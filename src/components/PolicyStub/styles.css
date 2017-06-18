@@ -8,10 +8,30 @@ li {
 
 .policy-stub {
   padding: 1em;
+  position: relative;
+
 }
 
 .policy-stub img {
+  position: relative;
+  top: 50%;
   border-radius: 100%;
   width: 100px;
   height: 100px;
+}
+
+.policy-stub-header {
+  margin-bottom: -20%;
+}
+
+.policy-stub-description {
+  background-color: #EEE;
+  padding: 1em;
+  padding-top: 30%;
+}
+
+.checkbox-label {
+  position: absolute !important;
+  top: 0;
+  right: 0;
 }
