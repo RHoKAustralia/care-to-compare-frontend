@@ -4,3 +4,27 @@
   padding: 20px;
   color: #222;
 }
+
+.landing-wrapper {
+  display: flex;
+  padding: 5em 1em;
+}
+
+.left {
+  display: inline-block;
+  width: 49%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.slick-slider {
+  flex: 2;
+}
+
+.right button {
+  width: 100%;
+}
