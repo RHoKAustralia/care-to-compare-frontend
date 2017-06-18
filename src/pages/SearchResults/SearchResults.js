@@ -37,6 +37,10 @@ class SearchResults extends Component {
   render() {
     return (
       <div className='search-results'>
+        <div className='flash'>
+          <h5>Thank you Jake!</h5>
+        </div>
+
         <div className='search-results-wrapper'>
           <div className='summary'>
             <h3>Summary</h3>
@@ -49,7 +53,7 @@ class SearchResults extends Component {
           </div>
 
           <div className='results row'>
-            <h2>Thank you Jake!</h2>
+            <h3>Choose a health fund</h3>
             {results.map(policy => (
               <PolicyStub
                 key={policy.name}
