@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import foundationImages from '../../assets/foundations/images';
+import fundImages from '../../assets/funds/images';
+import './Landing.css';
 
 class Landing extends Component {
   render() {
@@ -15,9 +18,22 @@ class Landing extends Component {
 
     return (
       <div>
+        <div className="Landing-header">
+          {
+            Object.keys(foundationImages).map(function (index) {
+              return (
+                <img key={index} src={foundationImages[index]} className="foundation-logo" alt="foundation-logo" height="100px" />
+              );
+            }, this)
+          }
+        </div>
+        <hr/>
         Landing
 
-        <div class="float: right; width: 480px;">
+        <div className="float: left; width: 480px;">
+
+        </div>
+        <div className="float: right; width: 480px;">
           <Slider {...settings}>
             <div><h3>1</h3></div>
             <div><h3>2</h3></div>
@@ -27,6 +43,15 @@ class Landing extends Component {
             <div><h3>6</h3></div>
           </Slider>
 
+        </div>
+        <div className="Landing-footer">
+          {
+            Object.keys(fundImages).map(function (index) { 
+              return (
+                <img key={index} src={fundImages[index]} className="fund-logo" alt="fund-logo" height="100px" />
+              );
+            }, this)
+          }
         </div>
       </div>
     );
