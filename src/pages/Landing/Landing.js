@@ -49,10 +49,8 @@ class Landing extends Component {
               <div><h3>6</h3></div>
             </Slider>
 
-            <Link to='/search'>
-              <button className='btn waves-effect waves-light'>
-                Compare now
-              </button>
+            <Link to='/search' className='btn waves-effect waves-light'>
+              Compare now
             </Link>
           </div>
         </div>

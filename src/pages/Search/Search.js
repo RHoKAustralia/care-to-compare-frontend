@@ -8,7 +8,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <div className="row" style={{marginTop: 100}}>    
+        <div className="row" style={{marginTop: 100}}>
           <div className="col offset-s4">
             <div className="switch">
               <h5 className="left-align">
@@ -95,10 +95,10 @@ class Search extends Component {
         </div>
         <div className="row">
           <div className="col offset-s4">
-            <a className="btn waves-effect waves-light">
-              <Link to='/results'>Let's Compare</Link>
+            <Link to='/results' className="btn waves-effect waves-light">
+              Let's Compare
               <i className="material-icons right">send</i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
