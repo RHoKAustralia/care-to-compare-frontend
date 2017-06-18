@@ -4,7 +4,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        Search
+        <h1>Exisitig Policy?</h1>
       </div>
     );
   }
