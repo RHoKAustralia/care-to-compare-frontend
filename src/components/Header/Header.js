@@ -19,9 +19,11 @@ class Header extends Component {
       <div className="App-header">
         <h2>Care to Compare</h2>
         <div className='pagination'>
-          {routes.map((route, i) =>
-            <i className={`fa fa-circle${i > stepNumber ? '-o' : ''}`} />
-          )}
+          <div className='pagination-bar'>
+            {routes.map((route, i) =>
+              <i className={`fa fa-circle${i > stepNumber ? '-o' : ''}`} />
+            )}
+          </div>
         </div>
       </div>
     )

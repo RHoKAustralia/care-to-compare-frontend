@@ -1,10 +1,16 @@
 .pagination {
+  background-color: #EEE;
+  padding: 2em;
+}
+
+.pagination-bar {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #000;
   height: 0.75em;
   width: 70%;
   margin: auto;
+  margin-bottom: 1em;
 }
 
 .pagination .fa {
