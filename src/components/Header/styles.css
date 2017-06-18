@@ -1,6 +1,11 @@
+header {
+  padding: 1em;
+}
+
 .pagination {
   background-color: #EEE;
   padding: 2em;
+  margin: -1em;
 }
 
 .pagination-bar {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router'
 import './styles.css';
+import logo from '../../assets/C2Clogo.png';
 
 // TODO: Use central route config
 const routes = [
@@ -16,8 +17,8 @@ class Header extends Component {
     const stepNumber = routes.indexOf(this.props.location.pathname);
 
     return (
-      <div className="App-header">
-        <h2>Care to Compare</h2>
+      <header>
+        <img src={logo} alt='Care to Compare logo' />
         <div className='pagination'>
           <div className='pagination-bar'>
             {routes.map((route, i) =>
@@ -25,7 +26,7 @@ class Header extends Component {
             )}
           </div>
         </div>
-      </div>
+      </header>
     )
   }
 }
