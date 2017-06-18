@@ -1,0 +1,17 @@
+h2 {
+  text-align: center;
+}
+
+.search-results-wrapper {
+  display: flex;
+}
+
+.search-results .summary {
+  flex: 1;
+  padding: 1em;
+}
+
+.search-results .results {
+  flex: 3;
+  padding: 1em;
+}
