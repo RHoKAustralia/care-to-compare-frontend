@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logo.svg';
+import { withRouter } from 'react-router'
+import './styles.css';
+
+// TODO: Use central route config
+const routes = [
+  '/',
+  '/landing',
+  '/search',
+  '/results',
+  '/checkout',
+  '/thanks'
+];
 
 class Header extends Component {
   render() {
+    const stepNumber = routes.indexOf(this.props.location.pathname);
+
     return (
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
+        <h2>Care to Compare</h2>
+        <div className='pagination'>
+          {routes.map((route, i) =>
+            <i className={`fa fa-circle${i > stepNumber ? '-o' : ''}`} />
+          )}
+        </div>
       </div>
     )
   }
 }
 
-export default Header;
+export default withRouter(Header);

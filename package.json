@@ -7,6 +7,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-materialize": "^1.0.1",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-slick": "^0.14.11",
     "slick-carousel": "^1.6.0"

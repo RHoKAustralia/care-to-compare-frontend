@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  height: 0.75em;
+  width: 70%;
+  margin: auto;
+}
+
+.pagination .fa {
+  font-size: 1.5em;
+}
