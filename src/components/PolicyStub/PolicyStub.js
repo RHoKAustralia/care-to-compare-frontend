@@ -10,8 +10,10 @@ class PolicyStub extends Component {
       <div className='policy-stub col s4'>
         <div className='policy-stub-header'>
           <img src={policy.logo} />
+          <input type='checkbox' className='filled-in' id={policy.name} />
+          <label className='checkbox-label' htmlFor={policy.name}></label>
         </div>
-        <div>
+        <div className='policy-stub-description'>
           <h3>{policy.name}</h3>
           <ul>
             {Object.keys(benefits).map((key, i) => (
