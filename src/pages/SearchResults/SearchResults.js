@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PolicyStub from '../../components/PolicyStub';
 import fundsImages from '../../assets/funds';
+import foundationImages from '../../assets/foundations';
 import './styles.css';
 
 const results = [
@@ -76,13 +77,20 @@ class SearchResults extends Component {
           </div>
         </div>
 
-        <div className='charities'>
-          Charities
+        <div className='charities center-align'>
+          <Link to='/checkout' className='btn waves-effect waves-light blue-grey darken-1'>
+            Checkout
+          </Link>
+          <div className='image-strip'>
+            {
+              Object.keys(foundationImages).map(function (index) {
+                return (
+                  <img key={index} src={foundationImages[index]} className="foundation-logo" alt="foundation-logo" height="100px" />
+                );
+              }, this)
+            }
+          </div>
         </div>
-
-        <Link to='/checkout' className='btn waves-effect waves-light blue-grey darken-1'>
-          Checkout
-        </Link>
       </div>
     );
   }
