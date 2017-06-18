@@ -40,10 +40,10 @@ class Landing extends Component {
         <div className='landing-wrapper'>
           <div className='left'>
             <ul>
-              <li><i className='fa fa-check' /> Exclusively deal in health products</li>
-              <li><i className='fa fa-check' /> Find a policy right for you</li>
-              <li><i className='fa fa-check' /> It costs no more no matter where you buy</li>
-              <li><i className='fa fa-check' /> Buy through C2C and support Stroke Foundation</li>
+              <li><i className='fa fa-check green-text darken-2' /> Exclusively deal in health products</li>
+              <li><i className='fa fa-check green-text darken-2' /> Find a policy right for you</li>
+              <li><i className='fa fa-check green-text darken-2' /> It costs no more no matter where you buy</li>
+              <li><i className='fa fa-check green-text darken-2' /> Buy through C2C and support Stroke Foundation</li>
             </ul>
           </div>
 

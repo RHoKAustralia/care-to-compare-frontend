@@ -17,7 +17,9 @@ class PolicyStub extends Component {
           <h3>{policy.name}</h3>
           <ul>
             {Object.keys(benefits).map((key, i) => (
-              <li key={key}><i className={`fa fa-${benefits[key] ? 'check' : 'times'}`} /> {key}</li>
+              <li key={key}>
+                <i className={`fa fa-${benefits[key] ? 'check green-text darken-2' : 'times red-text darken-2'}`} /> {key}
+              </li>
             ))}
           </ul>
         </div>
