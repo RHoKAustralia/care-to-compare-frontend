@@ -9,7 +9,6 @@ li {
 .policy-stub {
   padding: 1em;
   position: relative;
-
 }
 
 .policy-stub img {
@@ -18,16 +17,19 @@ li {
   border-radius: 100%;
   width: 100px;
   height: 100px;
+  border: 1.5px solid #333;
 }
 
 .policy-stub-header {
   margin-bottom: -20%;
+  text-align: center;
 }
 
 .policy-stub-description {
   background-color: #EEE;
   padding: 1em;
-  padding-top: 30%;
+  padding-top: 20%;
+  border-radius: 5px;
 }
 
 .checkbox-label {

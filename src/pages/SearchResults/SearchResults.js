@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PolicyStub from '../../components/PolicyStub';
+import fundsImages from '../../assets/funds';
 import './styles.css';
 
 const results = [
   {
     name: 'Health fund 1',
-    logo: 'https://i.imgur.com/ZZorNT1.jpg',
+    logo: fundsImages.bupa,
     benefits: {
       'Something': true,
       'Something else': true,
@@ -15,7 +16,7 @@ const results = [
   },
   {
     name: 'Health fund 2',
-    logo: 'https://i.imgur.com/ZZorNT1.jpg',
+    logo: fundsImages.australianUnity,
     benefits: {
       'Something': true,
       'Something else': false,
@@ -24,7 +25,7 @@ const results = [
   },
   {
     name: 'Health fund 3',
-    logo: 'https://i.imgur.com/ZZorNT1.jpg',
+    logo: fundsImages.nib,
     benefits: {
       'Something': false,
       'Something else': true,
