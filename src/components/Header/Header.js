@@ -5,7 +5,6 @@ import './styles.css';
 // TODO: Use central route config
 const routes = [
   '/',
-  '/landing',
   '/search',
   '/results',
   '/checkout',

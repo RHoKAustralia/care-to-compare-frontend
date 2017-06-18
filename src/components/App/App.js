@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 
 import Header from '../Header'
-import Referral from '../../pages/Referral';
 import Landing from '../../pages/Landing';
 import Search from '../../pages/Search';
 import SearchResults from '../../pages/SearchResults';
@@ -23,8 +22,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <Switch>
-            <Route exact path='/' component={Referral} />
-            <Route path='/landing' component={Landing} />
+            <Route exact path='/' component={Landing} />
             <Route path='/search' component={Search} />
             <Route path='/results' component={SearchResults} />
             <Route path='/checkout' component={Checkout} />
