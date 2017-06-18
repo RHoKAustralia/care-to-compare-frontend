@@ -9,27 +9,39 @@ const results = [
     name: 'Health fund 1',
     logo: fundsImages.bupa,
     benefits: {
-      'Something': true,
-      'Something else': true,
-      'Chunky bacon': false,
+      'General Dental': true,
+      'Optical': true,
+      'Physiotherapy': false,
+      'Chiropractic': true,
+      'Orthodontic': true,
+      'Glucose Monitor': false,
+      'Speech Therapy': true,
     }
   },
   {
     name: 'Health fund 2',
     logo: fundsImages.australianUnity,
     benefits: {
-      'Something': true,
-      'Something else': false,
-      'Chunky bacon': true,
+      'General Dental': true,
+      'Optical': false,
+      'Physiotherapy': true,
+      'Chiropractic': true,
+      'Orthodontic': false,
+      'Glucose Monitor': false,
+      'Speech Therapy': true,
     }
   },
   {
     name: 'Health fund 3',
     logo: fundsImages.nib,
     benefits: {
-      'Something': false,
-      'Something else': true,
-      'Chunky bacon': false,
+      'General Dental': false,
+      'Optical': true,
+      'Physiotherapy': true,
+      'Chiropractic': false,
+      'Orthodontic': true,
+      'Glucose Monitor': false,
+      'Speech Therapy': true,
     }
   },
 ];
