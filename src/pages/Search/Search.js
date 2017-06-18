@@ -95,7 +95,7 @@ class Search extends Component {
         </div>
         <div className="row">
           <div className="col offset-s4">
-            <Link to='/results' className="btn waves-effect waves-light">
+            <Link to='/results' className="btn waves-effect waves-light blue-grey darken-1">
               Let's Compare
               <i className="material-icons right">send</i>
             </Link>

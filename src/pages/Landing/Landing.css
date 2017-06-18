@@ -5,24 +5,36 @@
   color: #222;
 }
 
+.image-strip {
+  display: flex;
+  justify-content: space-between;
+}
+
 .landing-wrapper {
   display: flex;
-  padding: 5em 1em;
+  padding: 1em;
+  min-height: 400px;
 }
 
 .left {
   display: inline-block;
-  width: 49%;
+  width: 59%;
+  align-self: center;
 }
 
 .right {
   display: flex;
   flex-direction: column;
-  width: 49%;
+  width: 39%;
 }
 
 .slick-slider {
   flex: 2;
+}
+
+.slick-list,
+.slick-track {
+  height: 100%;
 }
 
 .right button {

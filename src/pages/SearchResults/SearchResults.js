@@ -63,7 +63,7 @@ class SearchResults extends Component {
           Charities
         </div>
 
-        <Link to='/checkout' className='btn waves-effect waves-light'>
+        <Link to='/checkout' className='btn waves-effect waves-light blue-grey darken-1'>
           Checkout
         </Link>
       </div>
