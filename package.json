@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://rhokaustralia.github.io/care-to-compare-frontend",
   "dependencies": {
+    "font-awesome": "^4.7.0",
+    "materialize-css": "^0.100.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-materialize": "^1.0.1",
