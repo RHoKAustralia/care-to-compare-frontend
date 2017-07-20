@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button, Icon, Input, Row, Col } from 'react-materialize'
 import { Link } from 'react-router-dom';
 
 var dummy = require('../../assets/dummy.jpg')
