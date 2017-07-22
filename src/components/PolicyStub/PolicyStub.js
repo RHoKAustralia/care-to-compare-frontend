@@ -9,7 +9,7 @@ class PolicyStub extends Component {
     return (
       <div className='policy-stub col s4'>
         <div className='policy-stub-header'>
-          <img src={policy.logo} />
+          <img src={policy.logo} alt="placeholder" />
           <input type='checkbox' className='filled-in' id={policy.name} />
           <label className='checkbox-label' htmlFor={policy.name}></label>
         </div>

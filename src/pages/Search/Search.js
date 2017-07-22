@@ -30,9 +30,9 @@ class Search extends Component {
               Type of Cover
             </h5>
             <div>
-              <img src={dummy} className="circle" style={{width: 50}} />
-              <img src={dummy} className="circle" style={{width: 50}} />
-              <img src={dummy} className="circle" style={{width: 50}} />
+              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
+              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
+              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
             </div>
           </div>
         </div>
