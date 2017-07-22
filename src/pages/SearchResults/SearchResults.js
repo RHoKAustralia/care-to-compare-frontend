@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PolicyStub from '../../components/PolicyStub';
+import { PolicyStub } from '../../components';
 import fundsImages from '../../assets/funds';
 import foundationImages from '../../assets/foundations';
 import './styles.css';
