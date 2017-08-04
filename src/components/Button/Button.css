@@ -1,5 +1,16 @@
 .btn {
+  background-color: #EEE;
+  color: #111;
+  border: transparent;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.btn-default {
   background-color: #5ED09F;
   color: #FFF;
-  border-radius: 5px;
 }

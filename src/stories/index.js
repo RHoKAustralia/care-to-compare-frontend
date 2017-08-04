@@ -7,4 +7,5 @@ import { linkTo } from '@storybook/addon-links';
 import { Button } from '../components'
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello World</Button>);
+  .add('no type', () => <Button onClick={action('clicked')}>Hello World</Button>)
+  .add('default', () => <Button type='default' onClick={action('clicked')}>Hello World</Button>);
