@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router'
+
+import { Pagination } from '../'
 import './styles.css';
 import logo from '../../assets/C2Clogo.png';
 
@@ -19,13 +21,10 @@ class Header extends Component {
     return (
       <header>
         <img src={logo} alt='Care to Compare logo' />
-        <div className='pagination'>
-          <div className='pagination-bar'>
-            {routes.map((route, i) =>
-              <i className={`fa fa-circle${i > stepNumber ? '-o' : ''}`} />
-            )}
-          </div>
-        </div>
+        <Pagination
+          routes={routes}
+          currentStep={stepNumber}
+        />
       </header>
     )
   }
