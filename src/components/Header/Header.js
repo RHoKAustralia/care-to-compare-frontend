@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router'
 
 import { Pagination } from '../'
-import './styles.css';
+import './Header.css';
 import logo from '../../assets/C2Clogo.png';
 
 // TODO: Use central route config

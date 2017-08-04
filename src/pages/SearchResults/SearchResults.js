@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { PolicyStub } from '../../components';
 import fundsImages from '../../assets/funds';
 import foundationImages from '../../assets/foundations';
-import './styles.css';
+import './SearchResults.css';
 
 const results = [
   {

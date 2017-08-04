@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles.css';
+import './PolicyStub.css';
 
 class PolicyStub extends Component {
   render() {

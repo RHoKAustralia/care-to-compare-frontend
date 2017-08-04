@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './styles.css'
+import './Pagination.css'
 
 const Pagination = ({ routes, currentStep}) => (
   <div className='pagination'>
