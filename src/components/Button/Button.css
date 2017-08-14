@@ -4,6 +4,7 @@
   border: transparent;
   padding: 5px 10px;
   text-align: center;
+  border-radius: 2.5px;
 }
 
 .btn a {
@@ -11,6 +12,6 @@
 }
 
 .btn-default {
-  background-color: #5ED09F;
+  background-color: #57D09F;
   color: #FFF;
 }

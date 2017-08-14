@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import foundationImages from '../../assets/foundations';
 import fundImages from '../../assets/funds';
+import { Button } from '../'
 import './Landing.css';
 
 const landingPageImages = [

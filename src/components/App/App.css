@@ -1,0 +1,12 @@
+.app {
+  margin: 0 auto;
+
+
+}
+
+@media (min-width: 960px) {
+  .app {
+    width: 75%;
+    min-width: 960px;
+  }
+}
