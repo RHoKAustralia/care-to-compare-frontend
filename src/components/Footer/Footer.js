@@ -4,15 +4,6 @@ import { SocialIcon } from 'react-social-icons';
 
 import './Footer.css';
 
-// TODO: Use central route config
-const routes = [
-  '/',
-  '/search',
-  '/results',
-  '/checkout',
-  '/thanks'
-];
-
 class Footer extends Component {
   render() {
     return (
