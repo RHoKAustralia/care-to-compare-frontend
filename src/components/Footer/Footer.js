@@ -1,0 +1,36 @@
+import React, { Component } from 'react';
+import { withRouter } from 'react-router'
+import { SocialIcon } from 'react-social-icons';
+
+import './Footer.css';
+
+// TODO: Use central route config
+const routes = [
+  '/',
+  '/search',
+  '/results',
+  '/checkout',
+  '/thanks'
+];
+
+class Footer extends Component {
+  render() {
+    return (
+      <footer>
+        <div className="footerCopyright">
+          &copy; CaretoCompare? 2017
+        </div>
+        <div className="footerSocialMedia">
+          <ul className="footerIcons">
+            <li><SocialIcon url="#" network="facebook" color="#363f48" style={{ height:30, width:30 }}/></li>
+            <li><SocialIcon url="#" network="twitter" color="#363f48" style={{ height:30, width:30 }}/></li>
+            <li><SocialIcon url="#" network="youtube" color="#363f48" style={{ height:30, width:30 }}/></li>
+            <li><SocialIcon url="#" network="instagram" color="#363f48" style={{ height:30, width:30 }}/></li>
+          </ul>
+        </div>
+      </footer>
+    )
+  }
+}
+
+export default withRouter(Footer);

@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Header } from '../index'
+import { Header, Footer } from '../index'
 import {
   Landing,
   Search,
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <Header />
+          <Header/>
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route path='/search' component={Search} />
@@ -28,6 +28,7 @@ class App extends Component {
             <Route path='/checkout' component={Checkout} />
             <Route path='/thanks' component={Thanks} />
           </Switch>
+          <Footer/>
         </div>
       </Router>
     );
