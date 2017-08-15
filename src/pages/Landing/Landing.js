@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import foundationImages from '../../assets/foundations';
 import fundImages from '../../assets/funds';
-import { Button } from '../'
 import './Landing.css';
 
 const landingPageImages = [
@@ -40,13 +39,23 @@ class Landing extends Component {
 
         <div className='landing-wrapper'>
           <div className='left'>
-            <ul>
-              <li><i className='fa fa-check green-text darken-2' /> Exclusively deal in health products</li>
-              <li><i className='fa fa-check green-text darken-2' /> Find a policy right for you</li>
-              <li><i className='fa fa-check green-text darken-2' /> It costs no more no matter where you buy</li>
-              <li><i className='fa fa-check green-text darken-2' /> Buy through C2C and support Stroke Foundation</li>
-            </ul>
+            <div className='wrapper-item'>
+              <ul>
+                <li><i className='fa fa-check green-text darken-2' /> Exclusively deal in health products</li>
+                <li><i className='fa fa-check green-text darken-2' /> Find a policy right for you</li>
+                <li><i className='fa fa-check green-text darken-2' /> It costs no more no matter where you buy</li>
+                <li><i className='fa fa-check green-text darken-2' /> Buy through C2C and support Stroke Foundation</li>
+              </ul>
+            </div>
+            <div className='wrapper-item'>
+              <Link to='/search' className='btn btn-large waves-effect waves-light darken-1'>
+
+
+                Compare now
+              </Link>
+            </div>
           </div>
+
 
           <div className='right'>
             <Slider {...settings}>
@@ -61,9 +70,7 @@ class Landing extends Component {
               ))}
             </Slider>
 
-            <Link to='/search' className='btn waves-effect waves-light blue-grey darken-1'>
-              Compare now
-            </Link>
+
           </div>
         </div>
 
