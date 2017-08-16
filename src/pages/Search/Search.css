@@ -5,3 +5,9 @@
 .excessAmount {
     font-weight: bold;
 }
+
+.row .btn {
+  background-color: #7ccea3;
+  color: #ffffff;
+  padding: 10px 10px;
+}
