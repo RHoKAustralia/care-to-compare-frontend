@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { CardPanel } from 'react-materialize';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {teal500} from 'material-ui/styles/colors';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Slider from 'material-ui/Slider';
 import './Search.css';
 
+const muiTheme = getMuiTheme({
+  palette: {
+    textColor: teal500
+  }
+});
 
 
 
@@ -10,6 +18,10 @@ class Search extends Component {
 
   state = {
     secondSlider: 300
+  };
+
+  handleSecondSlider = (event, value) => {
+    this.setState({secondSlider: value});
   };
 
 
@@ -74,6 +86,17 @@ class Search extends Component {
             </div>
           </div>
         </div>
+        <p>Excess Options</p>
+        <p>Choose your amount: <span className="excessAmount">$ {this.state.secondSlider}</span></p>
+        <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <Slider
+            min={0}
+            max={1000}
+            step={10}
+            value={this.state.secondSlider}
+            onChange={this.handleSecondSlider}
+          />
+        </MuiThemeProvider>
       </CardPanel>
     );
   }
