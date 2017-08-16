@@ -1,106 +1,80 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { CardPanel } from 'react-materialize';
+import Slider from 'material-ui/Slider';
+import './Search.css';
 
-var dummy = require('../../assets/dummy.jpg')
+
+
 
 class Search extends Component {
+
+  state = {
+    secondSlider: 300
+  };
+
+
   render() {
     return (
-      <div>
-        <div className="row" style={{marginTop: 100}}>
-          <div className="col offset-s4">
-            <div className="switch">
-              <h5 className="left-align">
-                Existing Cover?
-              </h5>
-              <div>
-                <label>
-                  No
-                  <input type="checkbox" />
-                  <span className="lever"></span>
-                  Yes
-                </label>
+      <CardPanel>
+        <p>Do you currently have a policy?</p>
+        <p>Enter your policy details so we can help you find a better one.</p>
+        <div className="row">
+          <div className="col offset-l1 offset-m1">
+            <div className="col s12 m5 l4 policyItem">
+              <input id="first_name" type="text" className="validate"/>
+              <label htmlFor="first_name">Policy Number</label>
+            </div>
+            <div className="col s12 m2 l2 policyItem">
+              <input id="last_name" type="text" className="validate"/>
+              <label htmlFor="last_name">Age</label>
+            </div>
+            <div className="col s12 m5 l6 policyItem">
+              <input id="last_name" type="text" className="validate"/>
+              <label htmlFor="last_name">Location</label>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="row">
+            <div className="col s4">
+              <div className="card-panel grey lighten-4 z-depth-1">
+                Individual
+              </div>
+            </div>
+            <div className="col s4">
+              <div className="card-panel grey lighten-4 z-depth-1">
+                Couple
+              </div>
+            </div>
+            <div className="col s4">
+              <div className="card-panel grey lighten-4 z-depth-1">
+                Family
               </div>
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-              Type of Cover
-            </h5>
-            <div>
-              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
-              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
-              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-                Your Age
-            </h5>
-            <div>
-              <input type="text" />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-                Your Location
-            </h5>
-            <div>
-              <input type="text" />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-                Cover Options
-            </h5>
+          <div className="row offset-l1">
             <div className="row">
               <div className="col s4">
-                <div className="card-panel grey lighten-5 z-depth-1">
+                <div className="card-panel grey lighten-4 z-depth-1">
                   Hospital
                 </div>
               </div>
               <div className="col s4">
-                <div className="card-panel grey lighten-5 z-depth-1">
+                <div className="card-panel grey lighten-4 z-depth-1">
                   Extras
                 </div>
               </div>
               <div className="col s4">
-                <div className="card-panel grey lighten-5 z-depth-1">
+                <div className="card-panel grey lighten-4 z-depth-1">
                   Combined
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5>
-                Excess
-            </h5>
-            <div>
-              <p className="range-field">
-                <input type="range" id="test5" min="0" max="2000" style={{width: 400}} />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <Link to='/results' className="btn waves-effect waves-light blue-grey darken-1">
-              Let's Compare
-              <i className="material-icons right">send</i>
-            </Link>
-          </div>
-        </div>
-      </div>
+      </CardPanel>
     );
   }
 }
