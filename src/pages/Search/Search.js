@@ -48,19 +48,19 @@ class Search extends Component {
           <div className="row">
             <div className="row">
               <div className="col s4">
-                <div className="card-panel grey lighten-4 z-depth-1">
+                <div className="card-panel grey lighten-4 z-depth-1 policyOption">
                   <Icon left>accessibility</Icon>
                   Individual
                 </div>
               </div>
               <div className="col s4">
-                <div className="card-panel grey lighten-4 z-depth-1">
+                <div className="card-panel grey lighten-4 z-depth-1 policyOption">
                   <Icon left>accessibility</Icon>
                   Couple
                 </div>
               </div>
               <div className="col s4">
-                <div className="card-panel grey lighten-4 z-depth-1">
+                <div className="card-panel grey lighten-4 z-depth-1 policyOption">
                   <Icon left>accessibility</Icon>
                   Family
                 </div>
@@ -71,17 +71,17 @@ class Search extends Component {
             <div className="row offset-l1">
               <div className="row">
                 <div className="col s4">
-                  <div className="card-panel grey lighten-4 z-depth-1">
+                  <div className="card-panel grey lighten-4 z-depth-1 policyOption">
                     Hospital
                   </div>
                 </div>
                 <div className="col s4">
-                  <div className="card-panel grey lighten-4 z-depth-1">
+                  <div className="card-panel grey lighten-4 z-depth-1 policyOption">
                     Extras
                   </div>
                 </div>
                 <div className="col s4">
-                  <div className="card-panel grey lighten-4 z-depth-1">
+                  <div className="card-panel grey lighten-4 z-depth-1 policyOption">
                     Combined
                   </div>
                 </div>
