@@ -32,16 +32,16 @@ class Search extends Component {
           <div className="row">
             <div className="col offset-l1 offset-m1">
               <div className="col s12 m5 l4 policyItem">
-                <input id="first_name" type="text" className="validate"/>
-                <label htmlFor="first_name">Policy Number</label>
+                <input id="policyNumber" type="text" maxlength="10" className="validate"/>
+                <label htmlFor="policyNumber">Policy Number</label>
               </div>
               <div className="col s12 m2 l2 policyItem">
-                <input id="last_name" type="text" className="validate"/>
-                <label htmlFor="last_name">Age</label>
+                <input id="age" type="text" maxlength="2" className="validate"/>
+                <label htmlFor="age">Age</label>
               </div>
               <div className="col s12 m5 l6 policyItem">
-                <input id="last_name" type="text" className="validate"/>
-                <label htmlFor="last_name">Location</label>
+                <input id="location" type="text" className="validate"/>
+                <label htmlFor="location">Location</label>
               </div>
             </div>
           </div>
