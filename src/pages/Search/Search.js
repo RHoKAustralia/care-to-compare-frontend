@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { CardPanel, Icon, Button} from 'react-materialize';
+import { CardPanel, Icon} from 'react-materialize';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {teal500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -32,7 +32,7 @@ class Search extends Component {
           <div className="row">
             <div className="col offset-l1 offset-m1">
               <div className="col s12 m5 l4 policyItem">
-                <input id="policyNumber" type="text" maxlength="10" className="validate"/>
+                <input id="policyNumber" type="text" className="validate"/>
                 <label htmlFor="policyNumber">Policy Number</label>
               </div>
               <div className="col s12 m2 l2 policyItem">
