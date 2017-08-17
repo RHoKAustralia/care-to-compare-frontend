@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { PolicyStub } from '../../components';
 import fundsImages from '../../assets/funds';
+import { CardPanel, Icon, Button} from 'react-materialize';
 import foundationImages from '../../assets/foundations';
 import './SearchResults.css';
 
 const results = [
   {
-    name: 'Health fund 1',
+    name: 'Prime Plus',
+    price: 303,
     logo: fundsImages.bupa,
     benefits: {
       'General Dental': true,
@@ -20,7 +22,8 @@ const results = [
     }
   },
   {
-    name: 'Health fund 2',
+    name: 'Smart Combination',
+    price: 297,
     logo: fundsImages.australianUnity,
     benefits: {
       'General Dental': true,
@@ -33,7 +36,8 @@ const results = [
     }
   },
   {
-    name: 'Health fund 3',
+    name: 'Security Essentials',
+    price: 286,
     logo: fundsImages.nib,
     benefits: {
       'General Dental': false,
@@ -56,24 +60,34 @@ class SearchResults extends Component {
         </div>
 
         <div className='search-results-wrapper'>
+
           <div className='summary'>
-            <h3>Summary</h3>
-            <ul>
-              <li>Individual</li>
-              <li>Location</li>
-              <li>Combined</li>
-              <li>Payment</li>
-            </ul>
+            <CardPanel>
+              <h3 className="top">Summary</h3>
+              <ul>
+                <li><Icon>person</Icon><span>Individual</span></li>
+                <li><Icon>add_location</Icon> Location</li>
+                <li><Icon>local_hospital</Icon> Hospital mid level & extras top level</li>
+                <li>    ${} excess</li>
+              </ul>
+            </CardPanel>
+            <CardPanel>
+              <p>Choose your payment frequency.</p>
+              <ul>
+                <Button>Monthly</Button>
+                <Button>Fortnightly</Button>
+                <Button>Weekly</Button>
+              </ul>
+            </CardPanel>
           </div>
 
           <div className='results row'>
-            <h3>Choose a health fund</h3>
             {results.map(policy => (
               <PolicyStub
                 key={policy.name}
                 policy={policy}
               />
-            ))}
+              ))}
           </div>
         </div>
 
