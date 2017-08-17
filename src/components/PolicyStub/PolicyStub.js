@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CardPanel, Icon} from 'react-materialize';
 import './PolicyStub.css';
 
 class PolicyStub extends Component {
@@ -7,14 +8,15 @@ class PolicyStub extends Component {
     const { benefits } = policy;
 
     return (
-      <div className='policy-stub col s4'>
+      <div className='policy-stub col offsets4 m4 l4'>
         <div className='policy-stub-header'>
-          <img src={policy.logo} alt="placeholder" />
-          <input type='checkbox' className='filled-in' id={policy.name} />
-          <label className='checkbox-label' htmlFor={policy.name}></label>
+          <img className="circle" src={policy.logo} alt="placeholder" />
         </div>
-        <div className='policy-stub-description'>
-          <h3>{policy.name}</h3>
+        <CardPanel className='policy-stub-description'>
+          <Icon className="right icon">close</Icon>
+          <p className="policy-title">{policy.name}</p>
+          <p className="policy-price">${policy.price}<span>.00</span></p>
+          <p className="center">/month</p>
           <ul>
             {Object.keys(benefits).map((key, i) => (
               <li key={key}>
@@ -22,7 +24,7 @@ class PolicyStub extends Component {
               </li>
             ))}
           </ul>
-        </div>
+        </CardPanel>
       </div>
     )
   }
