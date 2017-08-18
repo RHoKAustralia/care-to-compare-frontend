@@ -21,12 +21,18 @@
   display: inline-block;
   width: 59%;
   align-self: center;
+  text-align: center;
 }
 
 .right {
   display: flex;
   flex-direction: column;
   width: 39%;
+}
+
+.wrapper-item{
+  padding: 2em;
+  text-align: center;
 }
 
 .slick-slider {
@@ -40,4 +46,31 @@
 
 .right button {
   width: 100%;
+}
+
+.left .wrapper-item .btn {
+  background-color: #7ccea3;
+  color: #ffffff;
+  padding: 10px 10px;
+}
+
+.left .wrapper-item ul li i{
+  color: #7ccea3;
+}
+
+@media screen and (max-width: 600px) {
+  .left .right{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .wrapper-item{
+    width: 100%;
+    display: block;
+  }
+
+  .right {
+    display: block;
+    width: 100%;
+  }
 }

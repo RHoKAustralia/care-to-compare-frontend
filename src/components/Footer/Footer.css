@@ -1,0 +1,37 @@
+
+
+footer {
+  padding: .5em;
+  color: #363f48;
+  background-color: #EEEEEE;
+  height: 5em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerCopyright {
+  padding: 1.2em 2em;
+  float: left;
+}
+
+.footerSocialMedia {
+  float: right;
+  padding: 0em 2em;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footerIcons li {
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+@media (min-width: 960px) {
+  footer {
+    width: 75%;
+    min-width: 960px;
+  }
+}

@@ -1,0 +1,31 @@
+.policyItem{
+  text-align: center;
+}
+
+.row .col .policyOption {
+	margin: 15px 0;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+.row .col .policyOption:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-ms-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	transform: scale(1.02);
+}
+
+.excessAmount {
+    font-weight: bold;
+}
+
+.row .btn {
+  background-color: #7ccea3;
+  color: #ffffff;
+  padding: 10px 10px;
+}

@@ -7,7 +7,7 @@ li {
 }
 
 .policy-stub {
-  padding: 1em;
+  padding: .5em;
   position: relative;
 }
 
@@ -15,21 +15,43 @@ li {
   position: relative;
   top: 50%;
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
-  border: 1.5px solid #333;
+  width: 80px;
+  height: 80px;
+
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
 }
 
 .policy-stub-header {
-  margin-bottom: -20%;
+  margin-bottom: -50px;
   text-align: center;
+  width: 100%;
 }
 
 .policy-stub-description {
-  background-color: #EEE;
-  padding: 1em;
-  padding-top: 20%;
-  border-radius: 5px;
+  padding: 25px 10px 10px 10px;
+  border-radius: 1px;
+}
+
+.policy-title {
+  padding: 20px 0px 0px 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.policy-price {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+i.material-icons.right.icon{
+  width: auto;
+}
+
+.policy-stub-description icon{
+  margin: auto;
+  padding: 0px 0px;
+  width: 5% important!;
 }
 
 .checkbox-label {

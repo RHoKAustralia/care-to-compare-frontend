@@ -1,102 +1,109 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { CardPanel, Icon} from 'react-materialize';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {teal500} from 'material-ui/styles/colors';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Slider from 'material-ui/Slider';
+import './Search.css';
 
-var dummy = require('../../assets/dummy.jpg')
+const muiTheme = getMuiTheme({
+  palette: {
+    textColor: teal500
+  }
+});
 
 class Search extends Component {
+
+  state = {
+    secondSlider: 300
+  };
+
+  handleSecondSlider = (event, value) => {
+    this.setState({secondSlider: value});
+  };
+
   render() {
     return (
       <div>
-        <div className="row" style={{marginTop: 100}}>
-          <div className="col offset-s4">
-            <div className="switch">
-              <h5 className="left-align">
-                Existing Cover?
-              </h5>
-              <div>
-                <label>
-                  No
-                  <input type="checkbox" />
-                  <span className="lever"></span>
-                  Yes
-                </label>
+        <CardPanel>
+          <p>Do you currently have a policy?</p>
+          <p>Enter your policy details so we can help you find a better one.</p>
+          <div className="row">
+            <div className="col offset-l1 offset-m1">
+              <div className="col s12 m5 l4 policyItem">
+                <input id="policyNumber" type="text" className="validate"/>
+                <label htmlFor="policyNumber">Policy Number</label>
+              </div>
+              <div className="col s12 m2 l2 policyItem">
+                <input id="age" type="text" maxlength="2" className="validate"/>
+                <label htmlFor="age">Age</label>
+              </div>
+              <div className="col s12 m5 l6 policyItem">
+                <input id="location" type="text" className="validate"/>
+                <label htmlFor="location">Location</label>
               </div>
             </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-              Type of Cover
-            </h5>
-            <div>
-              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
-              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
-              <img src={dummy} alt="placeholder" className="circle" style={{width: 50}} />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-                Your Age
-            </h5>
-            <div>
-              <input type="text" />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-                Your Location
-            </h5>
-            <div>
-              <input type="text" />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5 className="left-align">
-                Cover Options
-            </h5>
+          <div className="row">
             <div className="row">
               <div className="col s4">
-                <div className="card-panel grey lighten-5 z-depth-1">
-                  Hospital
+                <div className="card-panel grey lighten-4 z-depth-1 policyOption">
+                  <Icon left>accessibility</Icon>
+                  Individual
                 </div>
               </div>
               <div className="col s4">
-                <div className="card-panel grey lighten-5 z-depth-1">
-                  Extras
+                <div className="card-panel grey lighten-4 z-depth-1 policyOption">
+                  <Icon left>accessibility</Icon>
+                  Couple
                 </div>
               </div>
               <div className="col s4">
-                <div className="card-panel grey lighten-5 z-depth-1">
-                  Combined
+                <div className="card-panel grey lighten-4 z-depth-1 policyOption">
+                  <Icon left>accessibility</Icon>
+                  Family
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col offset-s4">
-            <h5>
-                Excess
-            </h5>
-            <div>
-              <p className="range-field">
-                <input type="range" id="test5" min="0" max="2000" style={{width: 400}} />
-              </p>
+          <div className="row">
+            <div className="row offset-l1">
+              <div className="row">
+                <div className="col s4">
+                  <div className="card-panel grey lighten-4 z-depth-1 policyOption">
+                    Hospital
+                  </div>
+                </div>
+                <div className="col s4">
+                  <div className="card-panel grey lighten-4 z-depth-1 policyOption">
+                    Extras
+                  </div>
+                </div>
+                <div className="col s4">
+                  <div className="card-panel grey lighten-4 z-depth-1 policyOption">
+                    Combined
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <p>Excess Options</p>
+          <p>Choose your amount: <span className="excessAmount">$ {this.state.secondSlider}</span></p>
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <Slider
+              min={0}
+              max={1000}
+              step={10}
+              value={this.state.secondSlider}
+              onChange={this.handleSecondSlider}
+            />
+          </MuiThemeProvider>
+        </CardPanel>
         <div className="row">
-          <div className="col offset-s4">
-            <Link to='/results' className="btn waves-effect waves-light blue-grey darken-1">
-              Let's Compare
-              <i className="material-icons right">send</i>
+          <div className="col offset-s4 offset-l9 offset-m9">
+            <Link to='/results' className='btn btn-large waves-effect waves-light darken-1'>
+              Compare now
             </Link>
           </div>
         </div>
