@@ -5,9 +5,7 @@ footer {
   color: #363f48;
   background-color: #EEEEEE;
   height: 5em;
-  position: fixed;
   bottom: 0;
-  width: 100%;
 }
 
 .footerCopyright {
@@ -27,11 +25,4 @@ footer {
 .footerIcons li {
   display: inline-block;
   padding: 0px 5px;
-}
-
-@media (min-width: 960px) {
-  footer {
-    width: 75%;
-    min-width: 960px;
-  }
 }
