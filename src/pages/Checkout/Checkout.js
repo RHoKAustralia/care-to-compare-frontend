@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { UserDetailsForm, Button } from '../../components'
+import {
+  UserDetailsForm,
+  UserSummary,
+  Button,
+} from '../../components'
 
 class Checkout extends Component {
   render() {
     return (
       <div className='row'>
         <div className='col m4'>
-          Your Summary
+          <UserSummary />
         </div>
         <div className='col m8'>
           <UserDetailsForm />
