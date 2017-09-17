@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { UserDetailsForm, Button } from '../../components'
 
@@ -11,7 +12,9 @@ class Checkout extends Component {
         </div>
         <div className='col m8'>
           <UserDetailsForm />
-          <Button type='default'>Checkout</Button>
+          <Button type='default'>
+            <Link to="/thanks">Buy now</Link>
+          </Button>
         </div>
       </div>
     );
