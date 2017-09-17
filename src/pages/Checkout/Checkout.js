@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import {
+  Button,
+  PaymentSummary,
   UserDetailsForm,
   UserSummary,
-  Button,
 } from '../../components'
 
 class Checkout extends Component {
@@ -13,6 +14,7 @@ class Checkout extends Component {
       <div className='row'>
         <div className='col m4'>
           <UserSummary />
+          <PaymentSummary />
         </div>
         <div className='col m8'>
           <UserDetailsForm />
