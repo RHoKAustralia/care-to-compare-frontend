@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import {
   Button,
   PaymentSummary,
+  PaymentOptionsForm,
   UserDetailsForm,
   UserSummary,
 } from '../../components'
@@ -18,6 +19,7 @@ class Checkout extends Component {
         </div>
         <div className='col m8'>
           <UserDetailsForm />
+          <PaymentOptionsForm />
           <Button type='default'>
             <Link to="/thanks">Buy now</Link>
           </Button>
