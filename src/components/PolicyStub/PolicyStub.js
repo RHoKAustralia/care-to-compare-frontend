@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { CardPanel, Icon} from 'react-materialize';
+
+import { Button } from '../';
 import './PolicyStub.css';
 
 class PolicyStub extends Component {
@@ -24,6 +27,9 @@ class PolicyStub extends Component {
               </li>
             ))}
           </ul>
+          <Link to='/checkout'>
+            <Button style='default'>Buy Now</Button>
+          </Link>
         </CardPanel>
       </div>
     )

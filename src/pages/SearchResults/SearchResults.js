@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { PolicyStub } from '../../components';
 import fundsImages from '../../assets/funds';
 import { CardPanel, Icon, Button} from 'react-materialize';
@@ -92,9 +91,6 @@ class SearchResults extends Component {
         </div>
 
         <div className='charities center-align'>
-          <Link to='/checkout' className='btn waves-effect waves-light blue-grey darken-1'>
-            Checkout
-          </Link>
           <div className='image-strip'>
             {
               Object.keys(foundationImages).map(function (index) {
