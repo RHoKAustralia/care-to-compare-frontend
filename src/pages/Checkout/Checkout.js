@@ -5,6 +5,7 @@ import {
   Button,
   PaymentSummary,
   PaymentOptionsForm,
+  SelectedPolicyInformation,
   UserDetailsForm,
   UserSummary,
 } from '../../components'
@@ -20,9 +21,7 @@ class Checkout extends Component {
         <div className='col m8'>
           <UserDetailsForm />
           <PaymentOptionsForm />
-          <Button type='default'>
-            <Link to="/thanks">Buy now</Link>
-          </Button>
+          <SelectedPolicyInformation />
         </div>
       </div>
     );
