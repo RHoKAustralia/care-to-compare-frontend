@@ -59,13 +59,16 @@ class Landing extends Component {
 
           <div className='right'>
             <Slider {...settings}>
-              {landingPageImages.map(image => (
-                <div style={{
-                  backgroundImage: `url('${image}')`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  height: '100%'
-                }}>
+              {landingPageImages.map((image, index) => (
+                <div
+                  key={`carousel-image-${index}`}
+                  style={{
+                    backgroundImage: `url('${image}')`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '100%'
+                  }}
+                >
                 </div>
               ))}
             </Slider>
