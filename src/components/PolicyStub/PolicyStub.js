@@ -28,7 +28,7 @@ class PolicyStub extends Component {
             ))}
           </ul>
           <Link to='/checkout'>
-            <Button style='default'>Buy Now</Button>
+            <Button type='default'>Buy Now</Button>
           </Link>
         </CardPanel>
       </div>
