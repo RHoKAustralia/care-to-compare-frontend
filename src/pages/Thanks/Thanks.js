@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SocialIcon } from 'react-social-icons';
 
 import { Button } from '../../components'
 
@@ -38,10 +39,18 @@ class Thanks extends Component {
         <div>
           <h2>Keep up the great work.</h2>
           <p>Let your friends and family know about Care to Compare? Share on</p>
-          <Button>Facebook</Button>
-          <Button>Twitter</Button>
-          <Button>Instagram</Button>
-          <Button>Email</Button>
+          <Button type='secondary'>
+            <SocialIcon url="#" network="facebook" color="#363f48" style={{ height:30, width:30 }}/> Facebook
+          </Button>
+          <Button type='secondary'>
+            <SocialIcon url="#" network="twitter" color="#363f48" style={{ height:30, width:30 }}/> Twitter
+          </Button>
+          <Button type='secondary'>
+            <SocialIcon url="#" network="instagram" color="#363f48" style={{ height:30, width:30 }}/> Instagram
+          </Button>
+          <Button type='secondary'>
+            <SocialIcon url="#" network="email" color="#363f48" style={{ height:30, width:30 }}/> Email
+          </Button>
         </div>
       </div>
     );
