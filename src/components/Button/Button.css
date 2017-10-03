@@ -1,7 +1,7 @@
 .btn {
   background-color: #EEE;
   color: #111;
-  border: transparent;
+  border: 1px solid transparent;
   padding: 5px 10px;
   text-align: center;
   border-radius: 2.5px;
@@ -15,6 +15,12 @@
 .btn-default {
   background-color: #57D09F;
   color: #FFF;
+}
+
+.btn-inverted {
+  background-color: #FFF;
+  color: #57D09F;
+  border: 1px solid #57D09F;
 }
 
 .btn-secondary {
