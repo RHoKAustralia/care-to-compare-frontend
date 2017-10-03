@@ -2,27 +2,30 @@ import React, { Component } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
 import { Button } from '../../components'
+import './Thanks.css'
 
 class Thanks extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className='thanks-header'>
           <p>Thanks Jack</p>
           <p>Buying health insurance through Care to Compare? is good for you and good for charity</p>
         </div>
-        <div>
-          <h2>Your health insurance</h2>
-          <ul>
-            <li>Smart combination</li>
-            <li>$279.05 per month</li>
-            <li>Hospital and extras cover</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Your charity</h2>
-          You'll be saving $43.10 per month with your new health insurance policy
-          and supporting the Stroke Foundation with an extra $10 per month
+        <div className='row'>
+          <div className='col s6'>
+            <h2>Your health insurance</h2>
+            <ul>
+              <li>Smart combination</li>
+              <li>$279.05 per month</li>
+              <li>Hospital and extras cover</li>
+            </ul>
+          </div>
+          <div className='col s6'>
+            <h2>Your charity</h2>
+            You'll be saving $43.10 per month with your new health insurance policy
+            and supporting the Stroke Foundation with an extra $10 per month
+          </div>
         </div>
         <div>
           <h2>Jane Survivor Story</h2>
@@ -36,7 +39,7 @@ class Thanks extends Component {
           </p>
           <Button type='default'>Read more</Button>
         </div>
-        <div>
+        <div className='share-info'>
           <h2>Keep up the great work.</h2>
           <p>Let your friends and family know about Care to Compare? Share on</p>
           <Button type='secondary'>
