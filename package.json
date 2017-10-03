@@ -5,6 +5,7 @@
   "homepage": "https://rhokaustralia.github.io/care-to-compare-frontend",
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-materialize": "^1.0.10",
@@ -16,8 +17,6 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.1.9",
-    "gh-pages": "^1.0.0",
-    "material-ui": "^0.19.0",
     "autoprefixer": "7.1.0",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
@@ -39,8 +38,10 @@
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.11.1",
     "fs-extra": "3.0.1",
+    "gh-pages": "^1.0.0",
     "html-webpack-plugin": "2.28.0",
     "jest": "20.0.3",
+    "material-ui": "^0.19.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.5",
