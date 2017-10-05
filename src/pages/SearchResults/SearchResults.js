@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { PolicyStub } from '../../components';
-import fundsImages from '../../assets/funds';
 import { CardPanel, Icon, Button} from 'react-materialize';
+
+import { CharityBanner, PolicyStub } from '../../components';
+import fundsImages from '../../assets/funds';
 import foundationImages from '../../assets/foundations';
 import './SearchResults.css';
 
@@ -90,17 +91,7 @@ class SearchResults extends Component {
           </div>
         </div>
 
-        <div className='charities center-align'>
-          <div className='image-strip'>
-            {
-              Object.keys(foundationImages).map(function (index) {
-                return (
-                  <img key={index} src={foundationImages[index]} className="foundation-logo" alt="foundation-logo" height="100px" />
-                );
-              }, this)
-            }
-          </div>
-        </div>
+        <CharityBanner />
       </div>
     );
   }

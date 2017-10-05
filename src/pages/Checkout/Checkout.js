@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import {
+  CharityBanner,
   PaymentSummary,
   PaymentOptionsForm,
   SelectedPolicyInformation,
@@ -11,15 +12,20 @@ import {
 class Checkout extends Component {
   render() {
     return (
-      <div className='row'>
-        <div className='col m4'>
-          <UserSummary />
-          <PaymentSummary />
+      <div>
+        <div className='row'>
+          <div className='col m4'>
+            <UserSummary />
+            <PaymentSummary />
+          </div>
+          <div className='col m8'>
+            <UserDetailsForm />
+            <PaymentOptionsForm />
+            <SelectedPolicyInformation />
+          </div>
         </div>
-        <div className='col m8'>
-          <UserDetailsForm />
-          <PaymentOptionsForm />
-          <SelectedPolicyInformation />
+        <div className='row'>
+          <CharityBanner />
         </div>
       </div>
     );
