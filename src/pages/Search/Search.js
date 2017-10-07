@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { CardPanel, Icon} from 'react-materialize';
+import { CardPanel, Icon } from 'react-materialize';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {teal500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -36,8 +36,8 @@ class Search extends Component {
                 <label htmlFor="policyNumber">Policy Number</label>
               </div>
               <div className="col s12 m2 l2 policyItem">
-                <input id="age" type="text" maxlength="2" className="validate"/>
-                <label htmlFor="age">Age</label>
+                <input id="date-of-birth" type="date" className="datepicker validate"/>
+                <label htmlFor="date-of-birth">Date of birth</label>
               </div>
               <div className="col s12 m5 l6 policyItem">
                 <input id="location" type="text" className="validate"/>
