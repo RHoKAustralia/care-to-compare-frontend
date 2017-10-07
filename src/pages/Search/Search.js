@@ -27,7 +27,17 @@ class Search extends Component {
     return (
       <div>
         <CardPanel>
-          <p>Do you currently have a policy?</p>
+          <p>
+            Do you currently have a policy?
+            <div className="switch">
+            <label>
+              No
+              <input type="checkbox" />
+              <span className="lever"></span>
+              Yes
+            </label>
+          </div>
+          </p>
           <p>Enter your policy details so we can help you find a better one.</p>
           <div className="row">
             <div className="col offset-l1 offset-m1">
