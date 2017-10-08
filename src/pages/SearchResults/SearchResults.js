@@ -56,7 +56,8 @@ class SearchResults extends Component {
     return (
       <div className='search-results'>
         <div className='flash'>
-          <h5>Thank you Jake!</h5>
+          <h5>Thanks for caring to compare</h5>
+          <p>Here's the top 3 policies we found</p>
         </div>
 
         <div className='search-results-wrapper'>
