@@ -50,7 +50,16 @@ class Search extends Component {
                 <label htmlFor="date-of-birth">Date of birth</label>
               </div>
               <div className="col s12 m5 l6 policyItem">
-                <input id="location" type="text" className="validate"/>
+                <select id="location" className="browser-default">
+                  <option value="ACT">ACT</option>
+                  <option value="QLD">QLD</option>
+                  <option value="NSW">NSW</option>
+                  <option value="NT">NT</option>
+                  <option value="SA">SA</option>
+                  <option value="TAS">TAS</option>
+                  <option value="VIC">VIC</option>
+                  <option value="WA">WA</option>
+                </select>
                 <label htmlFor="location">Location</label>
               </div>
             </div>
