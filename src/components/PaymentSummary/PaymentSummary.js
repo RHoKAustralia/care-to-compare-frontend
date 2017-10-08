@@ -15,7 +15,7 @@ const PaymentSummary = (props) => (
       <li><i className='fa fa-check green-text darken-2' /> Basic hospital services</li>
     </ul>
     <Button type="default">
-      View SIS
+      <a href="./guide-to-sis-combined.pdf">View SIS</a>
     </Button>
   </div>
 )
