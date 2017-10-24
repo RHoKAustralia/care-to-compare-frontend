@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="app">
+        <div>
           <Header/>
           <Switch>
             <Route exact path='/' component={Landing} />

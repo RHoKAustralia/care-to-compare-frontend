@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router'
 
-import { Pagination } from '../'
+import { Container, Pagination } from '../'
 import './Header.css';
 import logo from '../../assets/C2Clogo.png';
 
@@ -20,11 +20,13 @@ class Header extends Component {
 
     return (
       <header>
-        <img src={logo} alt='Care to Compare logo' />
-        <Pagination
-          routes={routes}
-          currentStep={stepNumber}
-        />
+        <Container>
+          <img src={logo} alt='Care to Compare logo' />
+          <Pagination
+            routes={routes}
+            currentStep={stepNumber}
+          />
+        </Container>
       </header>
     )
   }
