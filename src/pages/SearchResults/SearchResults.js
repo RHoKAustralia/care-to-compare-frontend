@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CardPanel, Icon, Button} from 'react-materialize';
 
-import { CharityBanner, PolicyStub } from '../../components';
+import { CharityBanner, Container, PolicyStub } from '../../components';
 import fundsImages from '../../assets/funds';
 import foundationImages from '../../assets/foundations';
 import './SearchResults.css';
@@ -56,40 +56,43 @@ class SearchResults extends Component {
     return (
       <div className='search-results'>
         <div className='flash'>
-          <h5>Thanks for caring to compare</h5>
-          <p>Here's the top 3 policies we found</p>
+          <Container>
+            <h5>Thanks for caring to compare</h5>
+            <p>Here's the top 3 policies we found</p>
+          </Container>
         </div>
 
         <div className='search-results-wrapper'>
+          <Container>
+            <div className='summary'>
+              <CardPanel>
+                <h3 className="top">Summary</h3>
+                <ul>
+                  <li><Icon>person</Icon><span>Individual</span></li>
+                  <li><Icon>add_location</Icon> Location</li>
+                  <li><Icon>local_hospital</Icon> Hospital mid level & extras top level</li>
+                  <li>    ${} excess</li>
+                </ul>
+              </CardPanel>
+              <CardPanel>
+                <p>Choose your payment frequency.</p>
+                <ul>
+                  <Button>Monthly</Button>
+                  <Button>Fortnightly</Button>
+                  <Button>Weekly</Button>
+                </ul>
+              </CardPanel>
+            </div>
 
-          <div className='summary'>
-            <CardPanel>
-              <h3 className="top">Summary</h3>
-              <ul>
-                <li><Icon>person</Icon><span>Individual</span></li>
-                <li><Icon>add_location</Icon> Location</li>
-                <li><Icon>local_hospital</Icon> Hospital mid level & extras top level</li>
-                <li>    ${} excess</li>
-              </ul>
-            </CardPanel>
-            <CardPanel>
-              <p>Choose your payment frequency.</p>
-              <ul>
-                <Button>Monthly</Button>
-                <Button>Fortnightly</Button>
-                <Button>Weekly</Button>
-              </ul>
-            </CardPanel>
-          </div>
-
-          <div className='results row'>
-            {results.map(policy => (
-              <PolicyStub
-                key={policy.name}
-                policy={policy}
-              />
-              ))}
-          </div>
+            <div className='results row'>
+              {results.map(policy => (
+                <PolicyStub
+                  key={policy.name}
+                  policy={policy}
+                />
+                ))}
+            </div>
+          </Container>
         </div>
 
         <CharityBanner />
