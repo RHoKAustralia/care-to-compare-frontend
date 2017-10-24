@@ -43,16 +43,16 @@ class Search extends Component {
             </p>
             <p>Enter your policy details so we can help you find a better one.</p>
             <div className="row">
-              <div className="col offset-l1 offset-m1">
-                <div className="col s12 m5 l4 policyItem">
+              <div className="col offset-m1 m10">
+                <div className="col s12 m4 policyItem">
                   <input id="policyNumber" type="text" className="validate"/>
                   <label htmlFor="policyNumber">Policy Number</label>
                 </div>
-                <div className="col s12 m2 l2 policyItem">
+                <div className="col s12 m4 policyItem">
                   <input id="date-of-birth" type="date" className="datepicker validate"/>
                   <label htmlFor="date-of-birth">Date of birth</label>
                 </div>
-                <div className="col s12 m5 l6 policyItem">
+                <div className="col s12 m4 policyItem">
                   <select id="location" className="browser-default">
                     <option value="ACT">ACT</option>
                     <option value="QLD">QLD</option>
