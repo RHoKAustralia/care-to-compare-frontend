@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
-import { Button, Container } from '../../components'
+import { Button } from '../../components'
+import Container from '../../components/Container'
 import './styles.css'
 
 class Thanks extends Component {

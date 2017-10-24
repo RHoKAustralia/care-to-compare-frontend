@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 import {
   CharityBanner,
-  Container,
   PaymentSummary,
   PaymentOptionsForm,
   SelectedPolicyInformation,
   UserDetailsForm,
   UserSummary,
 } from '../../components'
+import Container from '../../components/Container'
 
 class Checkout extends Component {
   render() {

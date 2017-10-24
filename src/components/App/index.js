@@ -5,13 +5,14 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Header, Footer } from '../index'
+import Header from '../Header'
+import Footer from '../Footer'
 import Landing from '../../pages/Landing'
 import Search from '../../pages/Search'
 import SearchResults from '../../pages/SearchResults'
 import Checkout from '../../pages/Checkout'
 import Thanks from '../../pages/Thanks'
-import './App.css';
+import './styles.css';
 
 class App extends Component {
   render() {

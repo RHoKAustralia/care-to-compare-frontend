@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { CardPanel, Icon, Button} from 'react-materialize';
 
-import { CharityBanner, Container, PolicyStub } from '../../components';
+import { CharityBanner, PolicyStub } from '../../components';
+import Container from '../../components/Container'
 import fundsImages from '../../assets/funds';
 import foundationImages from '../../assets/foundations';
 import './styles.css';

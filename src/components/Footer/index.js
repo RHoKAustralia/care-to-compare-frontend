@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router'
 import { SocialIcon } from 'react-social-icons';
 
-import { Container } from '../'
-import './Footer.css';
+import Container from '../Container'
+import './styles.css';
 
 class Footer extends Component {
   render() {

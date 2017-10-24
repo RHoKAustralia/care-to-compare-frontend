@@ -6,7 +6,7 @@ import {teal500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Slider from 'material-ui/Slider';
 
-import { Container } from '../../components'
+import Container from '../../components/Container'
 import './styles.css';
 
 const muiTheme = getMuiTheme({
