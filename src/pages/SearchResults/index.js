@@ -4,7 +4,7 @@ import { CardPanel, Icon, Button} from 'react-materialize';
 import { CharityBanner, Container, PolicyStub } from '../../components';
 import fundsImages from '../../assets/funds';
 import foundationImages from '../../assets/foundations';
-import './SearchResults.css';
+import './styles.css';
 
 const results = [
   {

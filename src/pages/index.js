@@ -1,6 +1,0 @@
-export { default as Checkout } from './Checkout/Checkout'
-export { default as Landing } from './Landing/Landing'
-export { default as Referral } from './Referral/Referral'
-export { default as Search } from './Search/Search'
-export { default as SearchResults } from './SearchResults/SearchResults'
-export { default as Thanks } from './Thanks/Thanks'

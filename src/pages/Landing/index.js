@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import { Container } from '../../components';
 import foundationImages from '../../assets/foundations';
 import fundImages from '../../assets/funds';
-import './Landing.css';
+import './styles.css';
 
 const landingPageImages = [
   require('../../assets/landing-images/strokesurvivor.jpeg'),

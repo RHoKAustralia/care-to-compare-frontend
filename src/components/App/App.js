@@ -6,13 +6,11 @@ import {
 } from 'react-router-dom';
 
 import { Header, Footer } from '../index'
-import {
-  Landing,
-  Search,
-  SearchResults,
-  Checkout,
-  Thanks,
-} from '../../pages'
+import Landing from '../../pages/Landing'
+import Search from '../../pages/Search'
+import SearchResults from '../../pages/SearchResults'
+import Checkout from '../../pages/Checkout'
+import Thanks from '../../pages/Thanks'
 import './App.css';
 
 class App extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
 import { Button, Container } from '../../components'
-import './Thanks.css'
+import './styles.css'
 
 class Thanks extends Component {
   render() {
