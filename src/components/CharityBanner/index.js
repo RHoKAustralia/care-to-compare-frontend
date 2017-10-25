@@ -1,6 +1,6 @@
 import React from 'react'
 
-import strokeFoundationBanner from '../../assets/stroke-foundation-banner.jpeg'
+import strokeFoundationBanner from 'assets/stroke-foundation-banner.jpeg'
 import './styles.css'
 
 const CharityBanner = () => (

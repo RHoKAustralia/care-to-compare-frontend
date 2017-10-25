@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { CardPanel, Icon} from 'react-materialize';
 
-import Button from '../Button';
+import Button from 'components/Button';
 import './styles.css';
 
 class PolicyStub extends Component {

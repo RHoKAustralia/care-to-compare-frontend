@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
-import Container from '../../components/Container';
-import foundationImages from '../../assets/foundations';
-import fundImages from '../../assets/funds';
+import Container from 'components/Container';
+import foundationImages from 'assets/foundations';
+import fundImages from 'assets/funds';
 import './styles.css';
 
 const landingPageImages = [

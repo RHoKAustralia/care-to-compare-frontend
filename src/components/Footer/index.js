@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router'
 import { SocialIcon } from 'react-social-icons';
 
-import Container from '../Container'
+import Container from 'components/Container'
 import './styles.css';
 
 class Footer extends Component {

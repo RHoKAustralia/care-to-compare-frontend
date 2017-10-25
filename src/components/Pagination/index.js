@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Container from '../Container'
+import Container from 'components/Container'
 import './styles.css'
 
 const Pagination = ({ routes, currentStep}) => (

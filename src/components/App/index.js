@@ -5,13 +5,13 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Header from '../Header'
-import Footer from '../Footer'
-import Landing from '../../pages/Landing'
-import Search from '../../pages/Search'
-import SearchResults from '../../pages/SearchResults'
-import Checkout from '../../pages/Checkout'
-import Thanks from '../../pages/Thanks'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import Landing from 'pages/Landing'
+import Search from 'pages/Search'
+import SearchResults from 'pages/SearchResults'
+import Checkout from 'pages/Checkout'
+import Thanks from 'pages/Thanks'
 import './styles.css';
 
 class App extends Component {

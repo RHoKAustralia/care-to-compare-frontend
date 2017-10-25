@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { CardPanel, Icon, Button} from 'react-materialize';
 
-import CharityBanner from '../../components/CharityBanner';
-import PolicyStub from '../../components/PolicyStub'
-import Container from '../../components/Container'
-import fundsImages from '../../assets/funds';
-import foundationImages from '../../assets/foundations';
+import CharityBanner from 'components/CharityBanner';
+import PolicyStub from 'components/PolicyStub'
+import Container from 'components/Container'
+import fundsImages from 'assets/funds';
 import './styles.css';
 
 const results = [
