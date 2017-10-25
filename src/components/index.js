@@ -1,8 +1,0 @@
-export { default as Button } from './Button/Button'
-export { default as CharityBanner } from './CharityBanner/CharityBanner'
-export { default as PaymentOptionsForm } from './PaymentOptionsForm/PaymentOptionsForm'
-export { default as PaymentSummary } from './PaymentSummary/PaymentSummary'
-export { default as PolicyStub } from './PolicyStub/PolicyStub'
-export { default as SelectedPolicyInformation } from './SelectedPolicyInformation/SelectedPolicyInformation'
-export { default as UserDetailsForm } from './UserDetailsForm/UserDetailsForm'
-export { default as UserSummary } from './UserSummary/UserSummary'

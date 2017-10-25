@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 
-import {
-  CharityBanner,
-  PaymentSummary,
-  PaymentOptionsForm,
-  SelectedPolicyInformation,
-  UserDetailsForm,
-  UserSummary,
-} from '../../components'
+import CharityBanner from '../../components/CharityBanner'
+import PaymentSummary from '../../components/PaymentSummary'
+import PaymentOptionsForm from '../../components/PaymentOptionsForm'
+import SelectedPolicyInformation from '../../components/SelectedPolicyInformation'
+import UserDetailsForm from '../../components/UserDetailsForm'
+import UserSummary from '../../components/UserSummary'
 import Container from '../../components/Container'
 
 class Checkout extends Component {

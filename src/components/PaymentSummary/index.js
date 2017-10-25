@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from '../'
+import Button from '../Button'
 
 const PaymentSummary = (props) => (
   <div>
