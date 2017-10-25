@@ -1,34 +1,42 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { CardPanel, Icon} from 'react-materialize';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { CardPanel, Icon } from 'react-materialize'
 
-import Button from 'components/Button';
-import './styles.css';
+import Button from 'components/Button'
+import './styles.css'
 
 class PolicyStub extends Component {
   render() {
-    const { policy } = this.props;
-    const { benefits } = policy;
+    const { policy } = this.props
+    const { benefits } = policy
 
     return (
-      <div className='policy-stub col offsets4 m4 l4'>
-        <div className='policy-stub-header'>
+      <div className="policy-stub col offsets4 m4 l4">
+        <div className="policy-stub-header">
           <img className="circle" src={policy.logo} alt="placeholder" />
         </div>
-        <CardPanel className='policy-stub-description'>
+        <CardPanel className="policy-stub-description">
           <Icon className="right icon">close</Icon>
           <p className="policy-title">{policy.name}</p>
-          <p className="policy-price">${policy.price}<span>.00</span></p>
+          <p className="policy-price">
+            ${policy.price}
+            <span>.00</span>
+          </p>
           <p className="center">/month</p>
           <ul>
             {Object.keys(benefits).map((key, i) => (
               <li key={key}>
-                <i className={`fa fa-${benefits[key] ? 'check green-text darken-2' : 'times red-text darken-2'}`} /> {key}
+                <i
+                  className={`fa fa-${benefits[key]
+                    ? 'check green-text darken-2'
+                    : 'times red-text darken-2'}`}
+                />{' '}
+                {key}
               </li>
             ))}
           </ul>
-          <Link to='/checkout'>
-            <Button type='default'>Buy Now</Button>
+          <Link to="/checkout">
+            <Button type="default">Buy Now</Button>
           </Link>
         </CardPanel>
       </div>
@@ -36,4 +44,4 @@ class PolicyStub extends Component {
   }
 }
 
-export default PolicyStub;
+export default PolicyStub

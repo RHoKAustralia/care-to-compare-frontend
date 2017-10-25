@@ -1,55 +1,60 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { CardPanel, Icon } from 'react-materialize';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {teal500} from 'material-ui/styles/colors';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Slider from 'material-ui/Slider';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { CardPanel, Icon } from 'react-materialize'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { teal500 } from 'material-ui/styles/colors'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Slider from 'material-ui/Slider'
 
 import Container from 'components/Container'
-import './styles.css';
+import './styles.css'
 
 const muiTheme = getMuiTheme({
   palette: {
-    textColor: teal500
-  }
-});
+    textColor: teal500,
+  },
+})
 
 class Search extends Component {
-
   state = {
-    secondSlider: 300
-  };
+    secondSlider: 300,
+  }
 
   handleSecondSlider = (event, value) => {
-    this.setState({secondSlider: value});
-  };
+    this.setState({ secondSlider: value })
+  }
 
   render() {
     return (
       <div>
-          <Container>
+        <Container>
           <CardPanel>
             <p>
               Do you currently have a policy?
               <div className="switch">
-              <label>
-                No
-                <input type="checkbox" />
-                <span className="lever"></span>
-                Yes
-              </label>
-            </div>
+                <label>
+                  No
+                  <input type="checkbox" />
+                  <span className="lever" />
+                  Yes
+                </label>
+              </div>
             </p>
-            <p>Enter your policy details so we can help you find a better one.</p>
+            <p>
+              Enter your policy details so we can help you find a better one.
+            </p>
             <div className="row">
               <div className="col offset-m1 m10">
                 <div className="col s12 m4 policyItem">
-                  <input id="policyNumber" type="text" className="validate"/>
+                  <input id="policyNumber" type="text" className="validate" />
                   <label htmlFor="policyNumber">Policy Number</label>
                 </div>
                 <div className="col s12 m4 policyItem">
-                  <input id="date-of-birth" type="date" className="datepicker validate"/>
+                  <input
+                    id="date-of-birth"
+                    type="date"
+                    className="datepicker validate"
+                  />
                   <label htmlFor="date-of-birth">Date of birth</label>
                 </div>
                 <div className="col s12 m4 policyItem">
@@ -111,7 +116,10 @@ class Search extends Component {
               </div>
             </div>
             <p>Excess Options</p>
-            <p>Choose your amount: <span className="excessAmount">$ {this.state.secondSlider}</span></p>
+            <p>
+              Choose your amount:{' '}
+              <span className="excessAmount">$ {this.state.secondSlider}</span>
+            </p>
             <MuiThemeProvider muiTheme={muiTheme}>
               <Slider
                 min={0}
@@ -124,15 +132,18 @@ class Search extends Component {
           </CardPanel>
           <div className="row">
             <div className="col offset-s4 offset-l9 offset-m9">
-              <Link to='/results' className='btn btn-large waves-effect waves-light darken-1'>
+              <Link
+                to="/results"
+                className="btn btn-large waves-effect waves-light darken-1"
+              >
                 Compare now
               </Link>
             </div>
           </div>
         </Container>
       </div>
-    );
+    )
   }
 }
 
-export default Search;
+export default Search

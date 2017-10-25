@@ -13,24 +13,24 @@ class Checkout extends Component {
     return (
       <div>
         <Container>
-          <div className='row'>
-            <div className='col m4'>
+          <div className="row">
+            <div className="col m4">
               <UserSummary />
               <PaymentSummary />
             </div>
-            <div className='col m8'>
+            <div className="col m8">
               <UserDetailsForm />
               <PaymentOptionsForm />
               <SelectedPolicyInformation />
             </div>
           </div>
         </Container>
-        <div className='row'>
+        <div className="row">
           <CharityBanner />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Checkout;
+export default Checkout

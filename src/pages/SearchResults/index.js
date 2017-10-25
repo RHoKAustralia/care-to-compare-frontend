@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { CardPanel, Icon, Button} from 'react-materialize';
+import React, { Component } from 'react'
+import { CardPanel, Icon, Button } from 'react-materialize'
 
-import CharityBanner from 'components/CharityBanner';
+import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
 import Container from 'components/Container'
-import fundsImages from 'assets/funds';
-import './styles.css';
+import fundsImages from 'assets/funds'
+import './styles.css'
 
 const results = [
   {
@@ -14,13 +14,13 @@ const results = [
     logo: fundsImages.bupa,
     benefits: {
       'General Dental': true,
-      'Optical': true,
-      'Physiotherapy': false,
-      'Chiropractic': true,
-      'Orthodontic': true,
+      Optical: true,
+      Physiotherapy: false,
+      Chiropractic: true,
+      Orthodontic: true,
       'Glucose Monitor': false,
       'Speech Therapy': true,
-    }
+    },
   },
   {
     name: 'Smart Combination',
@@ -28,13 +28,13 @@ const results = [
     logo: fundsImages.australianUnity,
     benefits: {
       'General Dental': true,
-      'Optical': false,
-      'Physiotherapy': true,
-      'Chiropractic': true,
-      'Orthodontic': false,
+      Optical: false,
+      Physiotherapy: true,
+      Chiropractic: true,
+      Orthodontic: false,
       'Glucose Monitor': false,
       'Speech Therapy': true,
-    }
+    },
   },
   {
     name: 'Security Essentials',
@@ -42,37 +42,45 @@ const results = [
     logo: fundsImages.nib,
     benefits: {
       'General Dental': false,
-      'Optical': true,
-      'Physiotherapy': true,
-      'Chiropractic': false,
-      'Orthodontic': true,
+      Optical: true,
+      Physiotherapy: true,
+      Chiropractic: false,
+      Orthodontic: true,
       'Glucose Monitor': false,
       'Speech Therapy': true,
-    }
+    },
   },
-];
+]
 
 class SearchResults extends Component {
   render() {
     return (
-      <div className='search-results'>
-        <div className='flash'>
+      <div className="search-results">
+        <div className="flash">
           <Container>
             <h5>Thanks for caring to compare</h5>
             <p>Here's the top 3 policies we found</p>
           </Container>
         </div>
 
-        <div className='search-results-wrapper'>
+        <div className="search-results-wrapper">
           <Container>
-            <div className='summary'>
+            <div className="summary">
               <CardPanel>
                 <h3 className="top">Summary</h3>
                 <ul>
-                  <li><Icon>person</Icon><span>Individual</span></li>
-                  <li><Icon>add_location</Icon> Location</li>
-                  <li><Icon>local_hospital</Icon> Hospital mid level & extras top level</li>
-                  <li>    ${} excess</li>
+                  <li>
+                    <Icon>person</Icon>
+                    <span>Individual</span>
+                  </li>
+                  <li>
+                    <Icon>add_location</Icon> Location
+                  </li>
+                  <li>
+                    <Icon>local_hospital</Icon> Hospital mid level & extras top
+                    level
+                  </li>
+                  <li> ${} excess</li>
                 </ul>
               </CardPanel>
               <CardPanel>
@@ -85,21 +93,18 @@ class SearchResults extends Component {
               </CardPanel>
             </div>
 
-            <div className='results row'>
+            <div className="results row">
               {results.map(policy => (
-                <PolicyStub
-                  key={policy.name}
-                  policy={policy}
-                />
-                ))}
+                <PolicyStub key={policy.name} policy={policy} />
+              ))}
             </div>
           </Container>
         </div>
 
         <CharityBanner />
       </div>
-    );
+    )
   }
 }
 
-export default SearchResults;
+export default SearchResults
