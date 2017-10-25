@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://rhokaustralia.github.io/care-to-compare-frontend",
   "dependencies": {
+    "babel-plugin-module-resolver": "^2.7.1",
     "font-awesome": "^4.7.0",
     "materialize-css": "^0.100.2",
     "react": "^15.6.1",
@@ -93,6 +94,11 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      ["module-resolver", {
+        "root": ["./src"]
+      }]
     ]
   },
   "eslintConfig": {
