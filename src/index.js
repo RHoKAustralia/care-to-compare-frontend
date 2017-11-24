@@ -11,13 +11,27 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'font-awesome/css/font-awesome.min.css'
 import './index.css'
 
-const rootReducer = (state = {}, action) => { console.log(action); return state }
+import { types, creators } from 'actions'
+
+const rootReducer = (state = {}, action) => {
+  switch(action.type) {
+    case types.EXAMPLES.EXAMPLE_ACTION:
+      return {
+        ...state,
+        example: action.payload.message,
+      }
+    default:
+      return state
+  }
+}
 
 const configureStore = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f,
 )(createStore)
 
 const store = configureStore(rootReducer)
+
+store.dispatch(creators.example())
 
 ReactDOM.render(
   <Provider store={store}>
