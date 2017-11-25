@@ -11,7 +11,16 @@ import {
 
 function getPolicies(searchCriteria) {
 
+  // console.log(searchCriteria)
+
+  if(searchCriteria.monthlyPremium){
+    searchCriteria.monthlyPremium = {
+      $lt: parseFloat(searchCriteria.monthlyPremium)
+    }
+  }
+
   console.log(searchCriteria)
+
   return fetch('http://localhost:4000/policies/search', {
     method: 'POST',
     headers: {

@@ -1,14 +1,20 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { connect } from 'react-redux'
+import { Field, reduxForm, formValueSelector } from 'redux-form'
+
+const required = value => (value ? undefined : 'Required')
 
 let PolicySearchForm = props => {
-  const { handleSubmit } = props
+  const { handleSubmit, policyTypeValue } = props
+
+  console.log(policyTypeValue)
   
   return (
     <form onSubmit={ handleSubmit }>
       <div>
         <label htmlFor="category">Who is covered:</label>
-        <Field name="category" component="select" style={{display: 'block'}}>
+        <Field name="category" component="select" style={{display: 'block'}} validate={[required]}>
+            <option />
             <option value="Dependants only">Dependants only</option>
             <option value="One adult">Single</option>
             <option value="One adult &amp; any dependants">Single and Dependants</option>
@@ -20,15 +26,17 @@ let PolicySearchForm = props => {
       </div>
       <div>
         <label htmlFor="type">Type of cover:</label>
-        <Field name="type" component="select" style={{display: 'block'}}>
+        <Field name="type" component="select" style={{display: 'block'}} validate={[required]}>
+            <option />
             <option value="Combined">Combined</option>
             <option value="General">General</option>
             <option value="Hospital">Hospital</option>
         </Field>
       </div>
       <div>
-        <label htmlFor="states">Excess:</label>
-        <Field name="states" component="select" style={{display: 'block'}}>
+        <label htmlFor="states">Location:</label>
+        <Field name="states" component="select" style={{display: 'block'}} validate={[required]}>
+            <option />
             <option value="ACT">ACT</option>
             <option value="NSW">NSW</option>
             <option value="NT">Hospital</option>
@@ -39,9 +47,19 @@ let PolicySearchForm = props => {
             <option value="WA">WA</option>
         </Field>
       </div>
+
+      {policyTypeValue === 'General' ? (
+        <span />
+      ) : (
+        <div>
+          <label htmlFor="excess">Excess:</label>
+          <Field name="excess" component="input" type="text" />
+        </div>
+      )}
+      
       <div>
-        <label htmlFor="excess">Excess:</label>
-        <Field name="excess" component="input" type="text" />
+        <label htmlFor="monthlyPremium">Max monthly premium:</label>
+        <Field name="monthlyPremium" component="input" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -49,8 +67,18 @@ let PolicySearchForm = props => {
 }
 
 PolicySearchForm = reduxForm({
-  // a unique name for the form
   form: 'policySearch'
+})(PolicySearchForm)
+
+// Decorate with connect to read form values
+const selector = formValueSelector('policySearch') // <-- same as form name
+
+PolicySearchForm = connect(state => {
+  const policyTypeValue = selector(state, 'type')
+  
+  return {
+    policyTypeValue
+  }
 })(PolicySearchForm)
 
 export default PolicySearchForm;

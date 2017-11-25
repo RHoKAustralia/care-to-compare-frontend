@@ -28,8 +28,6 @@ class Search extends Component {
   }
 
   submit = values => {
-    console.log(values)
-    console.log(this.props.onSearch(values))
     this.props.onSearch(values)
   }
 
