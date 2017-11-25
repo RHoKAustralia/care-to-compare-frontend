@@ -7,20 +7,25 @@ let PolicySearchForm = props => {
   return (
     <form onSubmit={ handleSubmit }>
       <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component="input" type="text" />
+        <label htmlFor="whoIsCovered">Who is covered Name (Adult | Couples | Family)</label>
+        <Field name="whoIsCovered" component="input" type="text" />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component="input" type="text" />
+        <label htmlFor="typeOfCover">Type of cover (Hospital | General | Combined)</label>
+        <Field name="typeOfCover" component="input" type="text" />
       </div>
+      <div>
+        <label htmlFor="excess">Excess ($$$):</label>
+        <Field name="excess" component="input" type="text" />
+      </div>
+      <button type="submit">Submit</button>
     </form>
   )
 }
 
 PolicySearchForm = reduxForm({
   // a unique name for the form
-  form: 'search'
+  form: 'policySearch'
 })(PolicySearchForm)
 
 export default PolicySearchForm;
