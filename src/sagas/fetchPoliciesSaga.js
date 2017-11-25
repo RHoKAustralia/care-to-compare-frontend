@@ -26,5 +26,5 @@ function* perform(action) {
 }
 
 export default function* watchFetchPolicies() {
-  yield takeEvery(types.POLICIES.FETCHING_POLICIES, perform)
+  yield takeEvery(types.POLICIES.FETCH_POLICIES, perform)
 }
