@@ -4,6 +4,7 @@ import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import { Provider } from 'react-redux'
 import { createStore, compose, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import 'slick-carousel/slick/slick.css'
@@ -13,14 +14,17 @@ import './index.css'
 
 import { creators } from 'actions'
 import rootReducer from 'reducers'
+import rootSaga from 'sagas'
+
+const sagaMiddleware = createSagaMiddleware()
 
 const configureStore = compose(
+  applyMiddleware(sagaMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f,
 )(createStore)
 
 const store = configureStore(rootReducer)
-
-store.dispatch(creators.example())
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={store}>
