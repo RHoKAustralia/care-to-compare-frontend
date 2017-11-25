@@ -18,6 +18,7 @@ function* perform(action) {
   try {
     const response = yield call(getPolicies)
     yield put(fetchPoliciesSuccess(response))
+    window.location.assign('#/results')
   }
   catch (error) {
     yield put(fetchPoliciesFailure(error))
