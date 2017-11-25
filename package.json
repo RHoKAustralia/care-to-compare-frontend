@@ -6,6 +6,7 @@
   "dependencies": {
     "babel-plugin-module-resolver": "^2.7.1",
     "font-awesome": "^4.7.0",
+    "isomorphic-fetch": "^2.2.1",
     "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -16,6 +17,7 @@
     "react-slick": "^0.14.11",
     "react-social-icons": "^2.7.0",
     "redux": "^3.7.2",
+    "redux-form": "^7.1.2",
     "redux-saga": "^0.16.0",
     "slick-carousel": "^1.6.0"
   },
