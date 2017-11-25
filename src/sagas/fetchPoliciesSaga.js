@@ -1,4 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
+import fetch from 'isomorphic-fetch'
 
 import {
   types,
@@ -8,15 +9,24 @@ import {
   fetchPoliciesFailure,
 } from 'actions'
 
-function getPolicies() {
-  return Promise.resolve([])
+function getPolicies(searchCriteria) {
+
+  console.log(searchCriteria)
+  return fetch('http://localhost:4000/policies/search', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(searchCriteria)
+  })
+    .then(response => response.json())
 }
 
 function* perform(action) {
   yield put(fetchPoliciesRequest())
 
   try {
-    const response = yield call(getPolicies)
+    const response = yield call(getPolicies, action.payload.searchCriteria)
     yield put(fetchPoliciesSuccess(response))
     window.location.assign('#/results')
   }
