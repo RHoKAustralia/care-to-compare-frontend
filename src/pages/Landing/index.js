@@ -27,23 +27,24 @@ class Landing extends Component {
 
     return (
       <div>
-        <Container>
-          <div className="Landing-header">
-            <div className="image-strip">
-              {Object.keys(foundationImages).map(function(index) {
-                return (
-                  <img
-                    key={index}
-                    src={foundationImages[index]}
-                    className="foundation-logo"
-                    alt="foundation-logo"
-                    height="100px"
-                  />
-                )
-              }, this)}
-            </div>
+        <div className="Landing-header">
+          <Container>
+              <div className="image-strip">
+                {Object.keys(foundationImages).map(function(index) {
+                  return (
+                    <img
+                      key={index}
+                      src={foundationImages[index]}
+                      className="foundation-logo"
+                      alt="foundation-logo"
+                      height="50%"
+                    />
+                  )
+                }, this)}
+              </div>
+            </Container>
           </div>
-
+        <Container>
           <div className="landing-wrapper">
             <div className="left">
               <div className="wrapper-item">
@@ -69,8 +70,7 @@ class Landing extends Component {
               <div className="wrapper-item">
                 <Link
                   to="/search"
-                  className="btn btn-large waves-effect waves-light darken-1"
-                >
+                  className="btn btn-large waves-effect waves-light darken-1">
                   Compare now
                 </Link>
               </div>
@@ -92,23 +92,24 @@ class Landing extends Component {
               </Slider>
             </div>
           </div>
-
-          <div className="Landing-footer">
-            <div className="image-strip">
-              {Object.keys(fundImages).map(function(index) {
-                return (
-                  <img
-                    key={index}
-                    src={fundImages[index]}
-                    className="fund-logo"
-                    alt="fund-logo"
-                    height="100px"
-                  />
-                )
-              }, this)}
-            </div>
-          </div>
         </Container>
+        <div className="Landing-footer">
+            <Container>
+              <div className="image-strip">
+                {Object.keys(fundImages).map(function(index) {
+                  return (
+                    <img
+                      key={index}
+                      src={fundImages[index]}
+                      className="fund-logo"
+                      alt="fund-logo"
+                      height="50px"
+                    />
+                  )
+                }, this)}
+              </div>
+            </Container>
+          </div>
       </div>
     )
   }
