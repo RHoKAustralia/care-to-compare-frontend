@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CardPanel, Icon, Button } from 'react-materialize'
+import { connect } from 'react-redux'
 
 import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
@@ -64,42 +65,57 @@ class SearchResults extends Component {
         </div>
 
         <div className="search-results-wrapper">
-          <Container>
-            <div className="summary">
-              <CardPanel>
-                <h3 className="top">Summary</h3>
-                <ul>
-                  <li>
-                    <Icon>person</Icon>
-                    <span>Individual</span>
-                  </li>
-                  <li>
-                    <Icon>add_location</Icon> Location
-                  </li>
-                  <li>
-                    <Icon>local_hospital</Icon> Hospital mid level & extras top
-                    level
-                  </li>
-                  <li> ${} excess</li>
-                </ul>
-              </CardPanel>
-              <CardPanel>
-                <p>Choose your payment frequency.</p>
-                <ul>
-                  <Button>Monthly</Button>
-                  <Button>Fortnightly</Button>
-                  <Button>Weekly</Button>
-                </ul>
-              </CardPanel>
+          {this.props.policySearch.loading ? (
+            <div className="preloader-wrapper big active">
+              <div className="spinner-layer spinner-blue-only">
+                <div className="circle-clipper left">
+                  <div className="circle"></div>
+                </div><div className="gap-patch">
+                  <div className="circle"></div>
+                </div><div className="circle-clipper right">
+                  <div className="circle"></div>
+                </div>
+              </div>
             </div>
+          )
+          : (
+            <Container>
+              <div className="summary">
+                <CardPanel>
+                  <h3 className="top">Summary</h3>
+                  <ul>
+                    <li>
+                      <Icon>person</Icon>
+                      <span>Individual</span>
+                    </li>
+                    <li>
+                      <Icon>add_location</Icon> Location
+                    </li>
+                    <li>
+                      <Icon>local_hospital</Icon> Hospital mid level & extras top
+                      level
+                    </li>
+                    <li> ${} excess</li>
+                  </ul>
+                </CardPanel>
+                <CardPanel>
+                  <p>Choose your payment frequency.</p>
+                  <ul>
+                    <Button>Monthly</Button>
+                    <Button>Fortnightly</Button>
+                    <Button>Weekly</Button>
+                  </ul>
+                </CardPanel>
+              </div>
 
-            <div className="results row">
-              {results.map(policy => (
-                <PolicyStub key={policy.name} policy={policy} />
-              ))}
-            </div>
-          </Container>
-        </div>
+              <div className="results row">
+                {results.map(policy => (
+                  <PolicyStub key={policy.name} policy={policy} />
+                ))}
+              </div>
+            </Container>
+          )}
+          </div>
 
         <CharityBanner />
       </div>
@@ -107,4 +123,10 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults
+const mapStateToProps = (state, ownProps) => state
+const mapDispatchToProps = ({})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SearchResults)
