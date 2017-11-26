@@ -67,6 +67,9 @@ class SearchResults extends Component {
                 {this.props.policySearch.searchResults.slice(0, 3).map(policy => (
                   <PolicyStub key={policy.name} policy={policy} />
                 ))}
+                {this.props.policySearch.searchResults.length == 0 && (
+                  <CardPanel>No results found.</CardPanel>
+                )}
               </div>
             </Container>
           )}
