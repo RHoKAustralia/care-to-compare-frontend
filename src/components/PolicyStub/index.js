@@ -13,14 +13,14 @@ class PolicyStub extends Component {
     return (
       <div className="policy-stub col offsets4 m4 l4">
         <div className="policy-stub-header">
-          <img className="circle" src={policy.logo} alt="placeholder" />
+          <img className="circle" src="https://source.unsplash.com/random/200x200" alt="placeholder" />
         </div>
         <CardPanel className="policy-stub-description center">
           <Icon className="right icon">close</Icon>
-          <p className="policy-title">{policy.name}</p>
+          <p><strong>{policy.fundName}</strong></p>
+          <p className="policy-title">{policy.policyName}</p>
           <p className="policy-price">
-            ${policy.price}
-            <span>.00</span>
+            ${policy.monthlyPremium}
           </p>
           <p>/month</p>
           <p>Hospitals and extra cover</p>

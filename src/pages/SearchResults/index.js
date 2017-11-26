@@ -8,51 +8,6 @@ import Container from 'components/Container'
 import fundsImages from 'assets/funds'
 import './styles.css'
 
-const results = [
-  {
-    name: 'Prime Plus',
-    price: 303,
-    logo: fundsImages.bupa,
-    benefits: {
-      'General Dental': true,
-      Optical: true,
-      Physiotherapy: false,
-      Chiropractic: true,
-      Orthodontic: true,
-      'Glucose Monitor': false,
-      'Speech Therapy': true,
-    },
-  },
-  {
-    name: 'Smart Combination',
-    price: 297,
-    logo: fundsImages.australianUnity,
-    benefits: {
-      'General Dental': true,
-      Optical: false,
-      Physiotherapy: true,
-      Chiropractic: true,
-      Orthodontic: false,
-      'Glucose Monitor': false,
-      'Speech Therapy': true,
-    },
-  },
-  {
-    name: 'Security Essentials',
-    price: 286,
-    logo: fundsImages.nib,
-    benefits: {
-      'General Dental': false,
-      Optical: true,
-      Physiotherapy: true,
-      Chiropractic: false,
-      Orthodontic: true,
-      'Glucose Monitor': false,
-      'Speech Therapy': true,
-    },
-  },
-]
-
 class SearchResults extends Component {
   render() {
     return (
@@ -109,7 +64,7 @@ class SearchResults extends Component {
               </div>
 
               <div className="results row">
-                {results.map(policy => (
+                {this.props.policySearch.searchResults.slice(0, 3).map(policy => (
                   <PolicyStub key={policy.name} policy={policy} />
                 ))}
               </div>
