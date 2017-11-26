@@ -37,8 +37,8 @@ class Thanks extends Component {
                   <div className="content">
                     <p>
                       You'll be saving <span className="price">$43.10</span> per month with your new health insurance
-                      policy and supporting the Stroke Foundation with an extra <span className="price">$10</span> per
-                      month
+                      policy and supporting the Stroke Foundation with an extra
+                      <span className="price">$10 per month</span> 
                     </p>
                   </div>
                 </div>
