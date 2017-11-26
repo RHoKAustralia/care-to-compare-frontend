@@ -17,7 +17,13 @@ class Header extends Component {
       <header>
         <Container>
           <img src={logo} alt="Care to Compare logo" />
-          <Pagination routes={routes} currentStep={stepNumber} />
+
+          {this.props.location.pathname === '/' ? (
+            <span />
+          ) : (
+            <Pagination routes={routes} currentStep={stepNumber} />
+          )}
+      
         </Container>
       </header>
     )
