@@ -3,6 +3,7 @@ import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
 import Container from 'components/Container'
+import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
 import './styles.css'
 
 class Thanks extends Component {
@@ -47,17 +48,24 @@ class Thanks extends Component {
         </div>
         <div className="survivor-story">
           <Container>
-            <h4>Jane Survivor Story</h4>
-            <p>
-              My name is Jane and I am 43 years old, happy married and mum to
-              two 18 and 20 year old boys. I'm fit and healthy. Normal blood
-              pressure. Normal BMI. 12 weeks ago today, I woke up with pins and
-              needles in my right arm and leg. I'm a midwife and had worked
-              night shift the previous night, so I thought I'd slept really well
-              for once and hadn't moved much overnight (I'm usually a restless
-              sleeper)...
-            </p>
-            <Button type="default">Read more</Button>
+            <div className="row">
+              <div className="col s4">
+                <img className="circle responsive-img" src={survivorPhoto} alt={"Jane"} />
+              </div>
+              <div className="col s8">
+                <h4>Jane Survivor Story</h4>
+                <p>
+                  My name is Jane and I am 43 years old, happy married and mum to
+                  two 18 and 20 year old boys. I'm fit and healthy. Normal blood
+                  pressure. Normal BMI. 12 weeks ago today, I woke up with pins and
+                  needles in my right arm and leg. I'm a midwife and had worked
+                  night shift the previous night, so I thought I'd slept really well
+                  for once and hadn't moved much overnight (I'm usually a restless
+                  sleeper)...
+                </p>
+                <Button type="default">Read more</Button>
+              </div>
+            </div>
           </Container>
         </div>
         <div className="share-info">
