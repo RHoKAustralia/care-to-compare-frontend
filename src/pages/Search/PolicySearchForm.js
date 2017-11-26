@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
-import { PolicyOptions } from '../../components/PolicyOptions'
+import  PolicyOptions from '../../components/PolicyOptions'
 const required = value => (value ? undefined : 'Required')
 
 let PolicySearchForm = props => {
@@ -57,6 +57,7 @@ let PolicySearchForm = props => {
         </div>
       )}
       
+      <PolicyOptions />
       <div>
         <label htmlFor="monthlyPremium">Max monthly premium:</label>
         <Field name="monthlyPremium" component="input" type="text" />
