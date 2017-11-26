@@ -15,29 +15,21 @@ class PolicyStub extends Component {
         <div className="policy-stub-header">
           <img className="circle" src={policy.logo} alt="placeholder" />
         </div>
-        <CardPanel className="policy-stub-description">
+        <CardPanel className="policy-stub-description center">
           <Icon className="right icon">close</Icon>
           <p className="policy-title">{policy.name}</p>
           <p className="policy-price">
             ${policy.price}
             <span>.00</span>
           </p>
-          <p className="center">/month</p>
-          <ul>
-            {Object.keys(benefits).map((key, i) => (
-              <li key={key}>
-                <i
-                  className={`fa fa-${benefits[key]
-                    ? 'check green-text darken-2'
-                    : 'times red-text darken-2'}`}
-                />{' '}
-                {key}
-              </li>
-            ))}
-          </ul>
-          <Link to="/checkout">
-            <Button type="default">Buy Now</Button>
-          </Link>
+          <p>/month</p>
+          <p>Hospitals and extra cover</p>
+          <a href="#">View SIS</a>
+          <div>
+            <Link to="/checkout">
+              <Button type="default">Buy Now</Button>
+            </Link>
+          </div>
         </CardPanel>
       </div>
     )
