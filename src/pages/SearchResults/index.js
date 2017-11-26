@@ -53,19 +53,11 @@ class SearchResults extends Component {
                     <li> ${} excess</li>
                   </ul>
                 </CardPanel>
-                <CardPanel>
-                  <p>Choose your payment frequency.</p>
-                  <ul>
-                    <Button>Monthly</Button>
-                    <Button>Fortnightly</Button>
-                    <Button>Weekly</Button>
-                  </ul>
-                </CardPanel>
               </div>
 
               <div className="results row">
                 {this.props.policySearch.searchResults.slice(0, 3).map(policy => (
-                  <PolicyStub key={policy.name} policy={policy} />
+                  <PolicyStub key={policy.sisCode} policy={policy} />
                 ))}
                 {this.props.policySearch.searchResults.length == 0 && (
                   <CardPanel>No results found.</CardPanel>

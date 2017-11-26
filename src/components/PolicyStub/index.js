@@ -20,7 +20,7 @@ class PolicyStub extends Component {
           <p><strong>{policy.fundName}</strong></p>
           <p className="policy-title">{policy.policyName}</p>
           <p className="policy-price">
-            ${policy.monthlyPremium}
+            ${policy.monthlyPremium['$numberDecimal']}
           </p>
           <p>/month</p>
           <p>Hospitals and extra cover</p>

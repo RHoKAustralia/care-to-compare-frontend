@@ -57,7 +57,6 @@ let PolicySearchForm = props => {
         </div>
       )}
       
-      <PolicyOptions />
       <div>
         <label htmlFor="monthlyPremium">Max monthly premium:</label>
         <Field name="monthlyPremium" component="input" type="text" />
