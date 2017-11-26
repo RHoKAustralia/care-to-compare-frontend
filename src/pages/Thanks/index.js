@@ -11,34 +11,43 @@ class Thanks extends Component {
       <div>
         <div className="thanks-header">
           <Container>
-            <h5>Thank you</h5>
+            <h4>Thank you</h4>
             <p>
               Buying health insurance through Care to Compare? is good for you
               and good for charity
             </p>
           </Container>
+          <div className="row">
+            <Container>
+              <div className="thanks-summary">
+                <div className="card">
+                  <h6 className="heading">Your health insurance</h6>
+                  <div className="content">
+                    <ul>
+                      <li><i className="fa fa-check green-text darken-2" />{' '}Smart combination</li>
+                      <li><i className="fa fa-check green-text darken-2" />{' '}$279.05 per month</li>
+                      <li><i className="fa fa-check green-text darken-2" />{' '}Hospital and extras cover</li>
+                    </ul>
+                    <Button type="primary">View SIS</Button>
+                  </div>
+                </div>
+                <div className="card">
+                  <h6 className="heading">Your charity</h6>
+                  <div className="content">
+                    <p>
+                      You'll be saving <span className="price">$43.10</span> per month with your new health insurance
+                      policy and supporting the Stroke Foundation with an extra <span className="price">$10</span> per
+                      month
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </div>
         </div>
-        <div className="row">
+        <div className="survivor-story">
           <Container>
-            <div className="col s6">
-              <h2>Your health insurance</h2>
-              <ul>
-                <li>Smart combination</li>
-                <li>$279.05 per month</li>
-                <li>Hospital and extras cover</li>
-              </ul>
-            </div>
-            <div className="col s6">
-              <h2>Your charity</h2>
-              You'll be saving $43.10 per month with your new health insurance
-              policy and supporting the Stroke Foundation with an extra $10 per
-              month
-            </div>
-          </Container>
-        </div>
-        <div>
-          <Container>
-            <h2>Jane Survivor Story</h2>
+            <h4>Jane Survivor Story</h4>
             <p>
               My name is Jane and I am 43 years old, happy married and mum to
               two 18 and 20 year old boys. I'm fit and healthy. Normal blood
@@ -53,7 +62,7 @@ class Thanks extends Component {
         </div>
         <div className="share-info">
           <Container>
-            <h2>Keep up the great work.</h2>
+            <h4>Keep up the great work.</h4>
             <p>
               Let your friends and family know about Care to Compare? Share on
             </p>
@@ -94,6 +103,9 @@ class Thanks extends Component {
               Email
             </Button>
           </Container>
+        </div>
+        <div className="thanks-page-spacer">
+
         </div>
       </div>
     )

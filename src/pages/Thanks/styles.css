@@ -1,10 +1,49 @@
 .thanks-header {
-  background-color: #434343;
+  background: linear-gradient(0deg, #FBFBFB 40%, #434343 40%);
   color: #FFF;
   text-align: center;
+  padding: 2.5em 1em 0.5em 1em;
+}
+
+.thanks-summary {
+  display: flex;
+  color: #000;
+}
+
+.thanks-summary .card {
+  flex: 1;
+  margin: 1em;
+}
+
+.thanks-summary .card .content {
+  padding: 1em;
+}
+
+.thanks-summary .price {
+  font-size: 1.5em;
+  display: block;
+}
+
+.thanks-summary .heading {
+  text-transform: uppercase;
+  background-color: #F0F0F0;
+  color: #59636D;
+  padding: 1em;
+  margin-top: 0;
+}
+
+.survivor-story {
+  padding: 1em;
+  margin: 1em 0;
 }
 
 .share-info {
   background-color: #EEE;
+  padding: 1em;
   color: #444;
+}
+
+.thanks-page-spacer {
+  height: 100px;
+  background-color: #FBFBFB;
 }
