@@ -7,7 +7,8 @@ const initialState = {
   policySearch: {
     loading: false,
     errors: [],
-    searchResults: []
+    searchResults: [],
+    selectedPolicy: null,
   }
 }
 
@@ -18,7 +19,8 @@ const policySearch = (state = initialState.policySearch, action) => {
         ...state,
         loading: true,
         errors: [],
-        searchResults: []
+        searchResults: [],
+        selectPolicy: null,
       }
     case types.POLICIES.FETCH_POLICIES_SUCCESS:
       return {
@@ -33,6 +35,11 @@ const policySearch = (state = initialState.policySearch, action) => {
         loading: false,
         errors: action.payload.error,
         searchResults: []
+      }
+    case types.POLICIES.SELECT_POLICY:
+      return {
+        ...state,
+        selectedPolicy: action.payload.policy,
       }
     default:
       return state

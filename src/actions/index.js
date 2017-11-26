@@ -4,6 +4,7 @@ export const types = {
     FETCH_POLICIES_REQUEST: 'FETCH_POLICIES_REQUEST',
     FETCH_POLICIES_SUCCESS: 'FETCH_POLICIES_SUCCESS',
     FETCH_POLICIES_FAILURE: 'FETCH_POLICIES_FAILURE',
+    SELECT_POLICY: 'SELECT_POLICY',
   }
 }
 
@@ -31,4 +32,11 @@ export const fetchPoliciesFailure = (error) => ({
   payload: {
     error,
   },
+})
+
+export const selectPolicy = (policy) => ({
+  type: types.POLICIES.SELECT_POLICY,
+  payload: {
+    policy,
+  }
 })
