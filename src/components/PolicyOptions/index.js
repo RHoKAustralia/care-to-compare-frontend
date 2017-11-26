@@ -4,6 +4,7 @@ import { CardPanel, Icon } from 'react-materialize'
 
 import Button from 'components/Button'
 import './styles.css'
+const imageIcon = require('../../assets/policy-options/combined-unselected.png')
 
 /*
  Policy Options is a container component of a list of categories.
@@ -11,17 +12,34 @@ import './styles.css'
 
 */
 
-function Category (props) {
-  const category = props.name;
-  return (
-    <div className="col s4" onClick={(e)=>props.selected(e,category)} >
-          <div className="card-panel grey lighten-4 z-depth-1 policyOption">
-          <Icon left>accessibility</Icon>
-          { category }
-          </div>
-    </div>
 
-  );
+
+class Category extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = { isOn: false }
+    this.Selected = this.Selected.bind(this);
+  }
+
+  Selected(e){
+     this.setState({isOn : !this.state.isOn});
+     console.log(this.isOn); this.props.selected(e,this.props.name);
+  }
+  
+  render() {
+    var category = this.props.name;
+    return (          
+      <div className="col s4" onClick={(e)=> this.Selected(e) } >
+            <div className= {" policyOptions " + ( this.state.isOn ? 'policy-selected' : 'policy-unselected') }>
+            <img src={imageIcon} />
+            <span> { category }</span>
+          
+            </div>
+      </div>
+  
+    );
+  }
 }
 
 
