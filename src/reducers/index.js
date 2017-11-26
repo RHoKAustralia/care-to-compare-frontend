@@ -3,7 +3,15 @@ import {reducer as formReducer} from 'redux-form'
 
 import {types} from 'actions'
 
-const policySearch = (state = [], action) => {
+const initialState = {
+  policySearch: {
+    loading: false,
+    errors: [],
+    searchResults: []
+  }
+}
+
+const policySearch = (state = initialState.policySearch, action) => {
   switch (action.type) {
     case types.POLICIES.FETCH_POLICIES_REQUEST:
       return {
