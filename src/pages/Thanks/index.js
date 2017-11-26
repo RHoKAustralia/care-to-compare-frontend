@@ -11,7 +11,7 @@ class Thanks extends Component {
       <div>
         <div className="thanks-header">
           <Container>
-            <h5>Thanks Jack</h5>
+            <h5>Thank you</h5>
             <p>
               Buying health insurance through Care to Compare? is good for you
               and good for charity
