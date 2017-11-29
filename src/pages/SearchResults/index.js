@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { CardPanel, Icon, Button } from 'react-materialize'
+import { CardPanel, Icon } from 'react-materialize'
 import { connect } from 'react-redux'
 
 import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
 import Container from 'components/Container'
-import fundsImages from 'assets/funds'
 import './styles.css'
 
 class SearchResults extends Component {
@@ -59,7 +58,7 @@ class SearchResults extends Component {
                 {this.props.policySearch.searchResults.slice(0, 3).map(policy => (
                   <PolicyStub key={policy.sisCode} policy={policy} />
                 ))}
-                {this.props.policySearch.searchResults.length == 0 && (
+                {this.props.policySearch.searchResults.length === 0 && (
                   <CardPanel>No results found.</CardPanel>
                 )}
               </div>

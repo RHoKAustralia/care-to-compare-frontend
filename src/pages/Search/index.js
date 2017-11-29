@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { CardPanel, Icon } from 'react-materialize'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import { teal500 } from 'material-ui/styles/colors'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Slider from 'material-ui/Slider'
 
 import Container from 'components/Container'
 
@@ -13,12 +7,6 @@ import PolicySearchForm from './PolicySearchForm'
 
 import './styles.css'
 import { fetchPolicies } from 'actions'
-
-const muiTheme = getMuiTheme({
-  palette: {
-    textColor: teal500,
-  },
-})
 
 class Search extends Component {
   state = {
@@ -45,13 +33,11 @@ class Search extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => (state)
-const mapDispatchToProps = ({
+const mapDispatchToProps = {
   onSearch: fetchPolicies,
-})
+}
 
 export default connect(
   mapStateToProps,
-  {
-    onSearch: fetchPolicies,
-  },
+  mapDispatchToProps,
 )(Search)

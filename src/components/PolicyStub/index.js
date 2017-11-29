@@ -8,7 +8,6 @@ import './styles.css'
 class PolicyStub extends Component {
   render() {
     const { policy } = this.props
-    const { benefits } = policy
 
     return (
       <div className="policy-stub col offsets4 m4 l4">
@@ -24,7 +23,7 @@ class PolicyStub extends Component {
           </p>
           <p>/month</p>
           <p>Hospitals and extra cover</p>
-          <a href="#">View SIS</a>
+          <Button type="inverted">View SIS</Button>
           <div>
             <Link to="/checkout">
               <Button type="default">Buy Now</Button>

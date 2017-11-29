@@ -3,7 +3,6 @@ import fetch from 'isomorphic-fetch'
 
 import {
   types,
-  fetchPolicies,
   fetchPoliciesRequest,
   fetchPoliciesSuccess,
   fetchPoliciesFailure,
