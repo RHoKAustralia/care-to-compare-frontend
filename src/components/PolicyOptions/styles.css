@@ -4,6 +4,7 @@
     margin: 10px;
     color: black;
     padding: 10px;
+    border: 2px solid transparent;
 }
 
 .policy-selected {
@@ -14,5 +15,5 @@
 
 .policy-unselected {
     background-color: #EEEEEE;
-    
+
 }
