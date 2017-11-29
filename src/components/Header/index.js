@@ -23,7 +23,6 @@ class Header extends Component {
           ) : (
             <Pagination routes={routes} currentStep={stepNumber} />
           )}
-      
         </Container>
       </header>
     )

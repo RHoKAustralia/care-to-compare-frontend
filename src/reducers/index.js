@@ -1,7 +1,7 @@
-import {combineReducers} from 'redux'
-import {reducer as formReducer} from 'redux-form'
+import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 
-import {types} from 'actions'
+import { types } from 'actions'
 
 const initialState = {
   policySearch: {
@@ -9,7 +9,7 @@ const initialState = {
     errors: [],
     searchResults: [],
     selectedPolicy: null,
-  }
+  },
 }
 
 const policySearch = (state = initialState.policySearch, action) => {
@@ -27,14 +27,14 @@ const policySearch = (state = initialState.policySearch, action) => {
         ...state,
         loading: false,
         errors: [],
-        searchResults: action.payload.policies
+        searchResults: action.payload.policies,
       }
     case types.POLICIES.FETCH_POLICIES_FAILURE:
       return {
         ...state,
         loading: false,
         errors: action.payload.error,
-        searchResults: []
+        searchResults: [],
       }
     case types.POLICIES.SELECT_POLICY:
       return {
@@ -48,5 +48,5 @@ const policySearch = (state = initialState.policySearch, action) => {
 
 export default combineReducers({
   policySearch,
-  form: formReducer
+  form: formReducer,
 })

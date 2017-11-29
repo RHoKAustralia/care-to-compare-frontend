@@ -23,16 +23,17 @@ class SearchResults extends Component {
             <div className="preloader-wrapper big active">
               <div className="spinner-layer spinner-blue-only">
                 <div className="circle-clipper left">
-                  <div className="circle"></div>
-                </div><div className="gap-patch">
-                  <div className="circle"></div>
-                </div><div className="circle-clipper right">
-                  <div className="circle"></div>
+                  <div className="circle" />
+                </div>
+                <div className="gap-patch">
+                  <div className="circle" />
+                </div>
+                <div className="circle-clipper right">
+                  <div className="circle" />
                 </div>
               </div>
             </div>
-          )
-          : (
+          ) : (
             <Container>
               <div className="summary">
                 <CardPanel>
@@ -46,8 +47,8 @@ class SearchResults extends Component {
                       <Icon>add_location</Icon> Location
                     </li>
                     <li>
-                      <Icon>local_hospital</Icon> Hospital mid level & extras top
-                      level
+                      <Icon>local_hospital</Icon> Hospital mid level & extras
+                      top level
                     </li>
                     <li> ${} excess</li>
                   </ul>
@@ -55,16 +56,18 @@ class SearchResults extends Component {
               </div>
 
               <div className="results row">
-                {this.props.policySearch.searchResults.slice(0, 3).map(policy => (
-                  <PolicyStub key={policy.sisCode} policy={policy} />
-                ))}
+                {this.props.policySearch.searchResults
+                  .slice(0, 3)
+                  .map(policy => (
+                    <PolicyStub key={policy.sisCode} policy={policy} />
+                  ))}
                 {this.props.policySearch.searchResults.length === 0 && (
                   <CardPanel>No results found.</CardPanel>
                 )}
               </div>
             </Container>
           )}
-          </div>
+        </div>
 
         <CharityBanner />
       </div>
@@ -73,9 +76,6 @@ class SearchResults extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => state
-const mapDispatchToProps = ({})
+const mapDispatchToProps = {}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(SearchResults)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults)

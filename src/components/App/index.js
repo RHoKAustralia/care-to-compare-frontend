@@ -10,7 +10,7 @@ import Checkout from 'pages/Checkout'
 import Thanks from 'pages/Thanks'
 import './styles.css'
 
-const Footer = (props) => <noscript />
+const Footer = props => <noscript />
 
 class App extends Component {
   render() {

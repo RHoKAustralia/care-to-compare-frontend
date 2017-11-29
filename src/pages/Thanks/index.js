@@ -25,9 +25,18 @@ class Thanks extends Component {
                   <h6 className="heading">Your health insurance</h6>
                   <div className="content">
                     <ul>
-                      <li><i className="fa fa-check green-text darken-2" />{' '}Smart combination</li>
-                      <li><i className="fa fa-check green-text darken-2" />{' '}$279.05 per month</li>
-                      <li><i className="fa fa-check green-text darken-2" />{' '}Hospital and extras cover</li>
+                      <li>
+                        <i className="fa fa-check green-text darken-2" /> Smart
+                        combination
+                      </li>
+                      <li>
+                        <i className="fa fa-check green-text darken-2" />{' '}
+                        $279.05 per month
+                      </li>
+                      <li>
+                        <i className="fa fa-check green-text darken-2" />{' '}
+                        Hospital and extras cover
+                      </li>
                     </ul>
                     <Button type="primary">View SIS</Button>
                   </div>
@@ -36,9 +45,10 @@ class Thanks extends Component {
                   <h6 className="heading">Your charity</h6>
                   <div className="content">
                     <p>
-                      You'll be saving <span className="price">$43.10</span> per month with your new health insurance
-                      policy and supporting the Stroke Foundation with an extra
-                      <span className="price">$10 per month</span> 
+                      You'll be saving <span className="price">$43.10</span> per
+                      month with your new health insurance policy and supporting
+                      the Stroke Foundation with an extra
+                      <span className="price">$10 per month</span>
                     </p>
                   </div>
                 </div>
@@ -50,18 +60,22 @@ class Thanks extends Component {
           <Container>
             <div className="row">
               <div className="col s4">
-                <img className="circle responsive-img" src={survivorPhoto} alt={"Jane"} />
+                <img
+                  className="circle responsive-img"
+                  src={survivorPhoto}
+                  alt={'Jane'}
+                />
               </div>
               <div className="col s8">
                 <h4>Jane Survivor Story</h4>
                 <p>
-                  My name is Jane and I am 43 years old, happy married and mum to
-                  two 18 and 20 year old boys. I'm fit and healthy. Normal blood
-                  pressure. Normal BMI. 12 weeks ago today, I woke up with pins and
-                  needles in my right arm and leg. I'm a midwife and had worked
-                  night shift the previous night, so I thought I'd slept really well
-                  for once and hadn't moved much overnight (I'm usually a restless
-                  sleeper)...
+                  My name is Jane and I am 43 years old, happy married and mum
+                  to two 18 and 20 year old boys. I'm fit and healthy. Normal
+                  blood pressure. Normal BMI. 12 weeks ago today, I woke up with
+                  pins and needles in my right arm and leg. I'm a midwife and
+                  had worked night shift the previous night, so I thought I'd
+                  slept really well for once and hadn't moved much overnight
+                  (I'm usually a restless sleeper)...
                 </p>
                 <Button type="default">Read more</Button>
               </div>
@@ -112,9 +126,7 @@ class Thanks extends Component {
             </Button>
           </Container>
         </div>
-        <div className="thanks-page-spacer">
-
-        </div>
+        <div className="thanks-page-spacer" />
       </div>
     )
   }

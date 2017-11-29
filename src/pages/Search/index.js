@@ -32,12 +32,9 @@ class Search extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => (state)
+const mapStateToProps = (state, ownProps) => state
 const mapDispatchToProps = {
   onSearch: fetchPolicies,
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Search)
+export default connect(mapStateToProps, mapDispatchToProps)(Search)
