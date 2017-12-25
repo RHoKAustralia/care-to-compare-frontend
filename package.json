@@ -75,7 +75,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "precommit": "lint-staged",
-    "prettier": "prettier -l \"./src/**/*.js\"",
+    "prettier:list": "prettier -l \"./src/**/*.js\"",
     "prettier:fix": "prettier -l --write \"./src/**/*.js\""
   },
   "jest": {
