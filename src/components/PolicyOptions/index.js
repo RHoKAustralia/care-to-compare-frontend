@@ -25,7 +25,7 @@ class Category extends Component {
   render() {
     var category = this.props.name
     return (
-      <div className="col s4" onClick={e => this.Selected(e)}>
+      <div className="col s4" onClick={(e) => this.Selected(e)}>
         <div
           className={
             ' policyOptions ' +
@@ -73,7 +73,7 @@ class PolicyOptions extends Component {
 
     return (
       <div className="row">
-        {categories.map(category => (
+        {categories.map((category) => (
           <Category
             key={category}
             name={category}

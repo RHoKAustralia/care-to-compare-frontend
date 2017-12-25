@@ -17,7 +17,7 @@ class Search extends Component {
     this.setState({ secondSlider: value })
   }
 
-  submit = values => {
+  submit = (values) => {
     this.props.onSearch(values)
   }
 

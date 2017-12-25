@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from 'components/Button'
 
-const PaymentSummary = props => (
+const PaymentSummary = (props) => (
   <div>
     <h3>Purchase summary</h3>
     <div>$297.05 /month</div>

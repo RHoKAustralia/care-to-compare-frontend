@@ -25,7 +25,7 @@ function getPolicies(searchCriteria) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(searchCriteria),
-  }).then(response => response.json())
+  }).then((response) => response.json())
 }
 
 function* perform(action) {

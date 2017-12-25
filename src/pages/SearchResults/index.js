@@ -58,7 +58,7 @@ class SearchResults extends Component {
               <div className="results row">
                 {this.props.policySearch.searchResults
                   .slice(0, 3)
-                  .map(policy => (
+                  .map((policy) => (
                     <PolicyStub key={policy.sisCode} policy={policy} />
                   ))}
                 {this.props.policySearch.searchResults.length === 0 && (

@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
 import PolicyOptions from '../../components/PolicyOptions'
-const required = value => (value ? undefined : 'Required')
+const required = (value) => (value ? undefined : 'Required')
 
-let PolicySearchForm = props => {
+let PolicySearchForm = (props) => {
   const { handleSubmit, policyTypeValue } = props
 
   console.log(policyTypeValue)
@@ -97,7 +97,7 @@ PolicySearchForm = reduxForm({
 // Decorate with connect to read form values
 const selector = formValueSelector('policySearch') // <-- same as form name
 
-PolicySearchForm = connect(state => {
+PolicySearchForm = connect((state) => {
   const policyTypeValue = selector(state, 'type')
 
   return {

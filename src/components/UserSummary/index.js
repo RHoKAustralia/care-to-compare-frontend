@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const UserSummary = props => (
+const UserSummary = (props) => (
   <div>
     <h3>Your summary</h3>
     <Link to="/results">Edit</Link>

@@ -19,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const configureStore = compose(
   applyMiddleware(sagaMiddleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f,
+  window.devToolsExtension ? window.devToolsExtension() : (f) => f,
 )(createStore)
 
 const store = configureStore(rootReducer)

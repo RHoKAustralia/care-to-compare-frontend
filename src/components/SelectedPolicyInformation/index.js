@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Button from 'components/Button'
 
-const SelectedPolicyInformation = props => (
+const SelectedPolicyInformation = (props) => (
   <div>
     You'll be saving $43.10 per month with your new health insurance policy.
     <div>

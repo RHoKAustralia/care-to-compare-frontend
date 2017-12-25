@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PaymentOptionsForm = props => (
+const PaymentOptionsForm = (props) => (
   <form>
     <h2>Payment Options</h2>
     <p>Select your preferred payment option</p>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './styles.css'
 
-const Button = props => (
+const Button = (props) => (
   <button
     className={`btn ${props.type ? 'btn-' + props.type : ''}`}
     onClick={props.onClick}
