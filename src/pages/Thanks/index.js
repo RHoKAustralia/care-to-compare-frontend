@@ -3,6 +3,7 @@ import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
 import Container from 'components/Container'
+import { IconTick } from 'components/Icons'
 import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
 import './styles.css'
 
@@ -26,16 +27,13 @@ class Thanks extends Component {
                   <div className="content">
                     <ul>
                       <li>
-                        <i className="fa fa-check green-text darken-2" /> Smart
-                        combination
+                        <IconTick /> Smart combination
                       </li>
                       <li>
-                        <i className="fa fa-check green-text darken-2" />{' '}
-                        $279.05 per month
+                        <IconTick /> $279.05 per month
                       </li>
                       <li>
-                        <i className="fa fa-check green-text darken-2" />{' '}
-                        Hospital and extras cover
+                        <IconTick /> Hospital and extras cover
                       </li>
                     </ul>
                     <Button type="primary">View SIS</Button>

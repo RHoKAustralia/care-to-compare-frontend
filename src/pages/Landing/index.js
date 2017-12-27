@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 
 import Container from 'components/Container'
+import { IconTick } from 'components/Icons'
 import foundationImages from 'assets/foundations'
 import fundImages from 'assets/funds'
 import './styles.css'
@@ -50,20 +51,16 @@ class Landing extends Component {
               <div className="wrapper-item">
                 <ul>
                   <li>
-                    <i className="fa fa-check green-text darken-2" />{' '}
-                    Exclusively deal in health products
+                    <IconTick /> Exclusively deal in health products
                   </li>
                   <li>
-                    <i className="fa fa-check green-text darken-2" /> Find a
-                    policy right for you
+                    <IconTick /> Find a policy right for you
                   </li>
                   <li>
-                    <i className="fa fa-check green-text darken-2" /> It costs
-                    no more no matter where you buy
+                    <IconTick /> It costs no more no matter where you buy
                   </li>
                   <li>
-                    <i className="fa fa-check green-text darken-2" /> Buy
-                    through C2C and support Stroke Foundation
+                    <IconTick /> Buy through C2C and support Stroke Foundation
                   </li>
                 </ul>
               </div>
