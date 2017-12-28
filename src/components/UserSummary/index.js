@@ -1,19 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { IconMapMarker, IconMedkit, IconUser } from 'components/Icons'
+
 const UserSummary = (props) => (
   <div>
     <h3>Your summary</h3>
     <Link to="/results">Edit</Link>
     <ul>
       <li>
-        <i className="fa fa-user" /> Individual
+        <IconUser /> Individual
       </li>
       <li>
-        <i className="fa fa-map-marker" /> Victoria
+        <IconMapMarker /> Victoria
       </li>
       <li>
-        <i className="fa fa-medkit" />
+        <IconMedkit />
         <ul>
           <li>hospital mid level & extras top level</li>
           <li>$250 excess</li>
