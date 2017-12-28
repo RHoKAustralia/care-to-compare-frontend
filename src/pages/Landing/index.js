@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Slider from 'react-slick'
 
 import Container from 'components/Container'
+import Carousel from 'components/Carousel'
 import { IconTick } from 'components/Icons'
 import foundationImages from 'assets/foundations'
 import fundImages from 'assets/funds'
@@ -16,16 +16,6 @@ const landingPageImages = [
 
 class Landing extends Component {
   render() {
-    var settings = {
-      dots: false,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      pauseOnHover: true,
-    }
-
     return (
       <div>
         <div className="Landing-header">
@@ -75,19 +65,7 @@ class Landing extends Component {
             </div>
 
             <div className="right">
-              <Slider {...settings}>
-                {landingPageImages.map((image, index) => (
-                  <div
-                    key={`carousel-image-${index}`}
-                    style={{
-                      backgroundImage: `url('${image}')`,
-                      backgroundPosition: 'center',
-                      backgroundSize: 'cover',
-                      height: '100%',
-                    }}
-                  />
-                ))}
-              </Slider>
+              <Carousel images={landingPageImages} />
             </div>
           </div>
         </Container>
