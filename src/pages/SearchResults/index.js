@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Icon } from 'react-materialize'
 import { connect } from 'react-redux'
 
 import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
 import Container from 'components/Container'
 import Card, { CardHeader, CardContent } from 'components/Card'
+import { IconMapMarker, IconMedkit, IconUser } from 'components/Icons'
 import './styles.css'
 
 class SearchResults extends Component {
@@ -44,15 +44,14 @@ class SearchResults extends Component {
                   <CardContent>
                     <ul>
                       <li>
-                        <Icon>person</Icon>
+                        <IconUser />
                         <span>Individual</span>
                       </li>
                       <li>
-                        <Icon>add_location</Icon> Location
+                        <IconMapMarker /> Location
                       </li>
                       <li>
-                        <Icon>local_hospital</Icon> Hospital mid level & extras
-                        top level
+                        <IconMedkit /> Hospital mid level & extras top level
                       </li>
                       <li> ${} excess</li>
                     </ul>
