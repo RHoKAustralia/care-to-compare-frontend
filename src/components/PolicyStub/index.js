@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { CardPanel, Icon } from 'react-materialize'
+import { Icon } from 'react-materialize'
 
 import Button from 'components/Button'
+import Card, { CardHeader, CardContent } from 'components/Card'
 import './styles.css'
 
 class PolicyStub extends Component {
@@ -18,24 +19,28 @@ class PolicyStub extends Component {
             alt="placeholder"
           />
         </div>
-        <CardPanel className="policy-stub-description center">
-          <Icon className="right icon">close</Icon>
-          <p>
-            <strong>{policy.fundName}</strong>
-          </p>
-          <p className="policy-title">{policy.policyName}</p>
-          <p className="policy-price">
-            ${policy.monthlyPremium['$numberDecimal']}
-          </p>
-          <p>/month</p>
-          <p>Hospitals and extra cover</p>
-          <Button type="inverted">View SIS</Button>
-          <div>
-            <Link to="/checkout">
-              <Button type="default">Buy Now</Button>
-            </Link>
-          </div>
-        </CardPanel>
+        <Card>
+          <CardContent>
+            <div className="policy-stub-description center">
+              <Icon className="right icon">close</Icon>
+              <p>
+                <strong>{policy.fundName}</strong>
+              </p>
+              <p className="policy-title">{policy.policyName}</p>
+              <p className="policy-price">
+                ${policy.monthlyPremium['$numberDecimal']}
+              </p>
+              <p>/month</p>
+              <p>Hospitals and extra cover</p>
+              <Button type="inverted">View SIS</Button>
+              <div>
+                <Link to="/checkout">
+                  <Button type="default">Buy Now</Button>
+                </Link>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     )
   }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { CardPanel, Icon } from 'react-materialize'
+import { Icon } from 'react-materialize'
 import { connect } from 'react-redux'
 
 import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
 import Container from 'components/Container'
+import Card, { CardHeader, CardContent } from 'components/Card'
 import './styles.css'
 
 class SearchResults extends Component {
@@ -36,23 +37,27 @@ class SearchResults extends Component {
           ) : (
             <Container>
               <div className="summary">
-                <CardPanel>
-                  <h3 className="top">Summary</h3>
-                  <ul>
-                    <li>
-                      <Icon>person</Icon>
-                      <span>Individual</span>
-                    </li>
-                    <li>
-                      <Icon>add_location</Icon> Location
-                    </li>
-                    <li>
-                      <Icon>local_hospital</Icon> Hospital mid level & extras
-                      top level
-                    </li>
-                    <li> ${} excess</li>
-                  </ul>
-                </CardPanel>
+                <Card>
+                  <CardHeader>
+                    <h3 className="top">Summary</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <ul>
+                      <li>
+                        <Icon>person</Icon>
+                        <span>Individual</span>
+                      </li>
+                      <li>
+                        <Icon>add_location</Icon> Location
+                      </li>
+                      <li>
+                        <Icon>local_hospital</Icon> Hospital mid level & extras
+                        top level
+                      </li>
+                      <li> ${} excess</li>
+                    </ul>
+                  </CardContent>
+                </Card>
               </div>
 
               <div className="results row">
@@ -62,7 +67,9 @@ class SearchResults extends Component {
                     <PolicyStub key={policy.sisCode} policy={policy} />
                   ))}
                 {this.props.policySearch.searchResults.length === 0 && (
-                  <CardPanel>No results found.</CardPanel>
+                  <Card>
+                    <CardContent>No results found.</CardContent>
+                  </Card>
                 )}
               </div>
             </Container>
