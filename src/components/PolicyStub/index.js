@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Icon } from 'react-materialize'
 
 import Button from 'components/Button'
-import Card, { CardHeader, CardContent } from 'components/Card'
+import { IconClose } from 'components/Icons'
+import Card, { CardContent } from 'components/Card'
 import './styles.css'
 
 class PolicyStub extends Component {
@@ -22,7 +22,7 @@ class PolicyStub extends Component {
         <Card>
           <CardContent>
             <div className="policy-stub-description center">
-              <Icon className="right icon">close</Icon>
+              <IconClose />
               <p>
                 <strong>{policy.fundName}</strong>
               </p>
