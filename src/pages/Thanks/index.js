@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
+import Card, { CardHeader, CardContent } from 'components/Card'
 import Container from 'components/Container'
 import { IconTick } from 'components/Icons'
 import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
@@ -22,9 +23,11 @@ class Thanks extends Component {
           <div className="row">
             <Container>
               <div className="thanks-summary">
-                <div className="card">
-                  <h6 className="heading">Your health insurance</h6>
-                  <div className="content">
+                <Card>
+                  <CardHeader>
+                    <h6>Your health insurance</h6>
+                  </CardHeader>
+                  <CardContent>
                     <ul>
                       <li>
                         <IconTick /> Smart combination
@@ -37,19 +40,21 @@ class Thanks extends Component {
                       </li>
                     </ul>
                     <Button type="primary">View SIS</Button>
-                  </div>
-                </div>
-                <div className="card">
-                  <h6 className="heading">Your charity</h6>
-                  <div className="content">
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <h6>Your charity</h6>
+                  </CardHeader>
+                  <CardContent>
                     <p>
                       You'll be saving <span className="price">$43.10</span> per
                       month with your new health insurance policy and supporting
                       the Stroke Foundation with an extra
                       <span className="price">$10 per month</span>
                     </p>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </div>
             </Container>
           </div>

@@ -1,0 +1,17 @@
+.card {
+  flex: 1;
+  margin: 1em;
+  font-size: 1.25em;
+}
+
+.card .heading {
+  text-transform: uppercase;
+  background-color: #F0F0F0;
+  color: #59636D;
+  padding: 1em;
+  margin: 0;
+}
+
+.card .content {
+  padding: 1em;
+}
