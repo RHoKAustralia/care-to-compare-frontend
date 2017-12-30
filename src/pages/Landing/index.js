@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Container from 'components/Container'
 import Carousel from 'components/Carousel'
+import ImageRow from 'components/ImageRow'
 import { IconTick } from 'components/Icons'
 import foundationImages from 'assets/foundations'
 import fundImages from 'assets/funds'
@@ -20,19 +21,7 @@ class Landing extends Component {
       <div>
         <div className="Landing-header">
           <Container>
-            <div className="image-strip">
-              {Object.keys(foundationImages).map(function(index) {
-                return (
-                  <img
-                    key={index}
-                    src={foundationImages[index]}
-                    className="foundation-logo"
-                    alt="foundation-logo"
-                    height="50%"
-                  />
-                )
-              }, this)}
-            </div>
+            <ImageRow images={Object.values(foundationImages)} />
           </Container>
         </div>
         <Container>
@@ -71,19 +60,7 @@ class Landing extends Component {
         </Container>
         <div className="Landing-footer">
           <Container>
-            <div className="image-strip">
-              {Object.keys(fundImages).map(function(index) {
-                return (
-                  <img
-                    key={index}
-                    src={fundImages[index]}
-                    className="fund-logo"
-                    alt="fund-logo"
-                    height="50px"
-                  />
-                )
-              }, this)}
-            </div>
+            <ImageRow images={Object.values(fundImages)} />
           </Container>
         </div>
       </div>

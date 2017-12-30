@@ -10,12 +10,6 @@
   color: #222;
 }
 
-.image-strip {
-  display: flex;
-  justify-content: space-between;
-  background-color: #FFF;
-}
-
 .landing-wrapper {
   display: flex;
   padding: 1em;
