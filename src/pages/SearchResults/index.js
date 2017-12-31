@@ -5,6 +5,7 @@ import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
 import Container from 'components/Container'
 import Card, { CardHeader, CardContent } from 'components/Card'
+import Grid, { Col } from 'components/Grid'
 import { IconMapMarker, IconMedkit, IconUser } from 'components/Icons'
 import './styles.css'
 
@@ -59,18 +60,22 @@ class SearchResults extends Component {
                 </Card>
               </div>
 
-              <div className="results row">
+              <Grid>
                 {this.props.policySearch.searchResults
                   .slice(0, 3)
                   .map((policy) => (
-                    <PolicyStub key={policy.sisCode} policy={policy} />
+                    <Col s={4}>
+                      <PolicyStub key={policy.sisCode} policy={policy} />
+                    </Col>
                   ))}
                 {this.props.policySearch.searchResults.length === 0 && (
-                  <Card>
-                    <CardContent>No results found.</CardContent>
-                  </Card>
+                  <Col s={12}>
+                    <Card>
+                      <CardContent>No results found.</CardContent>
+                    </Card>
+                  </Col>
                 )}
-              </div>
+              </Grid>
             </Container>
           )}
         </div>

@@ -11,7 +11,7 @@ class PolicyStub extends Component {
     const { policy } = this.props
 
     return (
-      <div className="policy-stub col offsets4 m4 l4">
+      <div className="policy-stub">
         <div className="policy-stub-header">
           <img
             className="circle"
