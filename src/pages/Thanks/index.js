@@ -4,6 +4,7 @@ import { SocialIcon } from 'react-social-icons'
 import Button from 'components/Button'
 import Card, { CardHeader, CardContent } from 'components/Card'
 import Container from 'components/Container'
+import Grid, { Col } from 'components/Grid'
 import { IconTick } from 'components/Icons'
 import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
 import './styles.css'
@@ -61,15 +62,15 @@ class Thanks extends Component {
         </div>
         <div className="survivor-story">
           <Container>
-            <div className="row">
-              <div className="col s4">
+            <Grid>
+              <Col s={4}>
                 <img
                   className="circle responsive-img"
                   src={survivorPhoto}
                   alt={'Jane'}
                 />
-              </div>
-              <div className="col s8">
+              </Col>
+              <Col s={8}>
                 <h4>Jane Survivor Story</h4>
                 <p>
                   My name is Jane and I am 43 years old, happy married and mum
@@ -81,8 +82,8 @@ class Thanks extends Component {
                   (I'm usually a restless sleeper)...
                 </p>
                 <Button type="default">Read more</Button>
-              </div>
-            </div>
+              </Col>
+            </Grid>
           </Container>
         </div>
         <div className="share-info">

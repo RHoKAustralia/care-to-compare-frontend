@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import CharityBanner from 'components/CharityBanner'
+import Grid, { Col } from 'components/Grid'
 import PaymentSummary from 'components/PaymentSummary'
 import PaymentOptionsForm from 'components/PaymentOptionsForm'
 import SelectedPolicyInformation from 'components/SelectedPolicyInformation'
@@ -13,19 +14,19 @@ class Checkout extends Component {
     return (
       <div>
         <Container>
-          <div className="row">
-            <div className="col m4">
+          <Grid>
+            <Col s={4}>
               <UserSummary />
               <PaymentSummary />
-            </div>
-            <div className="col m8">
+            </Col>
+            <Col s={8}>
               <UserDetailsForm />
               <PaymentOptionsForm />
               <SelectedPolicyInformation />
-            </div>
-          </div>
+            </Col>
+          </Grid>
         </Container>
-        <div className="row">
+        <div>
           <CharityBanner />
         </div>
       </div>
