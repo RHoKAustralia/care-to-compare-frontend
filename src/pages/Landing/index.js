@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import Button from 'components/Button'
 import Container from 'components/Container'
 import Carousel from 'components/Carousel'
 import ImageRow from 'components/ImageRow'
@@ -44,12 +45,9 @@ class Landing extends Component {
                 </ul>
               </div>
               <div className="wrapper-item">
-                <Link
-                  to="/search"
-                  className="btn btn-large waves-effect waves-light darken-1"
-                >
-                  Compare now
-                </Link>
+                <Button>
+                  <Link to="/search">Compare now</Link>
+                </Button>
               </div>
             </div>
 
