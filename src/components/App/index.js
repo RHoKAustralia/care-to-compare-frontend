@@ -8,7 +8,6 @@ import SearchForm from 'pages/SearchForm'
 import SearchResults from 'pages/SearchResults'
 import Checkout from 'pages/Checkout'
 import Thanks from 'pages/Thanks'
-import './styles.css'
 
 const Footer = (props) => <noscript />
 
