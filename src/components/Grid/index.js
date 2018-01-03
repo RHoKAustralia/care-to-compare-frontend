@@ -1,10 +1,10 @@
 import React from 'react'
-import './styles.css'
+import styles from './styles.css'
 
-const Grid = ({ children }) => <div className="grid">{children}</div>
+const Grid = ({ children }) => <div className={styles.grid}>{children}</div>
 
 export const Col = ({ children, s }) => (
-  <div className={`s${s}`}>{children}</div>
+  <div className={styles[`s${s}`]}>{children}</div>
 )
 
 export default Grid
