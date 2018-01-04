@@ -1,53 +1,40 @@
-.thanks-header {
+.header {
   background: linear-gradient(0deg, #FBFBFB 40%, #434343 40%);
   color: #FFF;
   text-align: center;
   padding: 2.5em 1em 0.5em 1em;
 }
 
-.thanks-summary {
+.summary {
   display: flex;
   color: #000;
 }
 
-.thanks-summary .card {
-  flex: 1;
-  margin: 1em;
-  font-size: 1.25em;
-}
-
-.thanks-summary .card .content {
-  padding: 1em;
-}
-
-.thanks-summary .price {
+.price {
   font-size: 1.25em;
   font-weight: bold;
   display: block;
 }
 
-.thanks-summary .heading {
-  text-transform: uppercase;
-  background-color: #F0F0F0;
-  color: #59636D;
-  padding: 1em;
-  margin: 0;
+.survivorPhoto {
+  max-width: 100%;
+  border-radius: 100%;
 }
 
-.survivor-story {
+.survivorStory {
   padding: 1em;
   margin: 1em 0;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.share-info {
+.socialMediaInfo {
   background-color: #EEE;
   padding: 1em;
   color: #444;
 }
 
-.thanks-page-spacer {
+.spacer {
   height: 100px;
   background-color: #FBFBFB;
 }

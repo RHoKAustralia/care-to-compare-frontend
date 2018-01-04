@@ -1,16 +1,16 @@
-.Landing-header {
+.header {
   background-color: white;
   padding: 20px;
   color: #222;
 }
 
-.Landing-footer {
+.footer {
   background-color: white;
   padding: 30px;
   color: #222;
 }
 
-.landing-wrapper {
+.wrapper {
   display: flex;
   padding: 1em;
   min-height: 400px;
@@ -29,13 +29,13 @@
   width: 39%;
 }
 
-.wrapper-item{
+.wrapperItem {
   padding: 2em;
   text-align: center;
   font-size: 20px;
 }
 
-.wrapper-item > ul > li{
+.wrapperItem > ul > li {
   padding-bottom: 1em;
 }
 
@@ -52,12 +52,12 @@
   width: 100%;
 }
 
-.left .wrapper-item .btn {
+.left .wrapperItem .btn {
   background-color: #7ccea3;
   color: #ffffff;
 }
 
-.left .wrapper-item ul li i{
+.left .wrapperItem ul li i{
   color: #7ccea3;
 }
 
@@ -67,7 +67,8 @@
     width: 100%;
     text-align: center;
   }
-  .wrapper-item{
+
+  .wrapperItem{
     width: 100%;
     display: block;
   }

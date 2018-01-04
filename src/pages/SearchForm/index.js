@@ -5,7 +5,7 @@ import Container from 'components/Container'
 
 import PolicySearchForm from './PolicySearchForm'
 
-import './styles.css'
+import styles from './styles.css'
 import { fetchPolicies } from 'actions'
 
 class Search extends Component {

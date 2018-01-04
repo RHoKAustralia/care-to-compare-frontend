@@ -2,22 +2,17 @@ h2 {
   text-align: center;
 }
 
-.search-results-wrapper {
+.wrapper {
   display: flex;
 }
 
-.search-results .summary {
+.summary {
   flex: 1;
 }
 
-.search-results .flash {
+.flash {
   background-color: #111;
   color: #EEE;
   text-align: center;
   padding: 0.5em;
-}
-
-.image-strip {
-  display: flex;
-  justify-content: space-between;
 }

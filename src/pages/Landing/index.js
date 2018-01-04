@@ -8,7 +8,7 @@ import ImageRow from 'components/ImageRow'
 import { IconTick } from 'components/Icons'
 import foundationImages from 'assets/foundations'
 import fundImages from 'assets/funds'
-import './styles.css'
+import styles from './styles.css'
 
 const landingPageImages = [
   require('../../assets/landing-images/strokesurvivor.jpeg'),
@@ -20,15 +20,15 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <div className="Landing-header">
+        <div className={styles.header}>
           <Container>
             <ImageRow images={Object.values(foundationImages)} />
           </Container>
         </div>
         <Container>
-          <div className="landing-wrapper">
-            <div className="left">
-              <div className="wrapper-item">
+          <div className={styles.wrapper}>
+            <div className={styles.left}>
+              <div className={styles.wrapperItem}>
                 <ul>
                   <li>
                     <IconTick /> Exclusively deal in health products
@@ -44,19 +44,19 @@ class Landing extends Component {
                   </li>
                 </ul>
               </div>
-              <div className="wrapper-item">
+              <div className={styles.wrapperItem}>
                 <Button>
                   <Link to="/search">Compare now</Link>
                 </Button>
               </div>
             </div>
 
-            <div className="right">
+            <div className={styles.right}>
               <Carousel images={landingPageImages} />
             </div>
           </div>
         </Container>
-        <div className="Landing-footer">
+        <div className={styles.footer}>
           <Container>
             <ImageRow images={Object.values(fundImages)} />
           </Container>

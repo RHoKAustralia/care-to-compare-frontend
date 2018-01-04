@@ -8,26 +8,26 @@ import Card, { CardHeader, CardContent } from 'components/Card'
 import Grid, { Col } from 'components/Grid'
 import { IconMapMarker, IconMedkit, IconUser } from 'components/Icons'
 import LoadingSpinner from 'components/LoadingSpinner'
-import './styles.css'
+import styles from './styles.css'
 
 class SearchResults extends Component {
   render() {
     return (
-      <div className="search-results">
-        <div className="flash">
+      <div>
+        <div className={styles.flash}>
           <Container>
             <h5>Thanks for caring to compare</h5>
             <p>Here's the top 3 policies we found</p>
           </Container>
         </div>
 
-        <div className="search-results-wrapper">
+        <div className={styles.wrapper}>
           <LoadingSpinner loading={this.props.policySearch.loading} />
           <Container>
-            <div className="summary">
+            <div className={styles.summary}>
               <Card>
                 <CardHeader>
-                  <h3 className="top">Summary</h3>
+                  <h3>Summary</h3>
                 </CardHeader>
                 <CardContent>
                   <ul>

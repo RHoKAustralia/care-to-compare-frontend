@@ -7,13 +7,13 @@ import Container from 'components/Container'
 import Grid, { Col } from 'components/Grid'
 import { IconTick } from 'components/Icons'
 import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
-import './styles.css'
+import styles from './styles.css'
 
 class Thanks extends Component {
   render() {
     return (
       <div>
-        <div className="thanks-header">
+        <div className={styles.header}>
           <Container>
             <h4>Thank you</h4>
             <p>
@@ -21,9 +21,9 @@ class Thanks extends Component {
               and good for charity
             </p>
           </Container>
-          <div className="row">
+          <div>
             <Container>
-              <div className="thanks-summary">
+              <div className={styles.summary}>
                 <Card>
                   <CardHeader>
                     <h6>Your health insurance</h6>
@@ -49,10 +49,11 @@ class Thanks extends Component {
                   </CardHeader>
                   <CardContent>
                     <p>
-                      You'll be saving <span className="price">$43.10</span> per
-                      month with your new health insurance policy and supporting
-                      the Stroke Foundation with an extra
-                      <span className="price">$10 per month</span>
+                      You'll be saving{' '}
+                      <span className={styles.price}>$43.10</span> per month
+                      with your new health insurance policy and supporting the
+                      Stroke Foundation with an extra
+                      <span className={styles.price}>$10 per month</span>
                     </p>
                   </CardContent>
                 </Card>
@@ -60,12 +61,12 @@ class Thanks extends Component {
             </Container>
           </div>
         </div>
-        <div className="survivor-story">
+        <div className={styles.survivorStory}>
           <Container>
             <Grid>
               <Col s={4}>
                 <img
-                  className="circle responsive-img"
+                  className={styles.survivorPhoto}
                   src={survivorPhoto}
                   alt={'Jane'}
                 />
@@ -86,7 +87,7 @@ class Thanks extends Component {
             </Grid>
           </Container>
         </div>
-        <div className="share-info">
+        <div className={styles.socialMediaInfo}>
           <Container>
             <h4>Keep up the great work.</h4>
             <p>
@@ -130,7 +131,7 @@ class Thanks extends Component {
             </Button>
           </Container>
         </div>
-        <div className="thanks-page-spacer" />
+        <div className={styles.spacer} />
       </div>
     )
   }
