@@ -4,7 +4,7 @@
   font-size: 1.25em;
 }
 
-.card .heading {
+.header {
   text-transform: uppercase;
   background-color: #F0F0F0;
   color: #59636D;
@@ -12,6 +12,7 @@
   margin: 0;
 }
 
-.card .content {
+.content {
   padding: 1em;
+  background-color: #FFF;
 }
