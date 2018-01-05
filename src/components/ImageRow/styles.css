@@ -1,5 +1,9 @@
-.image-row {
+.row {
   display: flex;
   justify-content: space-between;
   background-color: #FFF;
+}
+
+.image {
+  height: 50px;
 }

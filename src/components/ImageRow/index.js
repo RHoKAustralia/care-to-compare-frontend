@@ -1,11 +1,16 @@
 import React from 'react'
-import './styles.css'
+import styles from './styles.css'
 
 const ImageRow = ({ images }) => (
-  <div className="image-row">
+  <div className={styles.row}>
     {images.map(function(imageUrl, index) {
       return (
-        <img key={index} src={imageUrl} alt="foundation-logo" height="50px" />
+        <img
+          key={index}
+          src={imageUrl}
+          className={styles.image}
+          alt="foundation-logo"
+        />
       )
     })}
   </div>

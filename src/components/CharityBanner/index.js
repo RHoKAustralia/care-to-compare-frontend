@@ -1,11 +1,15 @@
 import React from 'react'
 
 import strokeFoundationBanner from 'assets/stroke-foundation-banner.jpeg'
-import './styles.css'
+import styles from './styles.css'
 
 const CharityBanner = () => (
-  <div className="banner">
-    <img src={strokeFoundationBanner} alt="Stroke Foundation banner" />
+  <div>
+    <img
+      className={styles.bannerImage}
+      src={strokeFoundationBanner}
+      alt="Stroke Foundation banner"
+    />
   </div>
 )
 
