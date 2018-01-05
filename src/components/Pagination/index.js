@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 import Container from 'components/Container'
 import { IconCircle } from 'components/Icons'
-import './styles.css'
+import styles from './styles.css'
 
 const Pagination = ({ routes, currentStep }) => (
-  <div className="pagination">
+  <div className={styles.root}>
     <Container>
-      <div className="pagination-bar">
+      <div className={styles.content}>
         {routes.map((route, index) => (
           <IconCircle key={index} filled={index > currentStep} />
         ))}

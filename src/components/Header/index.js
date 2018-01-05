@@ -3,7 +3,7 @@ import { withRouter } from 'react-router'
 
 import Container from 'components/Container'
 import Pagination from 'components/Pagination'
-import './styles.css'
+import styles from './styles.css'
 import logo from 'assets/C2Clogo.png'
 
 // TODO: Use central route config
@@ -14,7 +14,7 @@ class Header extends Component {
     const stepNumber = routes.indexOf(this.props.location.pathname)
 
     return (
-      <header>
+      <header className={styles.root}>
         <Container>
           <img src={logo} alt="Care to Compare logo" />
 
