@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import classnames from 'classnames'
 
-import './styles.css'
+import Grid, { Col } from 'components/Grid'
+import styles from './styles.css'
 const imageIcon = require('../../assets/policy-options/combined-unselected.png')
 
 /*
@@ -25,12 +27,11 @@ class Category extends Component {
   render() {
     var category = this.props.name
     return (
-      <div className="col s4" onClick={(e) => this.Selected(e)}>
+      <div onClick={(e) => this.Selected(e)}>
         <div
-          className={
-            ' policyOptions ' +
-            (this.state.isOn ? 'policy-selected' : 'policy-unselected')
-          }
+          className={classnames(styles.categoryOption, {
+            [styles.categorySelected]: this.state.isOn,
+          })}
         >
           <img src={imageIcon} alt={category} />
           <span> {category}</span>
@@ -72,15 +73,17 @@ class PolicyOptions extends Component {
     ]
 
     return (
-      <div className="row">
+      <Grid>
         {categories.map((category) => (
-          <Category
-            key={category}
-            name={category}
-            selected={this.categoryChange}
-          />
+          <Col s={4}>
+            <Category
+              key={category}
+              name={category}
+              selected={this.categoryChange}
+            />
+          </Col>
         ))}
-      </div>
+      </Grid>
     )
   }
 }

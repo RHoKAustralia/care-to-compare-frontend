@@ -1,5 +1,5 @@
-.policyOptions {
-    background-color: grey;
+.categoryOption {
+    background-color: #EEEEEE;
     border-radius: 2%;
     margin: 10px;
     color: black;
@@ -7,13 +7,7 @@
     border: 2px solid transparent;
 }
 
-.policy-selected {
+.categorySelected {
     background-color: white;
     border: 2px solid #4A9D7C;
-}
-
-
-.policy-unselected {
-    background-color: #EEEEEE;
-
 }
