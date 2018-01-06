@@ -2,14 +2,6 @@ h2 {
   text-align: center;
 }
 
-.wrapper {
-  display: flex;
-}
-
-.summary {
-  flex: 1;
-}
-
 .flash {
   background-color: #111;
   color: #EEE;

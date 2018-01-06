@@ -21,10 +21,10 @@ class SearchResults extends Component {
           </Container>
         </div>
 
-        <div className={styles.wrapper}>
+        <div>
           <LoadingSpinner loading={this.props.policySearch.loading} />
           <Container>
-            <div className={styles.summary}>
+            <div>
               <Card>
                 <CardHeader>
                   <h3>Summary</h3>
