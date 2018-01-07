@@ -20,11 +20,17 @@ const Button = (props) => (
 Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  ghost: PropTypes.bool,
+  secondary: PropTypes.bool,
 }
 
 Button.defaultProps = {
   children: [],
   onClick: () => {},
+  primary: false,
+  ghost: false,
+  secondary: false,
 }
 
 export default Button

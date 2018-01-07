@@ -21,7 +21,7 @@ const PaymentSummary = (props) => (
         <IconTick /> Basic hospital services
       </li>
     </ul>
-    <Button type="default">
+    <Button primary>
       <a href="./guide-to-sis-combined.pdf">View SIS</a>
     </Button>
   </div>

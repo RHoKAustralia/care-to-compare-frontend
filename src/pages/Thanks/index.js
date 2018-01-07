@@ -40,7 +40,7 @@ class Thanks extends Component {
                         <IconTick /> Hospital and extras cover
                       </li>
                     </ul>
-                    <Button type="primary">View SIS</Button>
+                    <Button primary>View SIS</Button>
                   </CardContent>
                 </Card>
                 <Card>
@@ -82,7 +82,7 @@ class Thanks extends Component {
                   slept really well for once and hadn't moved much overnight
                   (I'm usually a restless sleeper)...
                 </p>
-                <Button type="default">Read more</Button>
+                <Button primary>Read more</Button>
               </Col>
             </Grid>
           </Container>
@@ -93,7 +93,7 @@ class Thanks extends Component {
             <p>
               Let your friends and family know about Care to Compare? Share on
             </p>
-            <Button type="secondary">
+            <Button secondary>
               <SocialIcon
                 url="#"
                 network="facebook"
@@ -102,7 +102,7 @@ class Thanks extends Component {
               />{' '}
               Facebook
             </Button>
-            <Button type="secondary">
+            <Button secondary>
               <SocialIcon
                 url="#"
                 network="twitter"
@@ -111,7 +111,7 @@ class Thanks extends Component {
               />{' '}
               Twitter
             </Button>
-            <Button type="secondary">
+            <Button secondary>
               <SocialIcon
                 url="#"
                 network="instagram"
@@ -120,7 +120,7 @@ class Thanks extends Component {
               />{' '}
               Instagram
             </Button>
-            <Button type="secondary">
+            <Button secondary>
               <SocialIcon
                 url="#"
                 network="email"

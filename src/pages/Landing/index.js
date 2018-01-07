@@ -45,7 +45,7 @@ class Landing extends Component {
                 </ul>
               </div>
               <div className={styles.wrapperItem}>
-                <Button>
+                <Button primary>
                   <Link to="/search">Compare now</Link>
                 </Button>
               </div>

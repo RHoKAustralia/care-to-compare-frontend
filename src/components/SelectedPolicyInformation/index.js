@@ -22,7 +22,7 @@ const SelectedPolicyInformation = (props) => (
       <input id="privacy" type="checkbox" />
       <label htmlFor="privacy">I have read the Privacy Statement</label>
     </div>
-    <Button type="default">
+    <Button primary>
       <Link to="/thanks">Buy now</Link>
     </Button>
   </div>

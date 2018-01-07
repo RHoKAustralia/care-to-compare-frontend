@@ -10,18 +10,18 @@ storiesOf('Button', module)
   .add('no type', () => (
     <Button onClick={action('clicked')}>Hello World</Button>
   ))
-  .add('default', () => (
-    <Button type="default" onClick={action('clicked')}>
+  .add('primary', () => (
+    <Button primary onClick={action('clicked')}>
       Hello World
     </Button>
   ))
-  .add('inverted', () => (
-    <Button type="inverted" onClick={action('clicked')}>
+  .add('ghost', () => (
+    <Button ghost onClick={action('clicked')}>
       Hello World
     </Button>
   ))
   .add('secondary', () => (
-    <Button type="secondary" onClick={action('clicked')}>
+    <Button secondary onClick={action('clicked')}>
       Hello World
     </Button>
   ))
