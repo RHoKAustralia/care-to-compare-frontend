@@ -75,12 +75,8 @@ class PolicyOptions extends Component {
     return (
       <Grid>
         {categories.map((category) => (
-          <Col s={4}>
-            <Category
-              key={category}
-              name={category}
-              selected={this.categoryChange}
-            />
+          <Col s={4} key={category}>
+            <Category name={category} selected={this.categoryChange} />
           </Col>
         ))}
       </Grid>
