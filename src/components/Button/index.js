@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
-import './styles.css'
+import styles from './styles.css'
 
 const Button = (props) => (
   <button
-    className={`btn ${props.type ? 'btn-' + props.type : ''}`}
+    className={classnames(styles.btn, {
+      [styles.primary]: props.primary,
+      [styles.ghost]: props.ghost,
+      [styles.secondary]: props.secondary,
+    })}
     onClick={props.onClick}
   >
     {props.children}

@@ -12,18 +12,18 @@
 }
 
 /* TODO: Redo class names */
-.btn-default {
+.primary {
   background-color: #57D09F;
   color: #FFF;
 }
 
-.btn-inverted {
+.ghost {
   background-color: #FFF;
   color: #57D09F;
   border: 1px solid #57D09F;
 }
 
-.btn-secondary {
+.secondary {
   background-color: #434343;
   color: #939393;
 }
