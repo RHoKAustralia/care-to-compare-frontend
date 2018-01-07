@@ -7,6 +7,7 @@ import {
   fetchPoliciesSuccess,
   fetchPoliciesFailure,
 } from 'actions'
+import fakeSearchResults from 'data/fakePolicySearchResults'
 
 function getPolicies(searchCriteria) {
   // console.log(searchCriteria)
@@ -33,10 +34,17 @@ function* perform(action) {
 
   try {
     const response = yield call(getPolicies, action.payload.searchCriteria)
+    console.log(response)
     yield put(fetchPoliciesSuccess(response))
     window.location.assign('#/results')
   } catch (error) {
-    yield put(fetchPoliciesFailure(error))
+    // TODO: Delete this - see comment in data/fakePolicySearchResults
+    if (window.location.href.includes('github.io')) {
+      yield put(fetchPoliciesSuccess(fakeSearchResults))
+      window.location.assign('#/results')
+    } else {
+      yield put(fetchPoliciesFailure(error))
+    }
   }
 }
 
