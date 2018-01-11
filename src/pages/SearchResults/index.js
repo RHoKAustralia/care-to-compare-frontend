@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import CharityBanner from 'components/CharityBanner'
 import PolicyStub from 'components/PolicyStub'
 import Container from 'components/Container'
-import Card, { CardHeader, CardContent } from 'components/Card'
+import Card, { Header, Content } from 'components/Card'
 import Grid, { Col } from 'components/Grid'
 import { IconMapMarker, IconMedkit, IconUser } from 'components/Icons'
 import LoadingSpinner from 'components/LoadingSpinner'
@@ -26,10 +26,10 @@ class SearchResults extends Component {
           <Container>
             <div>
               <Card>
-                <CardHeader>
+                <Header>
                   <h3>Summary</h3>
-                </CardHeader>
-                <CardContent>
+                </Header>
+                <Content>
                   <ul>
                     <li>
                       <IconUser />
@@ -43,7 +43,7 @@ class SearchResults extends Component {
                     </li>
                     <li> ${} excess</li>
                   </ul>
-                </CardContent>
+                </Content>
               </Card>
             </div>
 
@@ -58,7 +58,7 @@ class SearchResults extends Component {
               {this.props.policySearch.searchResults.length === 0 && (
                 <Col s={12}>
                   <Card>
-                    <CardContent>No results found.</CardContent>
+                    <Content>No results found.</Content>
                   </Card>
                 </Col>
               )}

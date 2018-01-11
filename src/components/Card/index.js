@@ -4,10 +4,10 @@ import styles from './styles.css'
 
 const Card = ({ children }) => <div className={styles.card}>{children}</div>
 
-export const CardHeader = ({ children }) => (
+export const Header = ({ children }) => (
   <div className={styles.header}>{children}</div>
 )
-export const CardContent = ({ children }) => (
+export const Content = ({ children }) => (
   <div className={styles.content}>{children}</div>
 )
 

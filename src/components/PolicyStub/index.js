@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Button from 'components/Button'
 import { IconClose } from 'components/Icons'
-import Card, { CardContent } from 'components/Card'
+import Card, { Content } from 'components/Card'
 import styles from './styles.css'
 
 class PolicyStub extends Component {
@@ -20,7 +20,7 @@ class PolicyStub extends Component {
           />
         </div>
         <Card>
-          <CardContent>
+          <Content>
             <div className={styles.policyDescription}>
               <IconClose />
               <p>
@@ -39,7 +39,7 @@ class PolicyStub extends Component {
                 </Link>
               </div>
             </div>
-          </CardContent>
+          </Content>
         </Card>
       </div>
     )

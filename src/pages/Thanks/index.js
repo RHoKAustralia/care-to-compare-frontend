@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
-import Card, { CardHeader, CardContent } from 'components/Card'
+import Card, { Header, Content } from 'components/Card'
 import Container from 'components/Container'
 import Grid, { Col } from 'components/Grid'
 import { IconTick } from 'components/Icons'
@@ -25,10 +25,10 @@ class Thanks extends Component {
             <Container>
               <div className={styles.summary}>
                 <Card>
-                  <CardHeader>
+                  <Header>
                     <h6>Your health insurance</h6>
-                  </CardHeader>
-                  <CardContent>
+                  </Header>
+                  <Content>
                     <ul>
                       <li>
                         <IconTick /> Smart combination
@@ -41,13 +41,13 @@ class Thanks extends Component {
                       </li>
                     </ul>
                     <Button primary>View SIS</Button>
-                  </CardContent>
+                  </Content>
                 </Card>
                 <Card>
-                  <CardHeader>
+                  <Header>
                     <h6>Your charity</h6>
-                  </CardHeader>
-                  <CardContent>
+                  </Header>
+                  <Content>
                     <p>
                       You'll be saving{' '}
                       <span className={styles.price}>$43.10</span> per month
@@ -55,7 +55,7 @@ class Thanks extends Component {
                       Stroke Foundation with an extra
                       <span className={styles.price}>$10 per month</span>
                     </p>
-                  </CardContent>
+                  </Content>
                 </Card>
               </div>
             </Container>
