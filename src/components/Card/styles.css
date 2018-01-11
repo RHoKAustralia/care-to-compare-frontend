@@ -1,7 +1,8 @@
 .card {
   flex: 1;
-  margin: 1em;
   font-size: 1.25em;
+  margin: 0.25em;
+  box-shadow: 5px 5px 5px #EEE;
 }
 
 .header {
