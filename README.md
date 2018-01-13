@@ -19,8 +19,17 @@ CareToCompare is a not-for-profit health insurance platform. Project started at 
 
 ## Installation
 
+*Note:* You will need to have the [search API](https://github.com/RHoKAustralia/care-to-compare-search-api) running on port 4000
+
 ```
 Clone repo
 yarn
 yarn start
+```
+
+## Deployment
+
+This project is currently hosted on GitHub pages. To deploy just run
+```
+yarn deploy
 ```
