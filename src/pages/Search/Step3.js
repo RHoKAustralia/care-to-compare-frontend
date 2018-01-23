@@ -83,6 +83,11 @@ class Step3 extends Component {
             <span />
           )}
         </div>
+        <div>
+          <button type="button" onClick={onPrevious}>
+            Change Search Criteria
+          </button>
+        </div>
       </div>
     )
   }
