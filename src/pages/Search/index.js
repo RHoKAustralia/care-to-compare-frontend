@@ -6,6 +6,7 @@ import Container from 'components/Container'
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
+import Step4 from './Step4'
 
 // import styles from './styles.css'
 // import { saveSearchCriteria } from 'actions'
@@ -27,8 +28,14 @@ class Search extends Component {
     this.setState({ page: this.state.page - 1 })
   }
 
+  selectPolicy = (policy) => {
+    // TODO: set policy details into redux state
+    console.log('Selected policy:', policy)
+    this.nextPage()
+  }
+
   submit = (values) => {
-    const { history } = this.props
+    //const { history } = this.props
 
     console.log('Submitting Search:', values)
 
@@ -51,7 +58,13 @@ class Search extends Component {
             <Step2 onSubmit={this.nextPage} onPrevious={this.previousPage} />
           )}
           {page === 3 && (
-            <Step3 onSubmit={this.submit} onPrevious={this.previousPage} />
+            <Step3
+              onSubmit={this.selectPolicy}
+              onPrevious={this.previousPage}
+            />
+          )}
+          {page === 4 && (
+            <Step4 onSubmit={this.submit} onPrevious={this.previousPage} />
           )}
         </Container>
       </div>

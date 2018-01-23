@@ -1,4 +1,5 @@
-export const formName = 'policySearch'
+export const searchFormName = 'policySearch'
+export const signupFormName = 'signup'
 
 export const catergoryOptions = [
   { value: 'SINGLES', label: 'Individual' },

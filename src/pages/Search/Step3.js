@@ -5,7 +5,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import lodash from 'lodash'
 
-import { formName } from './constants'
+import { searchFormName } from './constants'
 
 class Step3 extends Component {
   state = { page: 1 }
@@ -28,9 +28,9 @@ class Step3 extends Component {
 
   render() {
     const {
-      handleSubmit,
+      onSubmit,
       onPrevious,
-      searchCriteria,
+      //searchCriteria,
       loading,
       error,
       policies,
@@ -47,7 +47,7 @@ class Step3 extends Component {
 
     return (
       <div>
-        <h3 className="f3 lh-copy">Search Results</h3>
+        <h2>Select Policy (Step 3)</h2>
         <blockquote>
           {`Page ${meta.page} of ${meta.totalPages}`} (Total results:{' '}
           {meta.totalRecords})
@@ -55,9 +55,12 @@ class Step3 extends Component {
         <div>
           {policies.map((policy) => (
             <div key={policy.id}>
-              <div>
+              <span>
                 {policy.policyName} - ${policy.monthlyPremium}
-              </div>
+              </span>
+              <button onClick={(event) => onSubmit(policy)}>
+                Select Policy
+              </button>
             </div>
           ))}
         </div>
@@ -168,7 +171,7 @@ Step3 = graphql(POLICIES_QUERY, {
 })(Step3)
 
 Step3 = connect((state) => ({
-  searchCriteria: getFormValues(formName)(state),
+  searchCriteria: getFormValues(searchFormName)(state),
 }))(Step3)
 
 export default Step3

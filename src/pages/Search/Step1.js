@@ -9,7 +9,7 @@ import {
 } from 'redux-form'
 
 import {
-  formName,
+  searchFormName,
   catergoryOptions,
   typeOptions,
   statesOptions,
@@ -46,7 +46,7 @@ let Step1 = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Search Criteria</h2>
+      <h2>Search Criteria (Step 1)</h2>
 
       <div>
         <label htmlFor="categoryOfCover">Who is covered:</label>
@@ -113,16 +113,16 @@ let Step1 = (props) => {
 }
 
 Step1 = reduxForm({
-  form: formName,
+  form: searchFormName,
   validate,
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
 })(Step1)
 
 Step1 = connect((state) => ({
-  fieldErrors: getFormSyncErrors(formName)(state),
-  valid: isValid(formName)(state),
-  fields: getFormMeta(formName)(state),
+  fieldErrors: getFormSyncErrors(searchFormName)(state),
+  valid: isValid(searchFormName)(state),
+  fields: getFormMeta(searchFormName)(state),
 }))(Step1)
 
 export default Step1

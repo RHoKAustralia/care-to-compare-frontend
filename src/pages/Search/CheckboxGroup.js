@@ -1,9 +1,11 @@
 import React from 'react'
+import lodash from 'lodash'
 
 const CheckboxGroup = ({
   input: { value, onChange },
   groupId,
   groupOptions,
+  currentSelection,
 }) => {
   const inputs = []
   groupOptions.forEach((option, index) => {
@@ -11,6 +13,7 @@ const CheckboxGroup = ({
       <label style={{ display: 'block' }} key={`${groupId}_${option.value}`}>
         <input
           type="checkbox"
+          defaultChecked={lodash.includes(currentSelection, option.value)}
           value={option.value}
           onChange={(event) => {
             const updatedValue = value ? [...value] : []

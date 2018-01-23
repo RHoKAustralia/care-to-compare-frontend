@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
 
 import {
-  formName,
+  searchFormName,
   extrasInclusionsOptions,
   hospitalInclusionsOptions,
 } from './constants'
 import CheckboxGroup from './CheckboxGroup'
+//import { select } from 'async';
 
-const InclusionsGroup = ({ title, name, options }) => (
+const InclusionsGroup = ({ title, name, options, currentSelection }) => (
   <div>
     <h4>{title}</h4>
     <div>
@@ -18,6 +19,7 @@ const InclusionsGroup = ({ title, name, options }) => (
         component={CheckboxGroup}
         groupId={name}
         groupOptions={options}
+        currentSelection={currentSelection}
       />
     </div>
   </div>
@@ -30,11 +32,13 @@ let Step2 = (props) => {
     onPrevious,
     policyType,
     heldPreviousInsurance,
+    hospitalInclusions,
+    extrasInclusions,
   } = props
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Refine Search</h2>
+      <h2>Refine Search (Step 2)</h2>
 
       <div>
         <label htmlFor="dateOfBirth">Date of birth:</label>
@@ -96,6 +100,7 @@ let Step2 = (props) => {
           title="Select Hospital Inclusions"
           name="hospitalInclusions"
           options={hospitalInclusionsOptions}
+          currentSelection={hospitalInclusions}
         />
       )}
 
@@ -104,6 +109,7 @@ let Step2 = (props) => {
           title="Select Extras Inclusions"
           name="extrasInclusions"
           options={extrasInclusionsOptions}
+          currentSelection={extrasInclusions}
         />
       )}
 
@@ -116,20 +122,24 @@ let Step2 = (props) => {
 }
 
 Step2 = reduxForm({
-  form: formName,
+  form: searchFormName,
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
 })(Step2)
 
-const selector = formValueSelector(formName)
+const selector = formValueSelector(searchFormName)
 
 Step2 = connect((state) => {
   const policyType = selector(state, 'policyType')
   const heldPreviousInsurance = selector(state, 'heldPreviousInsurance')
+  const hospitalInclusions = selector(state, 'hospitalInclusions') || []
+  const extrasInclusions = selector(state, 'extrasInclusions') || []
 
   return {
     policyType,
     heldPreviousInsurance,
+    hospitalInclusions,
+    extrasInclusions,
   }
 })(Step2)
 
