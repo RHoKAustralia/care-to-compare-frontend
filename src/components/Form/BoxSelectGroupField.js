@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BoxSelectGroup from './BoxSelectGroup'
+import BoxSelectGroup from 'components/BoxSelectGroup'
 
 const BoxSelectGroupField = ({
   input,

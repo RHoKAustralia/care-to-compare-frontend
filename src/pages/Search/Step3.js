@@ -4,6 +4,7 @@ import { getFormValues } from 'redux-form'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import lodash from 'lodash'
+import { ButtonToolbar, Button } from 'react-bootstrap'
 
 import { searchFormName } from './constants'
 
@@ -64,32 +65,40 @@ class Step3 extends Component {
             </div>
           ))}
         </div>
-        <div className="mt3">
-          {meta.page > 1 ? (
-            <button
-              className="f6 link dim br1 ba bw2 ph3 pv2 mb2 dib mid-gray"
-              onClick={this.handlePrevious}
-            >
-              &lt;&lt;&lt; Previous
-            </button>
-          ) : (
-            <span />
-          )}
-          {meta.page < meta.totalPages ? (
-            <button
-              className="f6 link dim br1 ba bw2 ph3 pv2 mb2 dib mid-gray"
-              onClick={this.handleNext}
-            >
-              Next &gt;&gt;&gt;
-            </button>
-          ) : (
-            <span />
-          )}
-        </div>
+
         <div>
-          <button type="button" onClick={onPrevious}>
-            Change Search Criteria
-          </button>
+          <ButtonToolbar>
+            {meta.page > 1 ? (
+              <Button type="button" onClick={this.handlePrevious}>
+                <i className="fas fa-chevron-left" />&nbsp;Previous Results
+              </Button>
+            ) : (
+              <span />
+            )}
+            {meta.page < meta.totalPages ? (
+              <Button type="button" onClick={this.handleNext}>
+                Next Result&nbsp;<i className="fas fa-chevron-right" />
+              </Button>
+            ) : (
+              <span />
+            )}
+          </ButtonToolbar>
+        </div>
+
+        <div className="pull-right">
+          <ButtonToolbar>
+            <Button
+              bsStyle="info"
+              bsSize="large"
+              type="button"
+              onClick={onPrevious}
+            >
+              <i className="fas fa-arrow-left" />&nbsp;Previous
+            </Button>
+            <Button bsStyle="primary" bsSize="large" type="button">
+              Next&nbsp;<i className="fas fa-arrow-right" />
+            </Button>
+          </ButtonToolbar>
         </div>
       </div>
     )

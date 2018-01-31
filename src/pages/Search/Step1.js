@@ -8,9 +8,9 @@ import {
   getFormMeta,
   formValueSelector,
 } from 'redux-form'
-import { Button, Glyphicon } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
-import BoxSelectGroupField from './BoxSelectGroupField'
+import { BoxSelectGroupField } from 'components/Form'
 import { searchFormName } from './constants'
 import styles from './styles.css'
 
@@ -125,7 +125,7 @@ let Step1 = (props) => {
 
       <div className="h4">What type of cover are you looking for?</div>
 
-      <div>
+      <div className={styles.searchFieldRow}>
         <Field
           name="policyType"
           component={BoxSelectGroupField}
@@ -136,7 +136,7 @@ let Step1 = (props) => {
 
       <div className="h4">Where do you live?</div>
 
-      <div>
+      <div className={styles.searchFieldRow}>
         <Field
           name="stateOfResidence"
           component={BoxSelectGroupField}
