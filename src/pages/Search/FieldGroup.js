@@ -8,7 +8,7 @@ const FieldGroup = ({ controlId, label, field, helpBlock }) => {
         <Col xs={12}>{label}</Col>
       </Row>
       <Row>
-        <Col sm={4}>{field}</Col>
+        <Col md={5}>{field}</Col>
       </Row>
       <Row>
         <Col xs={12}>{helpBlock}</Col>
