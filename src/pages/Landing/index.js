@@ -56,6 +56,16 @@ class Landing extends Component {
                 </li>
               ))}
             </ul>
+            <div className="text-center">
+              <Button
+                bsStyle="primary"
+                bsSize="large"
+                className={styles.mainButton}
+                onClick={() => history.push('/search')}
+              >
+                Compare Now
+              </Button>
+            </div>
           </Col>
 
           <Col xsHidden smHidden md={6}>
@@ -73,19 +83,6 @@ class Landing extends Component {
                 </Carousel.Item>
               ))}
             </Carousel>
-          </Col>
-        </Row>
-
-        <Row className="text-center">
-          <Col xs={6}>
-            <Button
-              bsStyle="primary"
-              bsSize="large"
-              className={styles.mainButton}
-              onClick={() => history.push('/search')}
-            >
-              Compare Now
-            </Button>
           </Col>
         </Row>
 
