@@ -1,0 +1,9 @@
+.errorContainer {
+    color: red;
+    font-weight: bold;
+}
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+}

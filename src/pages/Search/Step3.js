@@ -4,9 +4,15 @@ import { getFormValues } from 'redux-form'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import lodash from 'lodash'
-import { ButtonToolbar, Button } from 'react-bootstrap'
+import { Row, Col, Panel, Button, Well, Image } from 'react-bootstrap'
 
 import { searchFormName } from './constants'
+import AsyncLoader from 'components/AsyncLoader'
+import styles from './styles.css'
+
+const dummyThumbnail = require('../../assets/dummy_thumbnail.png')
+
+const pageSize = 3
 
 class Step3 extends Component {
   state = { page: 1 }
@@ -38,69 +44,105 @@ class Step3 extends Component {
       meta,
     } = this.props
 
-    if (loading) {
-      return <div>Loading...</div>
-    }
-
-    if (error) {
-      return <div>{`Errors: ${error}`}</div>
-    }
-
     return (
-      <div>
-        <h2>Select Policy (Step 3)</h2>
-        <blockquote>
-          {`Page ${meta.page} of ${meta.totalPages}`} (Total results:{' '}
-          {meta.totalRecords})
-        </blockquote>
-        <div>
-          {policies.map((policy) => (
-            <div key={policy.id}>
-              <span>
-                {policy.policyName} - ${policy.monthlyPremium}
-              </span>
-              <button onClick={(event) => onSubmit(policy)}>
-                Select Policy
-              </button>
+      <AsyncLoader loading={loading} error={error}>
+        <Row>
+          <Col xsHidden smHidden md={3}>
+            <div>
+              <Panel>
+                <Panel.Heading>YOUR SUMMARY</Panel.Heading>
+                <Panel.Body>
+                  YOUR SUMMARY: TBA ...<br />
+                  <Button type="button" onClick={onPrevious}>
+                    Edit
+                  </Button>
+                </Panel.Body>
+              </Panel>
             </div>
-          ))}
-        </div>
-
-        <div>
-          <ButtonToolbar>
-            {meta.page > 1 ? (
-              <Button type="button" onClick={this.handlePrevious}>
-                <i className="fas fa-chevron-left" />&nbsp;Previous Results
+          </Col>
+          <Col mdHidden lgHidden xs={12} sm={12}>
+            <Well>
+              YOUR SUMMARY: TBA ...<br />{' '}
+              <Button type="button" onClick={onPrevious}>
+                Edit
               </Button>
-            ) : (
-              <span />
-            )}
-            {meta.page < meta.totalPages ? (
-              <Button type="button" onClick={this.handleNext}>
-                Next Result&nbsp;<i className="fas fa-chevron-right" />
-              </Button>
-            ) : (
-              <span />
-            )}
-          </ButtonToolbar>
-        </div>
-
-        <div className="pull-right">
-          <ButtonToolbar>
-            <Button
-              bsStyle="info"
-              bsSize="large"
-              type="button"
-              onClick={onPrevious}
-            >
-              <i className="fas fa-arrow-left" />&nbsp;Previous
-            </Button>
-            <Button bsStyle="primary" bsSize="large" type="button">
-              Next&nbsp;<i className="fas fa-arrow-right" />
-            </Button>
-          </ButtonToolbar>
-        </div>
-      </div>
+            </Well>
+          </Col>
+          <Col xs={12} sm={12} md={9}>
+            <Row>
+              <Col xs={12}>
+                {meta.page > 1 ? (
+                  <div
+                    className={[
+                      styles.prevPageButton,
+                      styles.resultNavButton,
+                    ].join(' ')}
+                    onClick={this.handlePrevious}
+                  >
+                    <i className="fas fa-chevron-circle-left fa-3x" />
+                  </div>
+                ) : (
+                  <span />
+                )}
+                {meta.page < meta.totalPages ? (
+                  <div
+                    className={[
+                      styles.nextPageButton,
+                      styles.resultNavButton,
+                    ].join(' ')}
+                    onClick={this.handleNext}
+                  >
+                    <i className="fas fa-chevron-circle-right fa-3x" />
+                  </div>
+                ) : (
+                  <span />
+                )}
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12}>
+                <div className={styles.resultPagingContainer}>
+                  {policies.map((policy) => (
+                    <div key={policy.id} className={styles.policyResult}>
+                      <div className={styles.fundThumbnailContainer}>
+                        <Image
+                          src={dummyThumbnail}
+                          circle
+                          className={styles.fundThumbnail}
+                          title={policy.fundName}
+                        />
+                      </div>
+                      <div className={styles.fundInfoContainer}>
+                        <div style={{ height: '100px' }}>
+                          <strong>{policy.policyName}</strong>
+                        </div>
+                        <div>
+                          <div style={{ fontSize: '24px' }}>
+                            ${policy.monthlyPremium}
+                          </div>
+                          <strong>&#47;month</strong>
+                        </div>
+                        <div style={{ marginTop: '20px' }}>
+                          <a>View SIS</a>
+                        </div>
+                        <div className={styles.selectFundBtnContainer}>
+                          <Button
+                            block
+                            bsStyle="success"
+                            onClick={(event) => onSubmit(policy)}
+                          >
+                            Select Policy
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </AsyncLoader>
     )
   }
 }
@@ -121,7 +163,7 @@ const POLICIES_QUERY = gql`
       hospitalInclusions: $hospitalInclusions
       extrasInclusions: $extrasInclusions
       page: $page
-      pageSize: 3
+      pageSize: ${pageSize}
     ) {
       policies {
         id

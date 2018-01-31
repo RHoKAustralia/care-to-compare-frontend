@@ -8,10 +8,10 @@ import {
   getFormMeta,
   formValueSelector,
 } from 'redux-form'
-import { Button } from 'react-bootstrap'
 
 import { BoxSelectGroupField } from 'components/Form'
 import { searchFormName } from './constants'
+import SearchButtonBar from './SearchButtonBar'
 import styles from './styles.css'
 
 const categoryOfCoverOptions = [
@@ -111,7 +111,7 @@ let Step1 = (props) => {
   } = props
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="h4">Who need covers?</div>
 
       <div className={styles.searchFieldRow}>
@@ -145,15 +145,13 @@ let Step1 = (props) => {
         />
       </div>
 
-      <div className="pull-right">
-        <Button
-          bsStyle="primary"
-          bsSize="large"
-          type="submit"
-          disabled={!valid}
-        >
-          Next&nbsp;<i className="fas fa-arrow-right" />
-        </Button>
+      <div>
+        <SearchButtonBar
+          next={{
+            cb: handleSubmit,
+            disabled: !valid,
+          }}
+        />
       </div>
     </form>
   )

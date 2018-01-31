@@ -58,7 +58,6 @@ class Landing extends Component {
             </ul>
             <div className="text-center">
               <Button
-                bsStyle="primary"
                 bsSize="large"
                 className={styles.mainButton}
                 onClick={() => history.push('/search')}

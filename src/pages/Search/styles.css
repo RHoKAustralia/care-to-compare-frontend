@@ -22,3 +22,64 @@
 .inclusionGroup {
 	margin-bottom: 20px;
 }
+
+.buttonContainer {
+	margin-top: 20px;
+}
+
+.resultNavButton {
+	top: 180px;
+	z-index: 99999;
+	opacity: 0.4;
+	position: absolute;
+}
+
+.resultNavButton:hover {
+	cursor: pointer;
+}
+
+.prevPageButton {
+	left: 0px;
+}
+
+.nextPageButton {
+	right: 0px;
+}
+
+.resultPagingContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.policyResult {
+	flex-basis: 30%;
+	text-align: center;
+}
+
+.policyResult:first-of-type {
+	margin-left: 15px;
+}
+
+.fundThumbnailContainer {
+	padding: 10px;
+	z-index: 9999;
+}
+
+.fundThumbnail {
+	height: 75px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fundInfoContainer {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-top: -37px;
+	padding-top: 55px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.selectFundBtnContainer {
+	margin-top: 25px;
+}

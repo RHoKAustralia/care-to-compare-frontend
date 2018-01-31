@@ -1,14 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
-import {
-  ButtonToolbar,
-  Button,
-  ControlLabel,
-  HelpBlock,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import { ControlLabel, HelpBlock, Row, Col } from 'react-bootstrap'
 
 import {
   searchFormName,
@@ -18,6 +11,7 @@ import {
 import { DateField, SelectField } from 'components/Form'
 import FieldGroup from './FieldGroup'
 import InclusionSelectionGroup from './InclusionSelectionGroup'
+import SearchButtonBar from './SearchButtonBar'
 
 let Step2 = (props) => {
   const {
@@ -31,7 +25,7 @@ let Step2 = (props) => {
   } = props
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <Row>
         <Col sm={4}>
           <FieldGroup
@@ -164,20 +158,17 @@ let Step2 = (props) => {
         </Col>
       </Row>
 
-      <div className="pull-right">
-        <ButtonToolbar>
-          <Button
-            bsStyle="info"
-            bsSize="large"
-            type="button"
-            onClick={onPrevious}
-          >
-            <i className="fas fa-arrow-left" />&nbsp;Previous
-          </Button>
-          <Button bsStyle="primary" bsSize="large" type="submit">
-            Next&nbsp;<i className="fas fa-arrow-right" />
-          </Button>
-        </ButtonToolbar>
+      <div>
+        <SearchButtonBar
+          prev={{
+            cb: onPrevious,
+            disabled: false,
+          }}
+          next={{
+            cb: handleSubmit,
+            disabled: false,
+          }}
+        />
       </div>
     </form>
   )
