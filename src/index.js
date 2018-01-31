@@ -10,9 +10,9 @@ import { Provider } from 'react-redux'
 import { createStore, compose, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import 'font-awesome/css/font-awesome.min.css'
+// TODO: boostrap impor does not seem to be working, no classes imported...including in index.html for now
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'font-awesome/css/font-awesome.css'
 import './index.css'
 
 import rootReducer from 'reducers'

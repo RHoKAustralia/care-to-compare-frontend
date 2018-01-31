@@ -3,14 +3,22 @@ import { connect } from 'react-redux'
 // import { reset } from 'redux-form'
 
 import Container from 'components/Container'
+import ProgressStepper from 'components/ProgressStepper'
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
 import Step4 from './Step4'
 
-// import styles from './styles.css'
+import styles from './styles.css'
 // import { saveSearchCriteria } from 'actions'
 // import { formName } from './constants'
+
+const allSteps = [
+  { step: 1, title: '1. Search' },
+  { step: 2, title: '2. Refine' },
+  { step: 3, title: '3. Compare' },
+  { step: 4, title: '4. Confirm' },
+]
 
 class Search extends Component {
   constructor(props) {
@@ -52,20 +60,38 @@ class Search extends Component {
 
     return (
       <div>
+        <div className={styles.header}>
+          <Container>
+            <ProgressStepper allSteps={allSteps} currentStep={page} />
+          </Container>
+        </div>
+
+        <div className={styles.banner}>
+          <Container>
+            <strong>Let's get to know one another!</strong>
+            <br />
+            Your on your way to getting the right health insrance for you and
+            supporting great charities when you choose &nbsp;
+            <strong>Care to Compare</strong>.
+          </Container>
+        </div>
+
         <Container>
-          {page === 1 && <Step1 onSubmit={this.nextPage} />}
-          {page === 2 && (
-            <Step2 onSubmit={this.nextPage} onPrevious={this.previousPage} />
-          )}
-          {page === 3 && (
-            <Step3
-              onSubmit={this.selectPolicy}
-              onPrevious={this.previousPage}
-            />
-          )}
-          {page === 4 && (
-            <Step4 onSubmit={this.submit} onPrevious={this.previousPage} />
-          )}
+          <div className={styles.searchStepContainer}>
+            {page === 1 && <Step1 onSubmit={this.nextPage} />}
+            {page === 2 && (
+              <Step2 onSubmit={this.nextPage} onPrevious={this.previousPage} />
+            )}
+            {page === 3 && (
+              <Step3
+                onSubmit={this.selectPolicy}
+                onPrevious={this.previousPage}
+              />
+            )}
+            {page === 4 && (
+              <Step4 onSubmit={this.submit} onPrevious={this.previousPage} />
+            )}
+          </div>
         </Container>
       </div>
     )
