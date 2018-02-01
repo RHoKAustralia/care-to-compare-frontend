@@ -24,7 +24,7 @@ const categoryOfCoverOptions = [
   {
     id: 2,
     text: 'Couples',
-    icon: 'fa-user-secret',
+    icon: 'fa-user-plus',
     value: 'COUPLES',
   },
   {
@@ -45,19 +45,19 @@ const policyTypeOptions = [
   {
     id: 1,
     text: 'Hospital',
-    icon: 'fa-hospital',
+    icon: 'fa-medkit',
     value: 'HOSPITAL',
   },
   {
     id: 2,
     text: 'Extras',
-    icon: 'fa-camera-retro',
+    icon: 'fa-plane',
     value: 'EXTRAS',
   },
   {
     id: 3,
     text: 'Combined',
-    icon: 'fa-volleyball-ball',
+    icon: 'fa-wrench',
     value: 'COMBINED',
   },
 ]

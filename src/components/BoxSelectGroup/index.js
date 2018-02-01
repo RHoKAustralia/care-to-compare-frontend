@@ -19,7 +19,7 @@ const BoxOption = ({ option, selected, onSelect }) => {
         <div className={styles.itemWrapperInner}>
           {option.icon ? (
             <div className={styles.itemIcon}>
-              <i className={`fas ${option.icon} fa-3x`} />
+              <i className={`fa ${option.icon} fa-3x`} />
             </div>
           ) : (
             <span />

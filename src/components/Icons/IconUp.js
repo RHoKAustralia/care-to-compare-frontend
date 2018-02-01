@@ -1,5 +1,5 @@
 import React from 'react'
 
-const IconUp = () => <i className="fas fa-chevron-up" />
+const IconUp = () => <i className="fa fa-chevron-up" />
 
 export default IconUp

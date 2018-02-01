@@ -4,6 +4,8 @@ import { withRouter } from 'react-router'
 
 import Container from 'components/Container'
 import ImageRow from 'components/ImageRow'
+import { IconTick } from 'components/Icons'
+
 import foundationImages from 'assets/foundations'
 import fundImages from 'assets/funds'
 import styles from './styles.css'
@@ -50,7 +52,7 @@ class Landing extends Component {
               {checkListItems.map((item, index) => (
                 <li key={index}>
                   <span className="fa-li">
-                    <i className="fas fa-check" />
+                    <IconTick />
                   </span>
                   {item}
                 </li>

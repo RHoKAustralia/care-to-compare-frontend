@@ -1,15 +1,86 @@
 import React from 'react'
 import { Button, Image } from 'react-bootstrap'
+import lodash from 'lodash'
 
 import styles from './styles.css'
+import { extrasInclusionsOptions, hospitalInclusionsOptions } from './constants'
+
 const dummyThumbnail = require('../../assets/dummy_thumbnail.png')
+
+const getInclusionLabelByValue = (inclusionLabelLookup, value) => {
+  return lodash.find(
+    inclusionLabelLookup,
+    (inclusion) => inclusion.value === value,
+  ).label
+}
+
+const InclusionItem = ({
+  inclusionLabelLookup,
+  inclusion: { category, covered },
+}) => {
+  return (
+    <li>
+      <span className="fa-li">
+        {covered ? (
+          <i className="fa fa-check" style={{ color: 'green' }} />
+        ) : (
+          <i className="fa fa-times" style={{ color: 'red' }} />
+        )}
+      </span>
+      {getInclusionLabelByValue(inclusionLabelLookup, category)}
+    </li>
+  )
+}
+
+const InclusionList = ({ title, policy, inclusions, inclusionLabelLookup }) => {
+  return (
+    <div style={{ marginTop: '20px' }}>
+      <p className="h4">{title}</p>
+      <ul className="fa-ul">
+        {lodash.map(inclusions, (inclusion, index) => (
+          <InclusionItem
+            inclusion={inclusion}
+            key={`${policy.sisCode}_${inclusion.category}`}
+            inclusionLabelLookup={inclusionLabelLookup}
+          />
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const AdditionalDetails = ({ policy, policyType }) => {
+  return (
+    <div className="text-left">
+      {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
+        <InclusionList
+          title="Hospital Inclusions"
+          policy={policy}
+          inclusions={policy.hospitalComponent.inclusions}
+          inclusionLabelLookup={hospitalInclusionsOptions}
+        />
+      )}
+
+      {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
+        <InclusionList
+          title="Extras Inclusions"
+          policy={policy}
+          inclusions={policy.extrasComponent.inclusions}
+          inclusionLabelLookup={extrasInclusionsOptions}
+        />
+      )}
+    </div>
+  )
+}
 
 const PolicyResultsViewer = ({
   pagingMeta,
   policies,
+  policyType,
   prevPage,
   nextPage,
   selectPolicy,
+  showPolicyDetails,
 }) => {
   return (
     <div>
@@ -21,7 +92,7 @@ const PolicyResultsViewer = ({
             )}
             onClick={prevPage}
           >
-            <i className="fas fa-chevron-circle-left fa-4x" />
+            <i className="fa fa-chevron-circle-left fa-4x" />
           </div>
         ) : (
           <span />
@@ -33,7 +104,7 @@ const PolicyResultsViewer = ({
             )}
             onClick={nextPage}
           >
-            <i className="fas fa-chevron-circle-right fa-4x" />
+            <i className="fa fa-chevron-circle-right fa-4x" />
           </div>
         ) : (
           <span />
@@ -51,13 +122,20 @@ const PolicyResultsViewer = ({
               />
             </div>
             <div className={styles.fundInfoContainer}>
-              <div style={{ height: '100px' }}>
+              <div style={{ height: '75px', textOverflow: 'ellipsis' }}>
                 <strong>{policy.policyName}</strong>
               </div>
               <div>
                 <div style={{ fontSize: '24px' }}>${policy.monthlyPremium}</div>
                 <strong>&#47;month</strong>
               </div>
+
+              <div style={{ marginTop: '20px' }}>
+                {showPolicyDetails && (
+                  <AdditionalDetails policy={policy} policyType={policyType} />
+                )}
+              </div>
+
               <div style={{ marginTop: '20px' }}>
                 <a>View SIS</a>
               </div>
