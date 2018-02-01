@@ -39,7 +39,7 @@
 }
 
 .prevPageButton {
-	left: 0px;
+	left: 14px;
 }
 
 .nextPageButton {
@@ -73,7 +73,7 @@
 
 .fundInfoContainer {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	margin-top: -37px;
+	margin-top: -47px;
 	padding-top: 55px;
     padding-left: 15px;
     padding-right: 15px;
@@ -82,4 +82,9 @@
 
 .selectFundBtnContainer {
 	margin-top: 25px;
+}
+
+.moreDetailsContainer {
+	margin-left: 15px;
+	margin-top: 20px;
 }
