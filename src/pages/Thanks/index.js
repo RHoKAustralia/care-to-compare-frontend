@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
@@ -11,14 +13,16 @@ import styles from './styles.css'
 
 class Thanks extends Component {
   render() {
+    const { policy, userDetails } = this.props
+
     return (
       <div>
         <div className={styles.header}>
           <Container>
-            <h4>Thank you</h4>
+            <h3>Thanks {userDetails.name}.</h3>
             <p>
-              Buying health insurance through Care to Compare? is good for you
-              and good for charity
+              Buying health insurance through <strong>Care to Compare?</strong>{' '}
+              is good for you and good for charity
             </p>
           </Container>
           <div>
@@ -136,5 +140,10 @@ class Thanks extends Component {
     )
   }
 }
+
+Thanks = connect((state) => ({
+  policy: state.policyPurchase.policy,
+  userDetails: state.policyPurchase.userDetails,
+}))(Thanks)
 
 export default Thanks

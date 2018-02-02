@@ -8,6 +8,7 @@
 .summary {
   display: flex;
   color: #000;
+  margin-top: 80px;
 }
 
 .price {

@@ -19,6 +19,19 @@ import { searchFormName, signupFormName } from './constants'
 
 import styles from './styles.css'
 
+const validate = (values) => {
+  const errors = {}
+
+  if (!values.firstName) {
+    errors.firstName = 'Required'
+  }
+  if (!values.lastName) {
+    errors.lastName = 'Required'
+  }
+
+  return errors
+}
+
 let Step4 = (props) => {
   const {
     handleSubmit,
@@ -26,8 +39,8 @@ let Step4 = (props) => {
     searchCriteria,
     onEditSearch,
     selectedPolicy,
+    valid,
   } = props
-  console.log('Policy selected:', selectedPolicy)
 
   return (
     <form>
@@ -299,7 +312,7 @@ let Step4 = (props) => {
           }}
           next={{
             cb: handleSubmit,
-            disabled: false,
+            disabled: !valid,
             label: 'Buy Now ',
           }}
         />
@@ -310,14 +323,13 @@ let Step4 = (props) => {
 
 Step4 = reduxForm({
   form: signupFormName,
+  validate,
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
 })(Step4)
 
 Step4 = connect((state) => ({
-  searchCriteria: getFormValues(searchFormName)(
-    state,
-  ) /** Get form values from search form **/,
+  searchCriteria: getFormValues(searchFormName)(state),
 }))(Step4)
 
 export default Step4

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import { reset } from 'redux-form'
+import { reset } from 'redux-form'
 
 import Container from 'components/Container'
 import ProgressStepper from 'components/ProgressStepper'
@@ -10,8 +10,8 @@ import Step3 from './Step3'
 import Step4 from './Step4'
 
 import styles from './styles.css'
-// import { saveSearchCriteria } from 'actions'
-// import { formName } from './constants'
+import { purchasedPolicy } from 'actions'
+import { searchFormName, signupFormName } from './constants'
 
 const allSteps = [
   { step: 1, title: '1. Search' },
@@ -46,17 +46,20 @@ class Search extends Component {
     this.nextPage()
   }
 
-  submit = (values) => {
-    //const { history } = this.props
+  enterUserAndPaymentDetails = (values) => {
+    const { history, clearSearchForms, onPurchasedPolicy } = this.props
+    const { selectedPolicy } = this.state
+    const userDetails = {
+      name: values.firstName + ' ' + values.lastName,
+    }
 
-    console.log('Submitting polcy buy:', values)
+    // TODO: submit details to somewhere??? How? Use exisitng GraphQL API with mutations? How to handle errors???
 
-    // We don't need to duplicate the search criteria to another part of state.
-    // We can use getFormValues to get form values.
-    // See https://redux-form.com/7.2.0/docs/api/selectors.md/
-    // onSearch(values)
+    // Then, set the details into redux state to be used in the thanks page
+    onPurchasedPolicy(selectedPolicy, userDetails)
 
-    //history.push('/') // TODO: goto results page
+    clearSearchForms()
+    history.push('/thanks')
   }
 
   render() {
@@ -94,7 +97,7 @@ class Search extends Component {
             )}
             {page === 4 && (
               <Step4
-                onSubmit={this.submit}
+                onSubmit={this.enterUserAndPaymentDetails}
                 onPrevious={this.previousPage}
                 onEditSearch={() => this.toPage(2)}
                 selectedPolicy={selectedPolicy}
@@ -110,11 +113,12 @@ class Search extends Component {
 const mapStateToProps = (state, ownProps) => state
 
 const mapDispatchToProps = (dispatch) => ({
-  // onSearch: (searchCriteria) => dispatch(saveSearchCriteria(searchCriteria)),
-  // onDone: () => {
-  //   dispatch(clearSearchCriteria())
-  //   // dispatch(reset(formName)) // TODO: example left here when we need to reset the form
-  // }
+  onPurchasedPolicy: (policy, userDetails) =>
+    dispatch(purchasedPolicy(policy, userDetails)),
+  clearSearchForms: () => {
+    dispatch(reset(searchFormName))
+    dispatch(reset(signupFormName))
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

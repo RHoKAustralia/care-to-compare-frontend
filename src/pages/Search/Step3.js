@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { getFormValues } from 'redux-form'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import lodash from 'lodash'
 import { Row, Col, Button } from 'react-bootstrap'
 
 import { searchFormName } from './constants'
