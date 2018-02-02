@@ -15,7 +15,8 @@ const SearchButtonBar = ({ prev, next }) => {
               onClick={() => prev.cb()}
               disabled={prev.disabled}
             >
-              <i className="fa fa-arrow-left" />&nbsp;Previous
+              <i className="fa fa-arrow-left" />
+              {prev.label ? prev.label : ' Previous'}
             </Button>
           ) : (
             <span />
@@ -28,7 +29,8 @@ const SearchButtonBar = ({ prev, next }) => {
               onClick={next.cb}
               disabled={next.disabled}
             >
-              Next&nbsp;<i className="fa fa-arrow-right" />
+              {next.label ? next.label : 'Next '}
+              <i className="fa fa-arrow-right" />
             </Button>
           ) : (
             <span />

@@ -1,6 +1,6 @@
 import React from 'react'
 import lodash from 'lodash'
-import { Checkbox } from 'react-bootstrap'
+import { Checkbox, FormGroup } from 'react-bootstrap'
 
 const CheckboxGroupField = ({
   input: { value, onChange },
@@ -39,7 +39,7 @@ const CheckboxGroupField = ({
     )
   })
 
-  return <div>{inputs}</div>
+  return <FormGroup bsSize="large">{inputs}</FormGroup>
 }
 
 export default CheckboxGroupField

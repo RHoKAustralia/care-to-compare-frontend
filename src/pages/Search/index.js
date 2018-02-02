@@ -25,7 +25,12 @@ class Search extends Component {
     super(props)
     this.state = {
       page: 1,
+      selectedPolicy: null,
     }
+  }
+
+  toPage = (toPage) => {
+    this.setState({ page: toPage })
   }
 
   nextPage = () => {
@@ -37,15 +42,14 @@ class Search extends Component {
   }
 
   selectPolicy = (policy) => {
-    // TODO: set policy details into redux state
-    console.log('Selected policy:', policy)
+    this.setState({ selectedPolicy: policy })
     this.nextPage()
   }
 
   submit = (values) => {
     //const { history } = this.props
 
-    console.log('Submitting Search:', values)
+    console.log('Submitting polcy buy:', values)
 
     // We don't need to duplicate the search criteria to another part of state.
     // We can use getFormValues to get form values.
@@ -56,7 +60,7 @@ class Search extends Component {
   }
 
   render() {
-    const { page } = this.state
+    const { page, selectedPolicy } = this.state
 
     return (
       <div>
@@ -89,7 +93,12 @@ class Search extends Component {
               />
             )}
             {page === 4 && (
-              <Step4 onSubmit={this.submit} onPrevious={this.previousPage} />
+              <Step4
+                onSubmit={this.submit}
+                onPrevious={this.previousPage}
+                onEditSearch={() => this.toPage(2)}
+                selectedPolicy={selectedPolicy}
+              />
             )}
           </div>
         </Container>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Panel } from 'react-bootstrap'
 
+import styles from './styles.css'
+
 const getWhoIsCoveredText = (categoryOfCover) => {
   if (categoryOfCover === 'FAMILIES') return 'Families'
   if (categoryOfCover === 'COUPLES') return 'Couples'
@@ -92,7 +94,7 @@ const Compact = ({ searchCriteria, onEditSearch }) => {
             onEditSearch()
           }}
         >
-          Edit...
+          Edit Search...
         </a>
       </div>
     </div>
@@ -107,9 +109,11 @@ const SearchSummary = ({ searchCriteria, onEditSearch, compact }) => {
   }
 
   return (
-    <div>
+    <div className={styles.searchSummaryContainer}>
       <Panel>
-        <Panel.Heading>YOUR SUMMARY</Panel.Heading>
+        <Panel.Heading>
+          <div className="h5">YOUR SUMMARY</div>
+        </Panel.Heading>
         <Panel.Body>
           <div className="clearfix">
             <div className="pull-right">
@@ -123,7 +127,7 @@ const SearchSummary = ({ searchCriteria, onEditSearch, compact }) => {
                   onEditSearch()
                 }}
               >
-                Edit
+                Edit Search...
               </a>
             </div>
           </div>

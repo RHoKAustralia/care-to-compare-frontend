@@ -88,7 +88,11 @@ class Step3 extends Component {
           <Row>
             <Col xs={12} sm={12} mdOffset={3} md={9}>
               <div className={styles.moreDetailsContainer}>
-                <Button block onClick={() => this.toggleDetails()}>
+                <Button
+                  block
+                  onClick={() => this.toggleDetails()}
+                  active={expandDetails}
+                >
                   <span
                     style={{
                       marginRight: '30px',
@@ -97,7 +101,7 @@ class Step3 extends Component {
                   >
                     {expandDetails ? 'Less' : 'More'} details
                   </span>
-                  {expandDetails ? <IconDown /> : <IconUp />}
+                  {expandDetails ? <IconUp /> : <IconDown />}
                 </Button>
               </div>
             </Col>
@@ -131,6 +135,7 @@ const POLICIES_QUERY = gql`
         sisCode
         fundName
         policyName
+        policyType
         monthlyPremium
         ambulanceCover
         extrasComponent {
@@ -186,8 +191,7 @@ const mapResultsToProps = ({ data }) => {
     loadPage: (page) =>
       data.fetchMore({
         variables: { page },
-        updateQuery: (previousResult, { fetchMoreResult }) =>
-          lodash.merge({}, previousResult, fetchMoreResult),
+        updateQuery: (previousResult, { fetchMoreResult }) => fetchMoreResult,
       }),
   }
 }

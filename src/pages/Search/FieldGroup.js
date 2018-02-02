@@ -3,12 +3,12 @@ import { FormGroup, Row, Col } from 'react-bootstrap'
 
 const FieldGroup = ({ controlId, label, field, helpBlock }) => {
   return (
-    <FormGroup controlId={controlId}>
+    <FormGroup controlId={controlId} bsSize="large">
       <Row>
         <Col xs={12}>{label}</Col>
       </Row>
       <Row>
-        <Col md={7}>{field}</Col>
+        <Col xs={12}>{field}</Col>
       </Row>
       <Row>
         <Col xs={12}>{helpBlock}</Col>

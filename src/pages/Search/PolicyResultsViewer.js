@@ -49,7 +49,7 @@ const InclusionList = ({ title, policy, inclusions, inclusionLabelLookup }) => {
   )
 }
 
-const AdditionalDetails = ({ policy, policyType }) => {
+export const AdditionalDetails = ({ policy, policyType }) => {
   return (
     <div className="text-left">
       {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
@@ -127,7 +127,7 @@ const PolicyResultsViewer = ({
               </div>
               <div>
                 <div style={{ fontSize: '24px' }}>${policy.monthlyPremium}</div>
-                <strong>&#47;month</strong>
+                <strong>{'/ month'}</strong>
               </div>
 
               <div style={{ marginTop: '20px' }}>
