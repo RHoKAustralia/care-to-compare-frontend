@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import styles from './styles.css'
 
@@ -39,11 +41,10 @@ const getStepElement = (wizardStep, index, currentStep) => {
     <div key={wizardStep.step} className={styles.step}>
       <div className={styles.stepItems}>
         <div
-          className={[
-            styles.stepMaker,
-            styles.stepItem,
-            styles[currentStep < wizardStep.step ? 'hollow' : 'solid'],
-          ].join(' ')}
+          className={classnames(styles.stepMaker, styles.stepItem, {
+            [styles.hollow]: currentStep < wizardStep.step,
+            [styles.solid]: currentStep >= wizardStep.step,
+          })}
         />
         <div className={[styles.stepItem, styles.stepText].join(' ')}>
           {wizardStep.title}
@@ -66,6 +67,16 @@ class ProgressStepper extends Component {
       </div>
     )
   }
+}
+
+ProgressStepper.propTypes = {
+  allSteps: PropTypes.arrayOf(
+    PropTypes.shape({
+      step: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  currentStep: PropTypes.number.isRequired,
 }
 
 export default ProgressStepper

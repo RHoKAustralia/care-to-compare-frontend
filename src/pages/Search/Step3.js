@@ -3,24 +3,17 @@ import { connect } from 'react-redux'
 import { getFormValues } from 'redux-form'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 import { searchFormName } from './constants'
 import AsyncLoader from 'components/AsyncLoader'
 import PolicyResultsViewer from './PolicyResultsViewer'
-import { IconUp, IconDown } from 'components/Icons'
 import SearchSummary from './SearchSummary'
-
-import styles from './styles.css'
 
 const pageSize = 3
 
 class Step3 extends Component {
-  state = { page: 1, expandDetails: false }
-
-  toggleDetails = () => {
-    this.setState(({ expandDetails }) => ({ expandDetails: !expandDetails }))
-  }
+  state = { page: 1 }
 
   handleNext = () => {
     const nextPage = this.state.page + 1
@@ -49,8 +42,6 @@ class Step3 extends Component {
       meta,
     } = this.props
 
-    const { expandDetails } = this.state
-
     return (
       <div
         style={{
@@ -66,11 +57,13 @@ class Step3 extends Component {
               />
             </Col>
             <Col mdHidden lgHidden xs={12} sm={12}>
-              <SearchSummary
-                searchCriteria={searchCriteria}
-                onEditSearch={onPrevious}
-                compact={true}
-              />
+              <div style={{ marginBottom: '25px' }}>
+                <SearchSummary
+                  searchCriteria={searchCriteria}
+                  onEditSearch={onPrevious}
+                  compact={true}
+                />
+              </div>
             </Col>
             <Col xs={12} sm={12} md={9}>
               <PolicyResultsViewer
@@ -80,29 +73,7 @@ class Step3 extends Component {
                 prevPage={this.handlePrevious}
                 nextPage={this.handleNext}
                 selectPolicy={onSubmit}
-                showPolicyDetails={expandDetails}
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} sm={12} mdOffset={3} md={9}>
-              <div className={styles.moreDetailsContainer}>
-                <Button
-                  block
-                  onClick={() => this.toggleDetails()}
-                  active={expandDetails}
-                >
-                  <span
-                    style={{
-                      marginRight: '30px',
-                      fontSize: '16px',
-                    }}
-                  >
-                    {expandDetails ? 'Less' : 'More'} details
-                  </span>
-                  {expandDetails ? <IconUp /> : <IconDown />}
-                </Button>
-              </div>
             </Col>
           </Row>
         </AsyncLoader>

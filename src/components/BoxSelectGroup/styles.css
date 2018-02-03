@@ -2,30 +2,20 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	/* justify-content: space-evenly; */
+	justify-content: space-evenly;
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
 .itemContainer {
-	width: 200px;
-    height: 100px;
-	margin-left: 10px;
-	margin-right: 10px;
+	/* flex-basis: 30%; */
 	margin-bottom: 10px;
-}
-
-.itemContainerNoIcon {
-	width: 100px;
-	height: 70px;
-	margin-left: 15px;
-	margin-right: 15px;
 }
 
 .itemWrapper:hover {
 	cursor: pointer;
-	border: 2px solid green;
-	background-color: white;
+	border: 2px solid #57D09F;
+	/* background-color: white; */
 }
 
 .itemWrapper {
@@ -34,18 +24,17 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 15px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 15px 20px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .itemUnselected {
-	background-color: gainsboro;
-	border: 2px solid gainsboro;
+	background-color: #f2f0f0;
+	border: 2px solid #f2f0f0;
 }
 
 .itemSelected {
-	background-color: white;
-	border: 2px solid green;
+	border: 2px solid #57D09F;
 }
 
 .itemWrapperInner {
@@ -58,12 +47,18 @@
 	align-self: center;
 }
 
-.itemIcon {
-	padding: 10px;
-}
-
 .itemText {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1.4;
+	text-overflow: ellipsis;
+}
+
+.itemTextNoIcon {
+	width: 50px;
+}
+
+.itemTextWithIcon {
+	margin-left: 10px;
+    width: 100px;
 }

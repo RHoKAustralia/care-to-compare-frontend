@@ -3,10 +3,17 @@
 	color: #222;
 }
 
+.stepperContainer {
+	padding-top: 25px; 
+	padding-bottom: 15px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
 .banner {
-	background-color: #3f3d3d;
+	background-color: #434343;
 	color: white;
-	padding: 20px;
+	padding: 30px 0px;
 	text-align: center;
 }
 
@@ -17,6 +24,8 @@
 .searchFieldRow {
 	margin-top: 15px;
 	margin-bottom: 15px;
+	width: 90%;
+    margin-left: 5%;
 }
 
 .inclusionGroup {
@@ -24,7 +33,8 @@
 }
 
 .buttonContainer {
-	margin-top: 20px;
+	margin-top: 40px;
+	text-align: right;
 }
 
 .resultNavButton {
@@ -39,17 +49,18 @@
 }
 
 .prevPageButton {
-	left: 14px;
+	left: 0px;
 }
 
 .nextPageButton {
 	right: 0px;
 }
 
-.resultPagingContainer {
+.policyResultsContainer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+	margin-bottom: 15px;
 }
 
 .policyResult {
@@ -57,27 +68,14 @@
 	text-align: center;
 }
 
-.policyResult:first-of-type {
-	margin-left: 15px;
-}
-
-.fundThumbnailContainer {
-	padding: 10px;
-	z-index: 9999;
-}
-
 .fundThumbnail {
 	height: 75px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 50%;
 }
 
 .fundInfoContainer {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	margin-top: -47px;
-	padding-top: 70px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+	margin-top: -38px;
 }
 
 .selectFundBtnContainer {
@@ -85,21 +83,33 @@
 }
 
 .moreDetailsContainer {
-	margin-left: 15px;
-	margin-top: 20px;
+	margin-top: 30px;
+	width: 96%;
+    margin-left: 2%;
 }
 
-.searchSummaryContainer {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	font-size: 16px;
+.searchSummaryEditLinkContainer {
+	text-align: right;
+}
+
+.searchSummaryEditLinkContainer a, .searchSummaryEditLinkContainer a:visited {
+	color: #57D09F;
+}
+
+.searchSummaryItemsContainer p span, .searchSummaryCompactContainer div p span {
+	margin-left: 15px;
+}
+
+.searchSummaryCompactContainer div p {
+	margin: 0px;
+}
+
+.searchSummaryCompactContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .paymentOptionsContainer {
-	margin-top: 35px;
-}
-
-.personalDetailsContainer, 
-.paymentOptionsContainer,
-.purchaseSummaryContainer {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-top: 25px;
 }

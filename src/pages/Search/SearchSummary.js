@@ -1,12 +1,13 @@
 import React from 'react'
-import { Panel } from 'react-bootstrap'
+
+import Card, { Header, Content } from 'components/Card'
 
 import styles from './styles.css'
 
 const getWhoIsCoveredText = (categoryOfCover) => {
-  if (categoryOfCover === 'FAMILIES') return 'Families'
-  if (categoryOfCover === 'COUPLES') return 'Couples'
-  if (categoryOfCover === 'SINGLES') return 'Individuals'
+  if (categoryOfCover === 'FAMILIES') return 'Family'
+  if (categoryOfCover === 'COUPLES') return 'Couple'
+  if (categoryOfCover === 'SINGLES') return 'Individual'
 
   throw new Error(`Unkown categoryOfCover: ${categoryOfCover}`)
 }
@@ -23,81 +24,51 @@ const SummaryItem = ({ icon, text }) => {
   return (
     <p>
       <i className={`fa ${icon} fa-lg`} />
-      <span
-        style={{
-          marginLeft: '10px',
-        }}
-      >
-        {text}
-      </span>
+      <span>{text}</span>
     </p>
   )
 }
 
 const Compact = ({ searchCriteria, onEditSearch }) => {
   return (
-    <div
-      className="clearfix"
-      style={{
-        fontSize: '16px',
-      }}
-    >
-      <div
-        className="pull-left"
-        style={{
-          marginLeft: '15px',
-        }}
-      >
-        YOUR SUMMARY:
-      </div>
-      <div
-        className="pull-left"
-        style={{
-          marginLeft: '25px',
-        }}
-      >
-        <SummaryItem
-          icon="fa-user"
-          text={'For ' + getWhoIsCoveredText(searchCriteria.categoryOfCover)}
-        />
-      </div>
-      <div
-        className="pull-left"
-        style={{
-          marginLeft: '25px',
-        }}
-      >
-        <SummaryItem
-          icon="fa-question-circle"
-          text={getPolicyTypeText(searchCriteria.policyType)}
-        />
-      </div>
-      <div
-        className="pull-left"
-        style={{
-          marginLeft: '25px',
-        }}
-      >
-        <SummaryItem
-          icon="fa-map-signs"
-          text={searchCriteria.stateOfResidence}
-        />
-      </div>
-      <div className="pull-left">
-        <a
-          style={{
-            marginLeft: '25px',
-          }}
-          href=""
-          onClick={(event) => {
-            event.preventDefault()
-            onEditSearch()
-          }}
-        >
-          Edit Search...
-        </a>
-      </div>
-    </div>
+    <Card>
+      <Content>
+        <div className={styles.searchSummaryCompactContainer}>
+          <div>YOUR SUMMARY:</div>
+          <div>
+            <SummaryItem
+              icon="fa-user"
+              text={
+                'For ' + getWhoIsCoveredText(searchCriteria.categoryOfCover)
+              }
+            />
+          </div>
+          <div>
+            <SummaryItem
+              icon="fa-question-circle"
+              text={getPolicyTypeText(searchCriteria.policyType)}
+            />
+          </div>
+          <div>
+            <SummaryItem
+              icon="fa-map-signs"
+              text={searchCriteria.stateOfResidence}
+            />
+          </div>
+          <div className={styles.searchSummaryEditLinkContainer}>
+            <a
+              href=""
+              onClick={(event) => {
+                event.preventDefault()
+                onEditSearch()
+              }}
+            >
+              Edit
+            </a>
+          </div>
+        </div>
+      </Content>
+    </Card>
   )
 }
 
@@ -110,33 +81,24 @@ const SearchSummary = ({ searchCriteria, onEditSearch, compact }) => {
 
   return (
     <div className={styles.searchSummaryContainer}>
-      <Panel>
-        <Panel.Heading>
-          <div className="h5">YOUR SUMMARY</div>
-        </Panel.Heading>
-        <Panel.Body>
-          <div className="clearfix">
-            <div className="pull-right">
-              <a
-                style={{
-                  fontSize: '16px',
-                }}
-                href=""
-                onClick={(event) => {
-                  event.preventDefault()
-                  onEditSearch()
-                }}
-              >
-                Edit Search...
-              </a>
-            </div>
+      <Card>
+        <Header>
+          <div>YOUR SUMMARY</div>
+        </Header>
+        <Content>
+          <div className={styles.searchSummaryEditLinkContainer}>
+            <a
+              href=""
+              onClick={(event) => {
+                event.preventDefault()
+                onEditSearch()
+              }}
+            >
+              Edit
+            </a>
           </div>
 
-          <div
-            style={{
-              fontSize: '16px',
-            }}
-          >
+          <div className={styles.searchSummaryItemsContainer}>
             <SummaryItem
               icon="fa-user"
               text={getWhoIsCoveredText(searchCriteria.categoryOfCover)}
@@ -150,8 +112,8 @@ const SearchSummary = ({ searchCriteria, onEditSearch, compact }) => {
               text={searchCriteria.stateOfResidence}
             />
           </div>
-        </Panel.Body>
-      </Panel>
+        </Content>
+      </Card>
     </div>
   )
 }

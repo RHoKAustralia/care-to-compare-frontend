@@ -69,7 +69,9 @@ class Search extends Component {
       <div>
         <div className={styles.header}>
           <Container>
-            <ProgressStepper allSteps={allSteps} currentStep={page} />
+            <div className={styles.stepperContainer}>
+              <ProgressStepper allSteps={allSteps} currentStep={page} />
+            </div>
           </Container>
         </div>
 

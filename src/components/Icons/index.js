@@ -6,6 +6,7 @@ import IconTick from './IconTick'
 import IconUser from './IconUser'
 import IconUp from './IconUp'
 import IconDown from './IconDown'
+import IconCross from './IconCross'
 
 export {
   IconCircle,
@@ -16,4 +17,5 @@ export {
   IconUser,
   IconUp,
   IconDown,
+  IconCross,
 }

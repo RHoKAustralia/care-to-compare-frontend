@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Panel, Image, Button } from 'react-bootstrap'
 
 import { AdditionalDetails } from './PolicyResultsViewer'
 import { IconUp, IconDown } from 'components/Icons'
+import Card, { Content, Header } from 'components/Card'
+import Button from 'components/Button'
 
 import styles from './styles.css'
 const dummyThumbnail = require('../../assets/dummy_thumbnail.png')
@@ -22,23 +23,22 @@ class PurchaseSummary extends Component {
 
     return (
       <div className={styles.purchaseSummaryContainer}>
-        <Panel>
-          <Panel.Heading>
-            <div className="h5">PURCHASE SUMMARY</div>
-          </Panel.Heading>
-          <Panel.Body>
+        <Card>
+          <Header>
+            <div>PURCHASE SUMMARY</div>
+          </Header>
+          <Content>
             <div
-              className="text-center"
               style={{
                 marginTop: '-25px',
+                textAlign: 'center',
               }}
             >
               <div>
-                <Image
+                <img
                   src={dummyThumbnail}
-                  circle
                   className={styles.fundThumbnail}
-                  title={policy.fundName}
+                  alt={policy.fundName}
                 />
               </div>
               <div
@@ -79,7 +79,13 @@ class PurchaseSummary extends Component {
                   marginTop: '20px',
                 }}
               >
-                <Button block onClick={this.togglePolicyDetails}>
+                <Button
+                  ghost
+                  block
+                  size="small"
+                  onClick={this.togglePolicyDetails}
+                  type="button"
+                >
                   {showDetails ? 'Less' : 'More'}
                   {' details  '}
                   {showDetails ? <IconUp /> : <IconDown />}
@@ -90,20 +96,28 @@ class PurchaseSummary extends Component {
                   marginTop: '10px',
                 }}
               >
-                <Button block>View SIS</Button>
+                <Button block ghost size="small" type="button">
+                  View SIS
+                </Button>
               </div>
               <div
                 style={{
                   marginTop: '10px',
                 }}
               >
-                <Button block onClick={onSelectAnotherPolicy}>
+                <Button
+                  ghost
+                  block
+                  size="small"
+                  onClick={onSelectAnotherPolicy}
+                  type="button"
+                >
                   Select Another Policy
                 </Button>
               </div>
             </div>
-          </Panel.Body>
-        </Panel>
+          </Content>
+        </Card>
       </div>
     )
   }

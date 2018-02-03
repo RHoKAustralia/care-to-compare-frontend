@@ -1,30 +1,42 @@
 import React, { Component } from 'react'
+import classnames from 'classnames'
 
 import styles from './styles.css'
 
 const BoxOption = ({ option, selected, onSelect }) => {
   return (
-    <div
-      className={
-        option.icon ? styles.itemContainer : styles.itemContainerNoIcon
-      }
-    >
+    <div className={styles.itemContainer}>
       <div
-        className={[
-          styles.itemWrapper,
-          selected ? styles.itemSelected : styles.itemUnselected,
-        ].join(' ')}
+        className={classnames(styles.itemWrapper, {
+          [styles.itemSelected]: selected,
+          [styles.itemUnselected]: !selected,
+        })}
         onClick={() => onSelect(option)}
       >
         <div className={styles.itemWrapperInner}>
-          {option.icon ? (
+          {option.icon && (
             <div className={styles.itemIcon}>
-              <i className={`fa ${option.icon} fa-3x`} />
+              {selected ? (
+                <img
+                  src={option.icon.selected}
+                  alt={option.text + ' selected'}
+                />
+              ) : (
+                <img
+                  src={option.icon.unSelected}
+                  alt={option.text + ' not selected'}
+                />
+              )}
             </div>
-          ) : (
-            <span />
           )}
-          <div className={styles.itemText}>{option.text}</div>
+          <div
+            className={classnames(styles.itemText, {
+              [styles.itemTextWithIcon]: option.icon,
+              [styles.itemTextNoIcon]: !option.icon,
+            })}
+          >
+            {option.text}
+          </div>
         </div>
       </div>
     </div>

@@ -10,33 +10,50 @@ import {
 } from 'redux-form'
 
 import { BoxSelectGroupField } from 'components/Form'
+import Card, { Content } from 'components/Card'
+import Button from 'components/Button'
+
 import { searchFormName } from './constants'
-import SearchButtonBar from './SearchButtonBar'
 import styles from './styles.css'
+
+const unSelectedIcon = require('../../assets/policy-options/combined-unselected.png')
+const selectedIcon = require('../../assets/policy-options/combined selected.png')
 
 const categoryOfCoverOptions = [
   {
     id: 1,
-    text: 'Individuals',
-    icon: 'fa-user',
+    text: 'Individual',
+    icon: {
+      unSelected: unSelectedIcon,
+      selected: selectedIcon,
+    },
     value: 'SINGLES',
   },
   {
     id: 2,
-    text: 'Couples',
-    icon: 'fa-user-plus',
+    text: 'Couple',
+    icon: {
+      unSelected: unSelectedIcon,
+      selected: selectedIcon,
+    },
     value: 'COUPLES',
   },
   {
     id: 3,
-    text: 'Families',
-    icon: 'fa-users',
+    text: 'Family',
+    icon: {
+      unSelected: unSelectedIcon,
+      selected: selectedIcon,
+    },
     value: 'FAMILIES',
   },
   // , {
   //     id: 4,
   //     text: 'Single Parents',
-  //     icon: 'fa-child',
+  //     icon: {
+  //       unSelected: unSelectedIcon,
+  //       selected: selectedIcon
+  //     },
   //     value: ''
   // }
 ]
@@ -45,19 +62,28 @@ const policyTypeOptions = [
   {
     id: 1,
     text: 'Hospital',
-    icon: 'fa-medkit',
+    icon: {
+      unSelected: unSelectedIcon,
+      selected: selectedIcon,
+    },
     value: 'HOSPITAL',
   },
   {
     id: 2,
     text: 'Extras',
-    icon: 'fa-plane',
+    icon: {
+      unSelected: unSelectedIcon,
+      selected: selectedIcon,
+    },
     value: 'EXTRAS',
   },
   {
     id: 3,
     text: 'Combined',
-    icon: 'fa-wrench',
+    icon: {
+      unSelected: unSelectedIcon,
+      selected: selectedIcon,
+    },
     value: 'COMBINED',
   },
 ]
@@ -111,49 +137,55 @@ let Step1 = (props) => {
   } = props
 
   return (
-    <form>
-      <div className="h4">Who need covers?</div>
+    <div>
+      <Card>
+        <Content>
+          <div className="h4">Who need covers?</div>
 
-      <div className={styles.searchFieldRow}>
-        <Field
-          name="categoryOfCover"
-          component={BoxSelectGroupField}
-          options={categoryOfCoverOptions}
-          currentValue={categoryOfCover}
-        />
+          <div className={styles.searchFieldRow}>
+            <Field
+              name="categoryOfCover"
+              component={BoxSelectGroupField}
+              options={categoryOfCoverOptions}
+              currentValue={categoryOfCover}
+            />
+          </div>
+
+          <div className="h4">What type of cover are you looking for?</div>
+
+          <div className={styles.searchFieldRow}>
+            <Field
+              name="policyType"
+              component={BoxSelectGroupField}
+              options={policyTypeOptions}
+              currentValue={policyType}
+            />
+          </div>
+
+          <div className="h4">Where do you live?</div>
+
+          <div className={styles.searchFieldRow}>
+            <Field
+              name="stateOfResidence"
+              component={BoxSelectGroupField}
+              options={statesOptions}
+              currentValue={stateOfResidence}
+            />
+          </div>
+        </Content>
+      </Card>
+      <div className={styles.buttonContainer}>
+        <Button
+          primary
+          onClick={handleSubmit}
+          disabled={!valid}
+          type="button"
+          size="xlarge"
+        >
+          Continue
+        </Button>
       </div>
-
-      <div className="h4">What type of cover are you looking for?</div>
-
-      <div className={styles.searchFieldRow}>
-        <Field
-          name="policyType"
-          component={BoxSelectGroupField}
-          options={policyTypeOptions}
-          currentValue={policyType}
-        />
-      </div>
-
-      <div className="h4">Where do you live?</div>
-
-      <div className={styles.searchFieldRow}>
-        <Field
-          name="stateOfResidence"
-          component={BoxSelectGroupField}
-          options={statesOptions}
-          currentValue={stateOfResidence}
-        />
-      </div>
-
-      <div>
-        <SearchButtonBar
-          next={{
-            cb: handleSubmit,
-            disabled: !valid,
-          }}
-        />
-      </div>
-    </form>
+    </div>
   )
 }
 

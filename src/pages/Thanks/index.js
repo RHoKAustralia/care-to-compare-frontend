@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { Redirect } from 'react-router-dom'
 import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
@@ -14,6 +14,10 @@ import styles from './styles.css'
 class Thanks extends Component {
   render() {
     const { policy, userDetails } = this.props
+
+    if (!policy || !userDetails) {
+      return <Redirect to="/landing" />
+    }
 
     return (
       <div>

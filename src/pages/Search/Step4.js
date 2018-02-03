@@ -4,17 +4,19 @@ import { Field, reduxForm, getFormValues } from 'redux-form'
 import {
   Row,
   Col,
-  Panel,
   FormGroup,
   ButtonToolbar,
   ToggleButtonGroup,
   ToggleButton,
 } from 'react-bootstrap'
 
-import SearchButtonBar from './SearchButtonBar'
+import { DateField, SelectField, TextField } from 'components/Form'
+import Card, { Header, Content } from 'components/Card'
+import Button from 'components/Button'
+
 import SearchSummary from './SearchSummary'
 import PurchaseSummary from './PurchaseSummary'
-import { DateField, SelectField, TextField } from 'components/Form'
+
 import { searchFormName, signupFormName } from './constants'
 
 import styles from './styles.css'
@@ -46,17 +48,19 @@ let Step4 = (props) => {
     <form>
       <Row>
         <Col xsHidden smHidden md={3}>
-          <PurchaseSummary
-            policy={selectedPolicy}
-            onSelectAnotherPolicy={onPrevious}
-          />
+          <div style={{ marginBottom: '25px' }}>
+            <PurchaseSummary
+              policy={selectedPolicy}
+              onSelectAnotherPolicy={onPrevious}
+            />
+          </div>
           <SearchSummary
             searchCriteria={searchCriteria}
             onEditSearch={onEditSearch}
           />
         </Col>
         <Col mdHidden lgHidden xs={12} sm={12}>
-          <div style={{ marginBottom: '15px' }}>
+          <div style={{ marginBottom: '25px' }}>
             <SearchSummary
               searchCriteria={searchCriteria}
               onEditSearch={onEditSearch}
@@ -66,14 +70,12 @@ let Step4 = (props) => {
         </Col>
         <Col xs={12} sm={12} md={9}>
           <div className={styles.personalDetailsContainer}>
-            <Panel>
-              <Panel.Heading>
-                <div className="h5">PERSONAL DETAILS</div>
-                <small className="text-muted">
-                  Complete your personal details
-                </small>
-              </Panel.Heading>
-              <Panel.Body>
+            <Card>
+              <Header>
+                <h5>PERSONAL DETAILS</h5>
+                <small>Complete your personal details</small>
+              </Header>
+              <Content>
                 <Row>
                   <Col xs={12} sm={6}>
                     <FormGroup bsSize="large">
@@ -224,19 +226,17 @@ let Step4 = (props) => {
                     </FormGroup>
                   </Col>
                 </Row>
-              </Panel.Body>
-            </Panel>
+              </Content>
+            </Card>
           </div>
 
           <div className={styles.paymentOptionsContainer}>
-            <Panel>
-              <Panel.Heading>
-                <div className="h5">PAYMENT OPTIONS</div>
-                <small className="text-muted">
-                  Select your preferred payment option
-                </small>
-              </Panel.Heading>
-              <Panel.Body>
+            <Card>
+              <Header>
+                <h5>PAYMENT OPTIONS</h5>
+                <small>Select your preferred payment option</small>
+              </Header>
+              <Content>
                 <div style={{ marginBottom: '15px' }}>
                   <ButtonToolbar>
                     <ToggleButtonGroup
@@ -297,25 +297,31 @@ let Step4 = (props) => {
                     </FormGroup>
                   </Col>
                 </Row>
-              </Panel.Body>
-            </Panel>
+              </Content>
+            </Card>
           </div>
         </Col>
       </Row>
 
-      <div>
-        <SearchButtonBar
-          prev={{
-            cb: onPrevious,
-            disabled: false,
-            label: ' Change Policy',
-          }}
-          next={{
-            cb: handleSubmit,
-            disabled: !valid,
-            label: 'Buy Now ',
-          }}
-        />
+      <div className={styles.buttonContainer}>
+        <Button
+          ghost
+          onClick={onPrevious}
+          size="xlarge"
+          style={{ marginRight: '15px' }}
+          type="button"
+        >
+          Back
+        </Button>
+        <Button
+          primary
+          onClick={handleSubmit}
+          size="xlarge"
+          disabled={!valid}
+          type="button"
+        >
+          Buy Now
+        </Button>
       </div>
     </form>
   )
