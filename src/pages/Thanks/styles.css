@@ -2,11 +2,14 @@
   background: linear-gradient(0deg, #FBFBFB 40%, #434343 40%);
   color: #FFF;
   text-align: center;
-  padding: 2.5em 1em 0.5em 1em;
+  padding: 2.5em 1em 4.5em 1em;
 }
 
 .summary {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   color: #000;
   margin-top: 80px;
 }
@@ -35,7 +38,21 @@
   color: #444;
 }
 
+.socialMediaInfo div button {
+  margin-right: 15px;
+}
+
+.socialMediaInfo div button span {
+  margin-left: 15px;
+}
+
 .spacer {
   height: 100px;
   background-color: #FBFBFB;
+}
+
+.fundThumbnail {
+	height: 75px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 50%;
 }

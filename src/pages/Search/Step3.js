@@ -151,7 +151,7 @@ const mapPropsToOptions = (props) => {
   }
 }
 
-const mapResultsToProps = ({ data }) => {
+const mapResultsToProps = ({ ownProps, data }) => {
   return {
     // https://github.com/apollographql/react-apollo/issues/1385
     loading: data.loading,
