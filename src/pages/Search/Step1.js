@@ -23,28 +23,19 @@ const categoryOfCoverOptions = [
   {
     id: 1,
     text: 'Individual',
-    icon: {
-      unSelected: unSelectedIcon,
-      selected: selectedIcon,
-    },
+    style: { width: '100px', height: '50px' },
     value: 'SINGLES',
   },
   {
     id: 2,
     text: 'Couple',
-    icon: {
-      unSelected: unSelectedIcon,
-      selected: selectedIcon,
-    },
+    style: { width: '100px', height: '50px' },
     value: 'COUPLES',
   },
   {
     id: 3,
     text: 'Family',
-    icon: {
-      unSelected: unSelectedIcon,
-      selected: selectedIcon,
-    },
+    style: { width: '100px', height: '50px' },
     value: 'FAMILIES',
   },
   // , {
@@ -62,28 +53,19 @@ const policyTypeOptions = [
   {
     id: 1,
     text: 'Hospital',
-    icon: {
-      unSelected: unSelectedIcon,
-      selected: selectedIcon,
-    },
+    style: { width: '100px', height: '50px' },
     value: 'HOSPITAL',
   },
   {
     id: 2,
     text: 'Extras',
-    icon: {
-      unSelected: unSelectedIcon,
-      selected: selectedIcon,
-    },
+    style: { width: '100px', height: '50px' },
     value: 'EXTRAS',
   },
   {
     id: 3,
     text: 'Combined',
-    icon: {
-      unSelected: unSelectedIcon,
-      selected: selectedIcon,
-    },
+    style: { width: '100px', height: '50px' },
     value: 'COMBINED',
   },
 ]
@@ -182,7 +164,7 @@ let Step1 = (props) => {
     <div>
       <Card>
         <Content>
-          <div className="h4">Who needs cover?</div>
+          <div className="h3">Who needs cover?</div>
 
           <div className={styles.searchFieldRow}>
             <Field
@@ -193,7 +175,7 @@ let Step1 = (props) => {
             />
           </div>
 
-          <div className="h4">Why do you need cover?</div>
+          <div className="h3">Why do you need cover?</div>
 
           <div className={styles.searchFieldRow}>
             <Field
@@ -204,7 +186,7 @@ let Step1 = (props) => {
             />
           </div>
 
-          <div className="h4">What type of cover are you looking for?</div>
+          <div className="h3">What type of cover are you looking for?</div>
 
           <div className={styles.searchFieldRow}>
             <Field
@@ -215,7 +197,7 @@ let Step1 = (props) => {
             />
           </div>
 
-          <div className="h4">Where do you live?</div>
+          <div className="h3">Where do you live?</div>
 
           <div className={styles.searchFieldRow}>
             <Field

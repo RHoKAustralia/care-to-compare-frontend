@@ -4,7 +4,7 @@
 }
 
 .stepperContainer {
-	padding-top: 25px; 
+	padding-top: 25px;
 	padding-bottom: 15px;
 	padding-left: 10%;
 	padding-right: 10%;
@@ -24,8 +24,8 @@
 .searchFieldRow {
 	margin-top: 15px;
 	margin-bottom: 15px;
-	width: 90%;
-    margin-left: 5%;
+	/* width: 90%;
+  margin-left: 5%; */
 }
 
 .inclusionGroup {
