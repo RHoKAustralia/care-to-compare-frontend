@@ -18,11 +18,11 @@ class Thanks extends Component {
   render() {
     let { policy, userDetails } = this.props
 
-    // if (!policy || !userDetails) {
-    //   return <Redirect to="/landing" />
-    // }
-    policy = {}
-    userDetails = {}
+    if (!policy || !userDetails) {
+      return <Redirect to="/landing" />
+    }
+    // policy = {}
+    // userDetails = {}
 
     // const userDetails = {
     //   name: 'Prav Perera'

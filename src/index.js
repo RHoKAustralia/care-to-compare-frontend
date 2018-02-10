@@ -19,7 +19,8 @@ import './index.css'
 import rootReducer from 'reducers'
 import rootSaga from 'sagas'
 
-const API_ENDPOINT = process.env.API_ENDPOINT || 'http://localhost:4000/graphql'
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
+
 const httpLink = new HttpLink({
   uri: API_ENDPOINT,
 })
