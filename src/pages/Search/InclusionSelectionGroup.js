@@ -13,7 +13,7 @@ const InclusionSelectionGroup = ({
 }) => (
   <div className={styles.inclusionGroup}>
     <FormGroup controlId={name}>
-      <ControlLabel className="h4">{title}</ControlLabel>
+      <ControlLabel className="h3">{title}</ControlLabel>
       <Field
         name={name}
         component={CheckboxGroupField}

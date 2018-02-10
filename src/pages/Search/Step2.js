@@ -33,11 +33,63 @@ let Step2 = (props) => {
       <Card>
         <Content>
           <Row>
-            <Col sm={4}>
+            <Col sm={5}>
+              {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
+                <FieldGroup
+                  controlId="levelOfHospitalCover"
+                  label={
+                    <ControlLabel className="h3">
+                      What level of hospital cover would you like?
+                    </ControlLabel>
+                  }
+                  field={
+                    <Field name="levelOfHospitalCover" component={SelectField}>
+                      <option />
+                      <option value="1">Basic</option>
+                      <option value="2">Bronze</option>
+                      <option value="3">Silver</option>
+                      <option value="4">Gold</option>
+                      <option value="5">Top</option>
+                    </Field>
+                  }
+                  helpBlock={
+                    <HelpBlock>
+                      (Optional: this helps us detemine policy inclusions...)
+                    </HelpBlock>
+                  }
+                />
+              )}
+
+              {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
+                <FieldGroup
+                  controlId="levelOfExtrasCover"
+                  label={
+                    <ControlLabel className="h3">
+                      What level of extras cover would you like?
+                    </ControlLabel>
+                  }
+                  field={
+                    <Field name="levelOfExtrasCover" component={SelectField}>
+                      <option />
+                      <option value="1">Basic</option>
+                      <option value="2">Bronze</option>
+                      <option value="3">Silver</option>
+                      <option value="4">Gold</option>
+                      <option value="5">Top</option>
+                    </Field>
+                  }
+                  helpBlock={
+                    <HelpBlock>
+                      (Optional: this helps us detemine policy inclusions...)
+                    </HelpBlock>
+                  }
+                />
+              )}
+
               <FieldGroup
                 controlId="dateOfBirth"
                 label={
-                  <ControlLabel className="h4">
+                  <ControlLabel className="h3">
                     What is your date of birth?
                   </ControlLabel>
                 }
@@ -59,7 +111,7 @@ let Step2 = (props) => {
               <FieldGroup
                 controlId="heldPreviousInsurance"
                 label={
-                  <ControlLabel className="h4">
+                  <ControlLabel className="h3">
                     Have you held previous insurnace?
                   </ControlLabel>
                 }
@@ -87,7 +139,7 @@ let Step2 = (props) => {
                 <FieldGroup
                   controlId="dateSinceInsured"
                   label={
-                    <ControlLabel className="h4">
+                    <ControlLabel className="h3">
                       What is the first date your were insurence from?
                     </ControlLabel>
                   }
@@ -110,7 +162,7 @@ let Step2 = (props) => {
               <FieldGroup
                 controlId="rebateTier"
                 label={
-                  <ControlLabel className="h4">
+                  <ControlLabel className="h3">
                     What is your annual income?
                   </ControlLabel>
                 }
@@ -130,7 +182,7 @@ let Step2 = (props) => {
                 }
               />
             </Col>
-            <Col sm={7} smOffset={1}>
+            <Col sm={6} smOffset={1}>
               <Row>
                 {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
                   <Col sm={policyType === 'HOSPITAL' ? 12 : 6}>
