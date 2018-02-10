@@ -1,0 +1,69 @@
+.groupContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* justify-content: space-evenly; */
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.itemContainer {
+	/* flex-basis: 30%; */
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.itemWrapper:hover {
+	cursor: pointer;
+	border: 2px solid #57D09F;
+	opacity: 0.7;
+	/* background-color: white; */
+}
+
+.itemWrapper {
+	vertical-align: middle;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 15px 20px;
+	/* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.itemUnselected {
+	background-color: #f2f0f0;
+	border: 2px solid #f2f0f0;
+}
+
+.itemSelected {
+	border: 2px solid #57D09F;
+}
+
+.itemWrapperInner {
+	display: flex;
+	flex-direction: row;
+	align-self: center
+}
+
+.itemWrapperInner div {
+	align-self: center;
+}
+
+.itemText {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.4;
+	text-overflow: ellipsis;
+}
+
+.itemTextNoIcon {
+	width: 50px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemTextWithIcon {
+	margin-left: 10px;
+  width: 100px;
+}

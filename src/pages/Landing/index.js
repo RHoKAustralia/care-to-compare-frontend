@@ -1,64 +1,82 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Row, Col } from 'react-bootstrap'
+import { withRouter } from 'react-router'
 
-import Button from 'components/Button'
 import Container from 'components/Container'
-import Carousel from 'components/Carousel'
 import ImageRow from 'components/ImageRow'
-import { IconTick } from 'components/Icons'
+import CheckList from 'components/CheckList'
+import Button from 'components/Button'
+import Carousel from 'components/Carousel'
+
 import foundationImages from 'assets/foundations'
 import fundImages from 'assets/funds'
 import styles from './styles.css'
 
 const landingPageImages = [
-  require('../../assets/landing-images/strokesurvivor.jpeg'),
-  require('../../assets/landing-images/strokesurvivor1.jpeg'),
-  require('../../assets/landing-images/strokesurvivor3 594x395.jpeg'),
+  { alt: '', src: require('../../assets/landing-images/strokesurvivor.jpeg') },
+  { alt: '', src: require('../../assets/landing-images/strokesurvivor1.jpeg') },
+  {
+    alt: '',
+    src: require('../../assets/landing-images/strokesurvivor3 594x395.jpeg'),
+  },
+]
+
+const checkListItems = [
+  { checked: true, label: 'Exclusively deal in health products' },
+  { checked: true, label: 'Exclusively deal in health products' },
+  { checked: true, label: 'Find a policy right for you' },
+  { checked: true, label: 'It costs no more no matter where you buy' },
+  { checked: true, label: 'Buy through C2C and support Stroke Foundation' },
 ]
 
 class Landing extends Component {
   render() {
+    const { history } = this.props
+
     return (
       <div>
         <div className={styles.header}>
           <Container>
-            <ImageRow images={Object.values(foundationImages)} />
+            <Row>
+              <Col sm={12} xsHidden>
+                <ImageRow images={Object.values(foundationImages)} />
+              </Col>
+            </Row>
           </Container>
         </div>
-        <Container>
-          <div className={styles.wrapper}>
-            <div className={styles.left}>
-              <div className={styles.wrapperItem}>
-                <ul>
-                  <li>
-                    <IconTick /> Exclusively deal in health products
-                  </li>
-                  <li>
-                    <IconTick /> Find a policy right for you
-                  </li>
-                  <li>
-                    <IconTick /> It costs no more no matter where you buy
-                  </li>
-                  <li>
-                    <IconTick /> Buy through C2C and support Stroke Foundation
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.wrapperItem}>
-                <Button primary>
-                  <Link to="/search">Compare now</Link>
-                </Button>
-              </div>
-            </div>
 
-            <div className={styles.right}>
+        <Container>
+          <Row>
+            <Col xs={12} smOffset={2} mdOffset={0} md={6}>
+              <div className={styles.siteItems}>
+                <CheckList items={checkListItems} itemSpacing="large" />
+
+                <div className={styles.mainButtonContainer}>
+                  <Button
+                    primary
+                    onClick={() => history.push('/search')}
+                    size="xlarge"
+                    type="button"
+                  >
+                    Compare Now
+                  </Button>
+                </div>
+              </div>
+            </Col>
+
+            <Col xsHidden smHidden md={6}>
               <Carousel images={landingPageImages} />
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Container>
+
         <div className={styles.footer}>
           <Container>
-            <ImageRow images={Object.values(fundImages)} />
+            <Row>
+              <Col sm={12} xsHidden>
+                <ImageRow images={Object.values(fundImages)} />
+              </Col>
+            </Row>
           </Container>
         </div>
       </div>
@@ -66,4 +84,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing
+export default withRouter(Landing)

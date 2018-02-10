@@ -3,7 +3,7 @@ import { reducer as formReducer } from 'redux-form'
 
 import { types } from 'actions'
 
-const initialState = {
+const policySearchInitialState = {
   policySearch: {
     loading: false,
     errors: [],
@@ -12,7 +12,10 @@ const initialState = {
   },
 }
 
-const policySearch = (state = initialState.policySearch, action) => {
+const policySearch = (
+  state = policySearchInitialState.policySearch,
+  action,
+) => {
   switch (action.type) {
     case types.POLICIES.FETCH_POLICIES_REQUEST:
       return {
@@ -46,7 +49,26 @@ const policySearch = (state = initialState.policySearch, action) => {
   }
 }
 
+const policyPurchaseInitialState = {
+  policy: null,
+  userDetails: null,
+}
+
+const policyPurchase = (state = policyPurchaseInitialState, action) => {
+  switch (action.type) {
+    case types.POLICIES.PURCHASED_POLICY:
+      return {
+        ...state,
+        policy: action.payload.policy,
+        userDetails: action.payload.userDetails,
+      }
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   policySearch,
+  policyPurchase,
   form: formReducer,
 })

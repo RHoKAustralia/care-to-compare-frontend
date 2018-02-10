@@ -1,29 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Field, reduxForm, formValueSelector } from 'redux-form'
+import { Field, reduxForm, formValueSelector, getFormValues } from 'redux-form'
+import { ControlLabel, HelpBlock, Row, Col } from 'react-bootstrap'
 
 import {
   searchFormName,
   extrasInclusionsOptions,
   hospitalInclusionsOptions,
 } from './constants'
-import CheckboxGroup from './CheckboxGroup'
-//import { select } from 'async';
+import styles from './styles.css'
 
-const InclusionsGroup = ({ title, name, options, currentSelection }) => (
-  <div>
-    <h4>{title}</h4>
-    <div>
-      <Field
-        name={name}
-        component={CheckboxGroup}
-        groupId={name}
-        groupOptions={options}
-        currentSelection={currentSelection}
-      />
-    </div>
-  </div>
-)
+import { DateField, SelectField } from 'components/Form'
+import Button from 'components/Button'
+import Card, { Content } from 'components/Card'
+
+import SearchSummary from './SearchSummary'
+import FieldGroup from './FieldGroup'
+import InclusionSelectionGroup from './InclusionSelectionGroup'
 
 let Step2 = (props) => {
   const {
@@ -34,90 +27,218 @@ let Step2 = (props) => {
     heldPreviousInsurance,
     hospitalInclusions,
     extrasInclusions,
+    searchCriteria,
   } = props
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Refine Search (Step 2)</h2>
+    <div>
+      <SearchSummary
+        searchCriteria={searchCriteria}
+        onEditSearch={onPrevious}
+        compact={true}
+      />
+      <Card>
+        <Content>
+          <Row>
+            <Col sm={5}>
+              {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
+                <FieldGroup
+                  controlId="levelOfHospitalCover"
+                  label={
+                    <ControlLabel className="h3">
+                      What level of hospital cover would you like?
+                    </ControlLabel>
+                  }
+                  field={
+                    <Field name="levelOfHospitalCover" component={SelectField}>
+                      <option />
+                      <option value="1">Basic</option>
+                      <option value="2">Bronze</option>
+                      <option value="3">Silver</option>
+                      <option value="4">Gold</option>
+                      <option value="5">Top</option>
+                    </Field>
+                  }
+                  helpBlock={
+                    <HelpBlock>
+                      (Optional: this helps us detemine policy inclusions...)
+                    </HelpBlock>
+                  }
+                />
+              )}
 
-      <div>
-        <label htmlFor="dateOfBirth">Date of birth:</label>
-        <Field
-          name="dateOfBirth"
-          component="input"
-          type="date"
-          style={{ display: 'block' }}
-        />
-      </div>
-      <div>
-        <label htmlFor="heldPreviousInsurance">Held previous insurance:</label>
-        <Field
-          name="heldPreviousInsurance"
-          component="select"
-          style={{ display: 'block' }}
-          onChange={(event, newValue, previousValue) => {
-            console.log(newValue)
-            if (newValue === 'false') {
-              change('dateSinceInsured', null)
-            }
-          }}
+              {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
+                <FieldGroup
+                  controlId="levelOfExtrasCover"
+                  label={
+                    <ControlLabel className="h3">
+                      What level of extras cover would you like?
+                    </ControlLabel>
+                  }
+                  field={
+                    <Field name="levelOfExtrasCover" component={SelectField}>
+                      <option />
+                      <option value="1">Basic</option>
+                      <option value="2">Bronze</option>
+                      <option value="3">Silver</option>
+                      <option value="4">Gold</option>
+                      <option value="5">Top</option>
+                    </Field>
+                  }
+                  helpBlock={
+                    <HelpBlock>
+                      (Optional: this helps us detemine policy inclusions...)
+                    </HelpBlock>
+                  }
+                />
+              )}
+
+              <FieldGroup
+                controlId="dateOfBirth"
+                label={
+                  <ControlLabel className="h3">
+                    What is your date of birth?
+                  </ControlLabel>
+                }
+                field={
+                  <Field
+                    name="dateOfBirth"
+                    component={DateField}
+                    dateFormat="DD/MM/YYYY"
+                    showClearButton={false}
+                  />
+                }
+                helpBlock={
+                  <HelpBlock>
+                    (Optional: this helps us detemine your loading...)
+                  </HelpBlock>
+                }
+              />
+
+              <FieldGroup
+                controlId="heldPreviousInsurance"
+                label={
+                  <ControlLabel className="h3">
+                    Have you held previous insurance?
+                  </ControlLabel>
+                }
+                field={
+                  <Field
+                    name="heldPreviousInsurance"
+                    component={SelectField}
+                    onChange={(event, newValue, previousValue) => {
+                      if (newValue === 'false') {
+                        change('dateSinceInsured', null)
+                      }
+                    }}
+                  >
+                    <option />
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  </Field>
+                }
+                helpBlock={
+                  <HelpBlock>(Optional: this helps us detemine...)</HelpBlock>
+                }
+              />
+
+              {heldPreviousInsurance === 'true' && (
+                <FieldGroup
+                  controlId="dateSinceInsured"
+                  label={
+                    <ControlLabel className="h3">
+                      What is the first date your were insurence from?
+                    </ControlLabel>
+                  }
+                  field={
+                    <Field
+                      name="dateSinceInsured"
+                      component={DateField}
+                      dateFormat="DD/MM/YYYY"
+                      showClearButton={false}
+                    />
+                  }
+                  helpBlock={
+                    <HelpBlock>
+                      (Optional: this helps us detemine your loading...)
+                    </HelpBlock>
+                  }
+                />
+              )}
+
+              <FieldGroup
+                controlId="rebateTier"
+                label={
+                  <ControlLabel className="h3">
+                    What is your annual income?
+                  </ControlLabel>
+                }
+                field={
+                  <Field name="rebateTier" component={SelectField}>
+                    <option />
+                    <option value="1">Below $90,000</option>
+                    <option value="2">$90,001 - $105,000</option>
+                    <option value="3">$105,001 - $140,000</option>
+                    <option value="4">Over $140,000+</option>
+                  </Field>
+                }
+                helpBlock={
+                  <HelpBlock>
+                    (Optional: this helps us detemine your rebate...)
+                  </HelpBlock>
+                }
+              />
+            </Col>
+            <Col sm={6} smOffset={1}>
+              <Row>
+                {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
+                  <Col sm={policyType === 'HOSPITAL' ? 12 : 6}>
+                    <InclusionSelectionGroup
+                      title="What hospital?"
+                      name="hospitalInclusions"
+                      options={hospitalInclusionsOptions}
+                      currentSelection={hospitalInclusions}
+                    />
+                  </Col>
+                )}
+                {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
+                  <Col sm={policyType === 'EXTRAS' ? 12 : 6}>
+                    <InclusionSelectionGroup
+                      title="What extras?"
+                      name="extrasInclusions"
+                      options={extrasInclusionsOptions}
+                      currentSelection={extrasInclusions}
+                    />
+                  </Col>
+                )}
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <HelpBlock>
+                    (Optional: this helps us narrow down the policies that is
+                    best fit for you)
+                  </HelpBlock>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Content>
+      </Card>
+      <div className={styles.buttonContainer}>
+        <Button
+          ghost
+          onClick={onPrevious}
+          size="xlarge"
+          type="button"
+          style={{ marginRight: '15px' }}
         >
-          <option />
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </Field>
+          Back
+        </Button>
+        <Button primary onClick={handleSubmit} type="button" size="xlarge">
+          Let's Compare
+        </Button>
       </div>
-
-      {heldPreviousInsurance === 'true' && (
-        <div>
-          <label htmlFor="dateSinceInsured">Date insurance (TBA?):</label>
-          <Field
-            name="dateSinceInsured"
-            component="input"
-            type="date"
-            style={{ display: 'block' }}
-          />
-        </div>
-      )}
-
-      <div>
-        <label htmlFor="rebateTier">Rebate tier:</label>
-        <Field
-          name="rebateTier"
-          component="select"
-          style={{ display: 'block' }}
-        >
-          <option />
-          <option value="1">$0 - $50,000</option>
-          <option value="2">$50,000 - $100,000</option>
-          <option value="3">$100,000 - $180,000</option>
-          <option value="4">$180,000+</option>
-        </Field>
-      </div>
-
-      {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
-        <InclusionsGroup
-          title="Select Hospital Inclusions"
-          name="hospitalInclusions"
-          options={hospitalInclusionsOptions}
-          currentSelection={hospitalInclusions}
-        />
-      )}
-
-      {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
-        <InclusionsGroup
-          title="Select Extras Inclusions"
-          name="extrasInclusions"
-          options={extrasInclusionsOptions}
-          currentSelection={extrasInclusions}
-        />
-      )}
-
-      <button type="button" onClick={onPrevious}>
-        Previous
-      </button>
-      <button type="submit">Search</button>
-    </form>
+    </div>
   )
 }
 
@@ -140,6 +261,7 @@ Step2 = connect((state) => {
     heldPreviousInsurance,
     hospitalInclusions,
     extrasInclusions,
+    searchCriteria: getFormValues(searchFormName)(state),
   }
 })(Step2)
 

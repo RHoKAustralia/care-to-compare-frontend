@@ -1,0 +1,62 @@
+.stepperContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stepMaker {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    border-radius: 100px;
+    border: 3px solid;
+    border-color: black;
+    z-index: 2;
+    text-align: center;
+    font-size: 14px;
+}
+
+.solid {
+    background: #57D09F;
+}
+
+.hollow {
+    background: #FBFBFB;
+}
+
+.stepConnector {
+    width: 100%;
+    flex-grow: 1;
+    margin-top: -5px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.stepConnector hr {
+    border-top: 2px solid #8c8b8b;
+    margin-top: 16px;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.step {
+    display: flex;
+    flex-grow: 1
+}
+
+.stepItems {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1
+}
+
+.stepItem {
+    align-self: center;
+}
+
+.stepText {
+    margin-top: 5px;
+    width: 100px;
+    text-align: center;
+}

@@ -3,9 +3,14 @@ import { connect } from 'react-redux'
 import { getFormValues } from 'redux-form'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import lodash from 'lodash'
+import { Row, Col } from 'react-bootstrap'
 
 import { searchFormName } from './constants'
+import AsyncLoader from 'components/AsyncLoader'
+import PolicyResultsViewer from './PolicyResultsViewer'
+import SearchSummary from './SearchSummary'
+
+const pageSize = 3
 
 class Step3 extends Component {
   state = { page: 1 }
@@ -30,67 +35,48 @@ class Step3 extends Component {
     const {
       onSubmit,
       onPrevious,
-      //searchCriteria,
+      searchCriteria,
       loading,
       error,
       policies,
       meta,
     } = this.props
 
-    if (loading) {
-      return <div>Loading...</div>
-    }
-
-    if (error) {
-      return <div>{`Errors: ${error}`}</div>
-    }
-
     return (
-      <div>
-        <h2>Select Policy (Step 3)</h2>
-        <blockquote>
-          {`Page ${meta.page} of ${meta.totalPages}`} (Total results:{' '}
-          {meta.totalRecords})
-        </blockquote>
-        <div>
-          {policies.map((policy) => (
-            <div key={policy.id}>
-              <span>
-                {policy.policyName} - ${policy.monthlyPremium}
-              </span>
-              <button onClick={(event) => onSubmit(policy)}>
-                Select Policy
-              </button>
-            </div>
-          ))}
-        </div>
-        <div className="mt3">
-          {meta.page > 1 ? (
-            <button
-              className="f6 link dim br1 ba bw2 ph3 pv2 mb2 dib mid-gray"
-              onClick={this.handlePrevious}
-            >
-              &lt;&lt;&lt; Previous
-            </button>
-          ) : (
-            <span />
-          )}
-          {meta.page < meta.totalPages ? (
-            <button
-              className="f6 link dim br1 ba bw2 ph3 pv2 mb2 dib mid-gray"
-              onClick={this.handleNext}
-            >
-              Next &gt;&gt;&gt;
-            </button>
-          ) : (
-            <span />
-          )}
-        </div>
-        <div>
-          <button type="button" onClick={onPrevious}>
-            Change Search Criteria
-          </button>
-        </div>
+      <div
+        style={{
+          minHeight: '300px',
+        }}
+      >
+        <AsyncLoader loading={loading} error={error}>
+          <Row>
+            <Col xsHidden smHidden md={3}>
+              <SearchSummary
+                searchCriteria={searchCriteria}
+                onEditSearch={onPrevious}
+              />
+            </Col>
+            <Col mdHidden lgHidden xs={12} sm={12}>
+              <div style={{ marginBottom: '25px' }}>
+                <SearchSummary
+                  searchCriteria={searchCriteria}
+                  onEditSearch={onPrevious}
+                  compact={true}
+                />
+              </div>
+            </Col>
+            <Col xs={12} sm={12} md={9}>
+              <PolicyResultsViewer
+                pagingMeta={meta}
+                policyType={searchCriteria.policyType}
+                policies={policies}
+                prevPage={this.handlePrevious}
+                nextPage={this.handleNext}
+                selectPolicy={onSubmit}
+              />
+            </Col>
+          </Row>
+        </AsyncLoader>
       </div>
     )
   }
@@ -112,13 +98,29 @@ const POLICIES_QUERY = gql`
       hospitalInclusions: $hospitalInclusions
       extrasInclusions: $extrasInclusions
       page: $page
-      pageSize: 3
+      pageSize: ${pageSize}
     ) {
       policies {
         id
+        sisCode
         fundName
         policyName
+        policyType
         monthlyPremium
+        ambulanceCover
+        extrasComponent {
+          inclusions {
+            category
+            covered
+          }
+          preferredProvider
+        }
+        hospitalComponent {
+          inclusions {
+            category
+            covered
+          }
+        }
       }
       meta {
         page
@@ -149,7 +151,7 @@ const mapPropsToOptions = (props) => {
   }
 }
 
-const mapResultsToProps = ({ data }) => {
+const mapResultsToProps = ({ ownProps, data }) => {
   return {
     // https://github.com/apollographql/react-apollo/issues/1385
     loading: data.loading,
@@ -159,8 +161,7 @@ const mapResultsToProps = ({ data }) => {
     loadPage: (page) =>
       data.fetchMore({
         variables: { page },
-        updateQuery: (previousResult, { fetchMoreResult }) =>
-          lodash.merge({}, previousResult, fetchMoreResult),
+        updateQuery: (previousResult, { fetchMoreResult }) => fetchMoreResult,
       }),
   }
 }

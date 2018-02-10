@@ -2,9 +2,16 @@
   background-color: #EEE;
   color: #111;
   border: 1px solid transparent;
-  padding: 5px 10px;
   text-align: center;
   border-radius: 2.5px;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn[disabled] {
+  opacity: 0.4;
 }
 
 .btn a {
@@ -25,5 +32,26 @@
 
 .secondary {
   background-color: #434343;
-  color: #939393;
+  color: #eee5e5;
+}
+
+.small {
+  padding: 5px 10px;
+}
+
+.medium {
+  padding: 10px 20px;
+}
+
+.large {
+  padding: 15px 40px;
+}
+
+.xlarge {
+  padding: 20px 70px;
+  font-size: 17px;
+}
+
+.block {
+  width: 100%;
 }

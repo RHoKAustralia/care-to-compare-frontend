@@ -5,6 +5,7 @@ export const types = {
     FETCH_POLICIES_SUCCESS: 'FETCH_POLICIES_SUCCESS',
     FETCH_POLICIES_FAILURE: 'FETCH_POLICIES_FAILURE',
     SELECT_POLICY: 'SELECT_POLICY',
+    PURCHASED_POLICY: 'PURCHASED_POLICY',
   },
 }
 
@@ -38,5 +39,13 @@ export const selectPolicy = (policy) => ({
   type: types.POLICIES.SELECT_POLICY,
   payload: {
     policy,
+  },
+})
+
+export const purchasedPolicy = (policy, userDetails) => ({
+  type: types.POLICIES.PURCHASED_POLICY,
+  payload: {
+    policy,
+    userDetails,
   },
 })

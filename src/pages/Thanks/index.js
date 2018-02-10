@@ -1,66 +1,106 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { SocialIcon } from 'react-social-icons'
 
 import Button from 'components/Button'
+import CheckList from 'components/CheckList'
 import Card, { Header, Content } from 'components/Card'
 import Container from 'components/Container'
 import Grid, { Col } from 'components/Grid'
 import { IconTick } from 'components/Icons'
-import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
+import survivorPhoto from 'assets/paul-fink-survivor.jpg'
 import styles from './styles.css'
+
+const dummyThumbnail = require('../../assets/dummy_thumbnail.png')
 
 class Thanks extends Component {
   render() {
+    let { policy, userDetails } = this.props
+
+    // if (!policy || !userDetails) {
+    //   return <Redirect to="/landing" />
+    // }
+    policy = {}
+    userDetails = {}
+
+    // const userDetails = {
+    //   name: 'Prav Perera'
+    // }
+    // const policy = {
+    //   policyName: 'ABC Policy Blah Blah',
+    //   monthlyPremium: '3234',
+    //   policyType: 'COMBINED'
+    // }
+
+    const checkListItems = [
+      { label: policy.policyName, checked: true },
+      { label: `$${policy.monthlyPremium} per month`, checked: true },
+      { label: `${policy.policyType} cover`, checked: true },
+    ]
+
     return (
       <div>
         <div className={styles.header}>
           <Container>
-            <h4>Thank you</h4>
+            <h3>Thanks {userDetails.name}.</h3>
             <p>
-              Buying health insurance through Care to Compare? is good for you
-              and good for charity
+              Buying health insurance through <strong>Care to Compare?</strong>{' '}
+              is good for you and good for charity
             </p>
           </Container>
-          <div>
-            <Container>
-              <div className={styles.summary}>
+
+          <Container>
+            <div className={styles.summary}>
+              <div>
                 <Card>
                   <Header>
-                    <h6>Your health insurance</h6>
+                    <h5>Your health insurance</h5>
                   </Header>
                   <Content>
-                    <ul>
-                      <li>
-                        <IconTick /> Smart combination
-                      </li>
-                      <li>
-                        <IconTick /> $279.05 per month
-                      </li>
-                      <li>
-                        <IconTick /> Hospital and extras cover
-                      </li>
-                    </ul>
-                    <Button primary>View SIS</Button>
-                  </Content>
-                </Card>
-                <Card>
-                  <Header>
-                    <h6>Your charity</h6>
-                  </Header>
-                  <Content>
-                    <p>
-                      You'll be saving{' '}
-                      <span className={styles.price}>$43.10</span> per month
-                      with your new health insurance policy and supporting the
-                      Stroke Foundation with an extra
-                      <span className={styles.price}>$10 per month</span>
-                    </p>
+                    <div>
+                      <div style={{ marginTop: '-140px' }}>
+                        <img
+                          src={dummyThumbnail}
+                          className={styles.fundThumbnail}
+                          alt="TODO"
+                        />
+                      </div>
+                      <div
+                        style={{
+                          paddingTop: '80px',
+                          paddingLeft: '30px',
+                          paddingRight: '30px',
+                          textAlign: 'left',
+                          minWidth: '400px',
+                        }}
+                      >
+                        <div style={{ fontSize: '14px' }}>
+                          <CheckList
+                            items={checkListItems}
+                            itemSpacing="medium"
+                          />
+                        </div>
+                        <div
+                          style={{
+                            marginTop: '20px',
+                            width: '50%',
+                            marginLeft: '25%',
+                          }}
+                        >
+                          <Button ghost size="medium" block>
+                            View SIS
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
                   </Content>
                 </Card>
               </div>
-            </Container>
-          </div>
+            </div>
+          </Container>
         </div>
+
         <div className={styles.survivorStory}>
           <Container>
             <Grid>
@@ -72,62 +112,61 @@ class Thanks extends Component {
                 />
               </Col>
               <Col s={8}>
-                <h4>Jane Survivor Story</h4>
+                <h4>Your Impact</h4>
                 <p>
-                  My name is Jane and I am 43 years old, happy married and mum
-                  to two 18 and 20 year old boys. I'm fit and healthy. Normal
-                  blood pressure. Normal BMI. 12 weeks ago today, I woke up with
-                  pins and needles in my right arm and leg. I'm a midwife and
-                  had worked night shift the previous night, so I thought I'd
-                  slept really well for once and hadn't moved much overnight
-                  (I'm usually a restless sleeper)...
+                  Three years ago Paul Fink was not able to walk, but with a lot
+                  of hard work, he tackled more than 1000 steps over the Sydney
+                  Harbour Bridge.
                 </p>
-                <Button primary>Read more</Button>
+                <Button size="medium" primary>
+                  Paul's Story
+                </Button>
               </Col>
             </Grid>
           </Container>
         </div>
+
         <div className={styles.socialMediaInfo}>
           <Container>
             <h4>Keep up the great work.</h4>
             <p>
               Let your friends and family know about Care to Compare? Share on
             </p>
-            <Button secondary>
+            <Button secondary size="medium">
               <SocialIcon
                 url="#"
                 network="facebook"
-                color="#363f48"
+                color="#eee5e5"
                 style={{ height: 30, width: 30 }}
-              />{' '}
-              Facebook
+              />
+              <span>Facebook</span>
             </Button>
-            <Button secondary>
+            <Button secondary size="medium">
               <SocialIcon
                 url="#"
                 network="twitter"
-                color="#363f48"
+                color="#eee5e5"
                 style={{ height: 30, width: 30 }}
-              />{' '}
-              Twitter
+              />
+              <span>Twitter</span>
             </Button>
-            <Button secondary>
+            <Button secondary size="medium">
               <SocialIcon
                 url="#"
                 network="instagram"
-                color="#363f48"
+                color="#eee5e5"
                 style={{ height: 30, width: 30 }}
-              />{' '}
-              Instagram
+              />
+              <span>Instagram</span>
             </Button>
-            <Button secondary>
+            <Button secondary size="medium">
               <SocialIcon
                 url="#"
                 network="email"
-                color="#363f48"
+                color="#eee5e5"
                 style={{ height: 30, width: 30 }}
-              />{' '}
-              Email
+              />
+              <span>Email</span>
             </Button>
           </Container>
         </div>
@@ -136,5 +175,10 @@ class Thanks extends Component {
     )
   }
 }
+
+Thanks = connect((state) => ({
+  policy: state.policyPurchase.policy,
+  userDetails: state.policyPurchase.userDetails,
+}))(Thanks)
 
 export default Thanks
