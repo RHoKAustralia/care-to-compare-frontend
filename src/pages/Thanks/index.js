@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { SocialIcon } from 'react-social-icons'
-import { Row, Col } from 'react-bootstrap'
 
 import Button from 'components/Button'
 import CheckList from 'components/CheckList'
 import Card, { Header, Content } from 'components/Card'
 import Container from 'components/Container'
+import Grid, { Col } from 'components/Grid'
 import { IconTick } from 'components/Icons'
-import survivorPhoto from 'assets/obligatory-stock-photo.jpeg'
+import survivorPhoto from 'assets/paul-fink-survivor.jpg'
 import styles from './styles.css'
 
 const dummyThumbnail = require('../../assets/dummy_thumbnail.png')
@@ -18,9 +18,11 @@ class Thanks extends Component {
   render() {
     let { policy, userDetails } = this.props
 
-    if (!policy || !userDetails) {
-      return <Redirect to="/landing" />
-    }
+    // if (!policy || !userDetails) {
+    //   return <Redirect to="/landing" />
+    // }
+    policy = {}
+    userDetails = {}
 
     // const userDetails = {
     //   name: 'Prav Perera'
@@ -101,30 +103,26 @@ class Thanks extends Component {
 
         <div className={styles.survivorStory}>
           <Container>
-            <Row>
-              <Col xs={4}>
+            <Grid>
+              <Col s={4}>
                 <img
                   className={styles.survivorPhoto}
                   src={survivorPhoto}
                   alt={'Jane'}
                 />
               </Col>
-              <Col xs={8}>
-                <h4>Jane Survivor Story</h4>
+              <Col s={8}>
+                <h4>Your Impact</h4>
                 <p>
-                  My name is Jane and I am 43 years old, happy married and mum
-                  to two 18 and 20 year old boys. I'm fit and healthy. Normal
-                  blood pressure. Normal BMI. 12 weeks ago today, I woke up with
-                  pins and needles in my right arm and leg. I'm a midwife and
-                  had worked night shift the previous night, so I thought I'd
-                  slept really well for once and hadn't moved much overnight
-                  (I'm usually a restless sleeper)...
+                  Three years ago Paul Fink was not able to walk, but with a lot
+                  of hard work, he tackled more than 1000 steps over the Sydney
+                  Harbour Bridge.
                 </p>
                 <Button size="medium" primary>
-                  Read more
+                  Paul's Story
                 </Button>
               </Col>
-            </Row>
+            </Grid>
           </Container>
         </div>
 
