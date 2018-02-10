@@ -99,6 +99,47 @@ const statesOptions = [
   { id: 8, value: 'VIC', text: 'VIC' },
 ]
 
+//, icon: { unSelected: unSelectedIcon, selected: selectedIcon }
+
+const whyNeedCoverOptions = [
+  {
+    id: 1,
+    value: '01',
+    text: 'Leaving Home',
+    style: { width: '100px', height: '50px' },
+  },
+  {
+    id: 2,
+    value: '02',
+    text: 'Reduce Tax',
+    style: { width: '100px', height: '50px' },
+  },
+  {
+    id: 3,
+    value: '03',
+    text: 'Comparison',
+    style: { width: '100px', height: '50px' },
+  },
+  {
+    id: 4,
+    value: '04',
+    text: 'Specific Health',
+    style: { width: '100px', height: '50px' },
+  },
+  {
+    id: 5,
+    value: '05',
+    text: 'Baby',
+    style: { width: '100px', height: '50px' },
+  },
+  {
+    id: 6,
+    value: '06',
+    text: 'Something Cheaper',
+    style: { width: '100px', height: '50px' },
+  },
+]
+
 const validate = (values) => {
   const errors = {}
 
@@ -134,13 +175,14 @@ let Step1 = (props) => {
     categoryOfCover,
     policyType,
     stateOfResidence,
+    whyNeedCover,
   } = props
 
   return (
     <div>
       <Card>
         <Content>
-          <div className="h4">Who need covers?</div>
+          <div className="h4">Who needs cover?</div>
 
           <div className={styles.searchFieldRow}>
             <Field
@@ -148,6 +190,17 @@ let Step1 = (props) => {
               component={BoxSelectGroupField}
               options={categoryOfCoverOptions}
               currentValue={categoryOfCover}
+            />
+          </div>
+
+          <div className="h4">Why do you need cover?</div>
+
+          <div className={styles.searchFieldRow}>
+            <Field
+              name="whyNeedCover"
+              component={BoxSelectGroupField}
+              options={whyNeedCoverOptions}
+              currentValue={whyNeedCover}
             />
           </div>
 
@@ -205,6 +258,7 @@ Step1 = connect((state) => ({
   categoryOfCover: selector(state, 'categoryOfCover'),
   policyType: selector(state, 'policyType'),
   stateOfResidence: selector(state, 'stateOfResidence'),
+  whyNeedCover: selector(state, 'whyNeedCover'),
 }))(Step1)
 
 export default Step1

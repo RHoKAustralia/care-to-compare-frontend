@@ -57,9 +57,12 @@
 
 .itemTextNoIcon {
 	width: 50px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .itemTextWithIcon {
 	margin-left: 10px;
-    width: 100px;
+  width: 100px;
 }

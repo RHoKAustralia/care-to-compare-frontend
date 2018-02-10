@@ -30,6 +30,7 @@ const BoxOption = ({ option, selected, onSelect }) => {
             </div>
           )}
           <div
+            style={{ ...option.style }}
             className={classnames(styles.itemText, {
               [styles.itemTextWithIcon]: option.icon,
               [styles.itemTextNoIcon]: !option.icon,
