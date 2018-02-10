@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Field, reduxForm, formValueSelector } from 'redux-form'
+import { Field, reduxForm, formValueSelector, getFormValues } from 'redux-form'
 import { ControlLabel, HelpBlock, Row, Col } from 'react-bootstrap'
 
 import {
@@ -14,6 +14,7 @@ import { DateField, SelectField } from 'components/Form'
 import Button from 'components/Button'
 import Card, { Content } from 'components/Card'
 
+import SearchSummary from './SearchSummary'
 import FieldGroup from './FieldGroup'
 import InclusionSelectionGroup from './InclusionSelectionGroup'
 
@@ -26,10 +27,16 @@ let Step2 = (props) => {
     heldPreviousInsurance,
     hospitalInclusions,
     extrasInclusions,
+    searchCriteria,
   } = props
 
   return (
     <div>
+      <SearchSummary
+        searchCriteria={searchCriteria}
+        onEditSearch={onPrevious}
+        compact={true}
+      />
       <Card>
         <Content>
           <Row>
@@ -112,7 +119,7 @@ let Step2 = (props) => {
                 controlId="heldPreviousInsurance"
                 label={
                   <ControlLabel className="h3">
-                    Have you held previous insurnace?
+                    Have you held previous insurance?
                   </ControlLabel>
                 }
                 field={
@@ -254,6 +261,7 @@ Step2 = connect((state) => {
     heldPreviousInsurance,
     hospitalInclusions,
     extrasInclusions,
+    searchCriteria: getFormValues(searchFormName)(state),
   }
 })(Step2)
 

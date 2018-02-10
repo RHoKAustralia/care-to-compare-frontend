@@ -10,7 +10,7 @@ import { extrasInclusionsOptions, hospitalInclusionsOptions } from './constants'
 
 const dummyThumbnail = require('../../assets/dummy_thumbnail.png')
 
-const getInclusionLabelByValue = (inclusionLabelLookup, value) => {
+export const getInclusionLabelByValue = (inclusionLabelLookup, value) => {
   return lodash.find(
     inclusionLabelLookup,
     (inclusion) => inclusion.value === value,
@@ -165,7 +165,7 @@ class PolicyResultsViewer extends Component {
                     </div>
                     <div className={styles.selectFundBtnContainer}>
                       <Button
-                        primary
+                        ghost
                         block
                         onClick={(event) => selectPolicy(policy)}
                         size="medium"
@@ -181,7 +181,7 @@ class PolicyResultsViewer extends Component {
         </div>
         <div className={styles.moreDetailsContainer}>
           <Button
-            ghost
+            primary
             block
             size="medium"
             type="button"

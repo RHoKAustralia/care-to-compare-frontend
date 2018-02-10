@@ -1,7 +1,10 @@
 import React from 'react'
 
+import CheckList from 'components/CheckList'
 import Card, { Header, Content } from 'components/Card'
 
+import { extrasInclusionsOptions, hospitalInclusionsOptions } from './constants'
+import { getInclusionLabelByValue } from './PolicyResultsViewer'
 import styles from './styles.css'
 
 const getWhoIsCoveredText = (categoryOfCover) => {
@@ -72,12 +75,49 @@ const Compact = ({ searchCriteria, onEditSearch }) => {
   )
 }
 
+const InclusionSummary = ({ title, inclusionList }) => {
+  if (!inclusionList || inclusionList.length === 0) {
+    return <span />
+  }
+
+  return (
+    <div>
+      <div className="h5">{title}</div>
+      <div>
+        <CheckList items={inclusionList} itemSpacing="normal" />
+      </div>
+    </div>
+  )
+}
+
 const SearchSummary = ({ searchCriteria, onEditSearch, compact }) => {
   if (compact) {
     return (
       <Compact searchCriteria={searchCriteria} onEditSearch={onEditSearch} />
     )
   }
+
+  const {
+    categoryOfCover,
+    policyType,
+    stateOfResidence,
+    extrasInclusions,
+    hospitalInclusions,
+  } = searchCriteria
+
+  const hospitalInclusionsList = hospitalInclusions
+    ? hospitalInclusions.map((inclusion) => ({
+        checked: true,
+        label: getInclusionLabelByValue(hospitalInclusionsOptions, inclusion),
+      }))
+    : []
+
+  const extrasInclusionsList = extrasInclusions
+    ? extrasInclusions.map((inclusion) => ({
+        checked: true,
+        label: getInclusionLabelByValue(extrasInclusionsOptions, inclusion),
+      }))
+    : []
 
   return (
     <div className={styles.searchSummaryContainer}>
@@ -101,15 +141,21 @@ const SearchSummary = ({ searchCriteria, onEditSearch, compact }) => {
           <div className={styles.searchSummaryItemsContainer}>
             <SummaryItem
               icon="fa-user"
-              text={getWhoIsCoveredText(searchCriteria.categoryOfCover)}
+              text={getWhoIsCoveredText(categoryOfCover)}
             />
             <SummaryItem
               icon="fa-question-circle"
-              text={getPolicyTypeText(searchCriteria.policyType)}
+              text={getPolicyTypeText(policyType)}
             />
-            <SummaryItem
-              icon="fa-map-signs"
-              text={searchCriteria.stateOfResidence}
+            <SummaryItem icon="fa-map-signs" text={stateOfResidence} />
+
+            <InclusionSummary
+              title="Hospital Inclusions"
+              inclusionList={hospitalInclusionsList}
+            />
+            <InclusionSummary
+              title="Extras Inclusions"
+              inclusionList={extrasInclusionsList}
             />
           </div>
         </Content>

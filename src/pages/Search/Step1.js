@@ -64,7 +64,7 @@ const policyTypeOptions = [
   },
   {
     id: 3,
-    text: 'Combined',
+    text: 'Hospital & Extras',
     style: { width: '100px', height: '50px' },
     value: 'COMBINED',
   },
