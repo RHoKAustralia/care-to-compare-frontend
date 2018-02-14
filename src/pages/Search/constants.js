@@ -38,7 +38,7 @@ export const extrasInclusionsOptions = [
   { label: 'Phsychology', value: 'CLINICAL_PSYCHOLOGY' },
   { label: 'Acupuncture', value: 'ACUPUNCTURE' },
   { label: 'Naturopathy', value: 'NATUROPATHY' },
-  { label: 'Massge', value: 'MASSAGE' },
+  { label: 'Massage', value: 'MASSAGE' },
   { label: 'Hearing Aids', value: 'HEARING_AIDS' },
   { label: 'Blood Glucose Monitor', value: 'BLOOD_GLUCOSE_MONITOR' },
 ]

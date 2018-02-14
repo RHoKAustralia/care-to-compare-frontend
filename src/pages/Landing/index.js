@@ -22,8 +22,7 @@ const landingPageImages = [
 ]
 
 const checkListItems = [
-  { checked: true, label: 'Exclusively deal in health products' },
-  { checked: true, label: 'Exclusively deal in health products' },
+  { checked: true, label: 'Exclusively deal in health insurance' },
   { checked: true, label: 'Find a policy right for you' },
   { checked: true, label: 'It costs no more no matter where you buy' },
   { checked: true, label: 'Buy through C2C and support Stroke Foundation' },
