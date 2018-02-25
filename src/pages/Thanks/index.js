@@ -8,7 +8,6 @@ import CheckList from 'components/CheckList'
 import Card, { Header, Content } from 'components/Card'
 import Container from 'components/Container'
 import Grid, { Col } from 'components/Grid'
-import { IconTick } from 'components/Icons'
 import survivorPhoto from 'assets/paul-fink-survivor.jpg'
 import styles from './styles.css'
 
