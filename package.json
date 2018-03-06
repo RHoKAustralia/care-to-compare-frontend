@@ -77,7 +77,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build:local": "cross-env NODE_ENV=LOCAL node scripts/build.js",
-    "build:prod": "cross-env NODE_ENV=PRODUCTION node scripts/build.js",
+    "build:prod": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
