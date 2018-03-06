@@ -5,10 +5,10 @@ import styles from './styles.css'
 
 const AsyncLoader = ({ loading, error, children }) => {
   if (error) {
-    console.log('An error occurred:', error)
+    console.error('An error occurred:', error)
     return (
       <div className={styles.errorContainer}>
-        <div>And error occurred!</div>
+        <div>An error occurred!</div>
       </div>
     )
   }

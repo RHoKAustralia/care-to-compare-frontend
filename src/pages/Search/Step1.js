@@ -16,8 +16,8 @@ import Button from 'components/Button'
 import { searchFormName } from './constants'
 import styles from './styles.css'
 
-const unSelectedIcon = require('../../assets/policy-options/combined-unselected.png')
-const selectedIcon = require('../../assets/policy-options/combined selected.png')
+// const unSelectedIcon = require('../../assets/policy-options/combined-unselected.png')
+// const selectedIcon = require('../../assets/policy-options/combined selected.png')
 
 const categoryOfCoverOptions = [
   {
