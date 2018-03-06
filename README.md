@@ -2,7 +2,6 @@
 
 CareToCompare is a not-for-profit health insurance platform. Project started at RHoK Melbourne Winter 2017.
 
-[Demo](https://rhokaustralia.github.io/care-to-compare-frontend/)
 [Care to Compare Search API](https://github.com/RHoKAustralia/care-to-compare-search-api)
 
 ## Technologies used
@@ -25,11 +24,4 @@ CareToCompare is a not-for-profit health insurance platform. Project started at 
 Clone repo
 yarn
 yarn start
-```
-
-## Deployment
-
-This project is currently hosted on GitHub pages. To deploy just run
-```
-yarn deploy
 ```
