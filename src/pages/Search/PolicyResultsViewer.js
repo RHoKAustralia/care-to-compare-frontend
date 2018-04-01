@@ -161,7 +161,17 @@ class PolicyResultsViewer extends Component {
                     </div>
 
                     <div style={{ marginTop: '20px' }}>
-                      <a>View SIS</a>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={
+                          'http://assets.caretocompare.com.au/sis/' +
+                          policy.sisCode.split('/').join('-') +
+                          '.pdf'
+                        }
+                      >
+                        View SIS
+                      </a>
                     </div>
                     <div className={styles.selectFundBtnContainer}>
                       <Button
