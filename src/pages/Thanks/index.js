@@ -140,7 +140,7 @@ class Thanks extends Component {
             </p>
             <Button secondary size="medium">
               <SocialIcon
-                url="#"
+                url="https://www.facebook.com/caretocompare"
                 network="facebook"
                 color="#eee5e5"
                 style={{ height: 30, width: 30 }}
@@ -149,7 +149,7 @@ class Thanks extends Component {
             </Button>
             <Button secondary size="medium">
               <SocialIcon
-                url="#"
+                url="https://twitter.com/caretocompare"
                 network="twitter"
                 color="#eee5e5"
                 style={{ height: 30, width: 30 }}
@@ -158,7 +158,7 @@ class Thanks extends Component {
             </Button>
             <Button secondary size="medium">
               <SocialIcon
-                url="#"
+                url="https://www.instagram.com/caretocompare/"
                 network="instagram"
                 color="#eee5e5"
                 style={{ height: 30, width: 30 }}
@@ -167,7 +167,7 @@ class Thanks extends Component {
             </Button>
             <Button secondary size="medium">
               <SocialIcon
-                url="#"
+                url="mailto:info@caretocompare.com.au"
                 network="email"
                 color="#eee5e5"
                 style={{ height: 30, width: 30 }}
