@@ -43,10 +43,13 @@ class Thanks extends Component {
         <div className={styles.header}>
           <Container>
             <h3>Thanks {userDetails.name}.</h3>
+            <p>Here is your new policy information.</p>
             <p>
-              Buying health insurance through <strong>Care to Compare?</strong>{' '}
-              is good for you and good for charity
+              Thanks for buying health insurance through{' '}
+              <strong>Care To Compare</strong>. You have now increased the
+              impact we have for the health charities we support
             </p>
+            <p>THANK YOU!</p>
           </Container>
 
           <Container>
@@ -83,12 +86,10 @@ class Thanks extends Component {
                         <div
                           style={{
                             marginTop: '20px',
-                            width: '50%',
-                            marginLeft: '25%',
                           }}
                         >
                           <Button ghost size="medium" block>
-                            View SIS
+                            View Standard Information Statement
                           </Button>
                         </div>
                       </div>
@@ -118,7 +119,12 @@ class Thanks extends Component {
                   Harbour Bridge.
                 </p>
                 <Button size="medium" primary>
-                  Paul's Story
+                  <a
+                    href="https://strokefoundation.org.au/Media-Releases/2017/10/12/01/10/Stroke-survivor-challenges-Australians-to-Stride4stroke"
+                    target="_blank"
+                  >
+                    Paul's Story
+                  </a>
                 </Button>
               </Col>
             </Grid>
@@ -129,7 +135,8 @@ class Thanks extends Component {
           <Container>
             <h4>Keep up the great work.</h4>
             <p>
-              Let your friends and family know about Care to Compare? Share on
+              Let your friends and family know about{' '}
+              <strong>Care to Compare</strong>.
             </p>
             <Button secondary size="medium">
               <SocialIcon
