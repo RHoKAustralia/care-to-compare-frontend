@@ -1,13 +1,15 @@
-import beyondBlue from './landing/beyondblue.png'
-import heartFoundation from './landing/heartfoundation.png'
-import kidneyHealth from './landing/kidneyhealth.png'
 import nsfLogo from './landing/strokefoundation.png'
 import visionAustralia from './landing/visionaustralia.png'
+import redDust from './landing/reddustrolemodels.png'
+import heartKids from './landing/heartkids.png'
+import saneAusralia from './landing/saneaustralia.png'
+import lungFoundation from './landing/lungfoundation.png'
 
 export default {
-  beyondBlue,
-  heartFoundation,
-  kidneyHealth,
   nsfLogo,
+  redDust,
+  heartKids,
+  saneAusralia,
+  lungFoundation,
   visionAustralia,
 }
