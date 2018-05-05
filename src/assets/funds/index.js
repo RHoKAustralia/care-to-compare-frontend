@@ -1,13 +1,15 @@
-import australianUnity from './australian unity672x672.png'
-import bupa from './bupa 300x300.png'
-import gmhba from './gmhba400x400.jpeg'
-import medibank from './medibank800x252.png'
-import nib from './nib420x281.png'
+import australianUnity from './AustralianUnity.png'
+import bupa from './bupa.png'
+import hcf from './hcf.png'
+import lhm from './peopleCare.png'
+import pwa from './phoenix.png'
+import myo from './myOwn.png'
 
 export default {
   australianUnity,
   bupa,
-  gmhba,
-  medibank,
-  nib,
+  hcf,
+  lhm,
+  pwa,
+  myo,
 }
