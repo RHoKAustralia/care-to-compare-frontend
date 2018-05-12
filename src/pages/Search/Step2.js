@@ -59,11 +59,6 @@ let Step2 = (props) => {
                       <option value="5">Top</option>
                     </Field>
                   }
-                  helpBlock={
-                    <HelpBlock>
-                      (Optional: this helps us detemine policy inclusions...)
-                    </HelpBlock>
-                  }
                 />
               )}
 
@@ -85,11 +80,6 @@ let Step2 = (props) => {
                       <option value="5">Top</option>
                     </Field>
                   }
-                  helpBlock={
-                    <HelpBlock>
-                      (Optional: this helps us detemine policy inclusions...)
-                    </HelpBlock>
-                  }
                 />
               )}
 
@@ -107,11 +97,6 @@ let Step2 = (props) => {
                     dateFormat="DD/MM/YYYY"
                     showClearButton={false}
                   />
-                }
-                helpBlock={
-                  <HelpBlock>
-                    (Optional: this helps us detemine your loading...)
-                  </HelpBlock>
                 }
               />
 
@@ -137,9 +122,6 @@ let Step2 = (props) => {
                     <option value="false">No</option>
                   </Field>
                 }
-                helpBlock={
-                  <HelpBlock>(Optional: this helps us detemine...)</HelpBlock>
-                }
               />
 
               {heldPreviousInsurance === 'true' && (
@@ -158,11 +140,6 @@ let Step2 = (props) => {
                       dateFormat="DD/MM/YYYY"
                       showClearButton={false}
                     />
-                  }
-                  helpBlock={
-                    <HelpBlock>
-                      (Optional: this helps us detemine your loading...)
-                    </HelpBlock>
                   }
                 />
               )}
@@ -183,11 +160,6 @@ let Step2 = (props) => {
                     <option value="3">$105,001 - $140,000</option>
                     <option value="4">Over $140,000+</option>
                   </Field>
-                }
-                helpBlock={
-                  <HelpBlock>
-                    (Optional: this helps us detemine your rebate...)
-                  </HelpBlock>
                 }
               />
             </Col>
@@ -213,14 +185,6 @@ let Step2 = (props) => {
                     />
                   </Col>
                 )}
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <HelpBlock>
-                    (Optional: this helps us narrow down the policies that is
-                    best fit for you)
-                  </HelpBlock>
-                </Col>
               </Row>
             </Col>
           </Row>
