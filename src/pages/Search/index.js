@@ -79,8 +79,9 @@ class Search extends Component {
           <Container>
             <strong>Let's get to know one another!</strong>
             <br />
-            Your on your way to getting the right health insrance for you and
-            supporting great charities when you choose &nbsp;
+            You're on your way to getting the right health insurance for you and
+            supporting great charities when you compare and buy health insurance
+            with&nbsp;
             <strong>Care to Compare</strong>.
           </Container>
         </div>
