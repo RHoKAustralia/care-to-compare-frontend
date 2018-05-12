@@ -147,7 +147,8 @@ let Step2 = (props) => {
                   controlId="dateSinceInsured"
                   label={
                     <ControlLabel className="h3">
-                      What is the first date your were insurence from?
+                      Have you held insurance continually since turning 31 or
+                      for the last 10 years?
                     </ControlLabel>
                   }
                   field={
@@ -170,7 +171,8 @@ let Step2 = (props) => {
                 controlId="rebateTier"
                 label={
                   <ControlLabel className="h3">
-                    What is your annual income?
+                    To determine your rebate level please select your combined
+                    household income tier.
                   </ControlLabel>
                 }
                 field={
@@ -194,7 +196,7 @@ let Step2 = (props) => {
                 {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
                   <Col sm={policyType === 'HOSPITAL' ? 12 : 6}>
                     <InclusionSelectionGroup
-                      title="What hospital?"
+                      title="What hospital benefits are important to you?"
                       name="hospitalInclusions"
                       options={hospitalInclusionsOptions}
                       currentSelection={hospitalInclusions}
@@ -204,7 +206,7 @@ let Step2 = (props) => {
                 {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
                   <Col sm={policyType === 'EXTRAS' ? 12 : 6}>
                     <InclusionSelectionGroup
-                      title="What extras?"
+                      title="What extras benefits are important to you?"
                       name="extrasInclusions"
                       options={extrasInclusionsOptions}
                       currentSelection={extrasInclusions}

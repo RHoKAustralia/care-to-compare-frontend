@@ -32,7 +32,7 @@ class PolicyStub extends Component {
               </p>
               <p>/month</p>
               <p>Hospitals and extra cover</p>
-              <Button ghost>View SIS</Button>
+              <Button ghost>Standard Information Statement</Button>
               <div>
                 <Link to="/checkout">
                   <Button primary>Buy Now</Button>

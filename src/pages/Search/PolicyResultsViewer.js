@@ -170,7 +170,7 @@ class PolicyResultsViewer extends Component {
                           '.pdf'
                         }
                       >
-                        View SIS
+                        Standard Information Statement
                       </a>
                     </div>
                     <div className={styles.selectFundBtnContainer}>

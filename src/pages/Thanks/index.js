@@ -89,7 +89,7 @@ class Thanks extends Component {
                           }}
                         >
                           <Button ghost size="medium" block>
-                            View Standard Information Statement
+                            Standard Information Statement
                           </Button>
                         </div>
                       </div>
