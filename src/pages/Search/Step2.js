@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector, getFormValues } from 'redux-form'
-import { ControlLabel, HelpBlock, Row, Col } from 'react-bootstrap'
+import { ControlLabel, Row, Col } from 'react-bootstrap'
 
 import {
   searchFormName,
