@@ -8,4 +8,6 @@ jobs:
           name: Deploy to Demo
           command: |-
             ./deploy.sh demo
+          environment:
+            REACT_APP_API_ENDPOINT: http://search-api.caretocompare.com.au:3000/graphql
 
