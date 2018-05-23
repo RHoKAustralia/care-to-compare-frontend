@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector, getFormValues } from 'redux-form'
-import { ControlLabel, HelpBlock, Row, Col } from 'react-bootstrap'
+import { ControlLabel, Row, Col } from 'react-bootstrap'
 
 import {
   searchFormName,
@@ -59,11 +59,6 @@ let Step2 = (props) => {
                       <option value="5">Top</option>
                     </Field>
                   }
-                  helpBlock={
-                    <HelpBlock>
-                      (Optional: this helps us detemine policy inclusions...)
-                    </HelpBlock>
-                  }
                 />
               )}
 
@@ -85,11 +80,6 @@ let Step2 = (props) => {
                       <option value="5">Top</option>
                     </Field>
                   }
-                  helpBlock={
-                    <HelpBlock>
-                      (Optional: this helps us detemine policy inclusions...)
-                    </HelpBlock>
-                  }
                 />
               )}
 
@@ -107,11 +97,6 @@ let Step2 = (props) => {
                     dateFormat="DD/MM/YYYY"
                     showClearButton={false}
                   />
-                }
-                helpBlock={
-                  <HelpBlock>
-                    (Optional: this helps us detemine your loading...)
-                  </HelpBlock>
                 }
               />
 
@@ -137,9 +122,6 @@ let Step2 = (props) => {
                     <option value="false">No</option>
                   </Field>
                 }
-                helpBlock={
-                  <HelpBlock>(Optional: this helps us detemine...)</HelpBlock>
-                }
               />
 
               {heldPreviousInsurance === 'true' && (
@@ -147,7 +129,8 @@ let Step2 = (props) => {
                   controlId="dateSinceInsured"
                   label={
                     <ControlLabel className="h3">
-                      What is the first date your were insurence from?
+                      Have you held insurance continually since turning 31 or
+                      for the last 10 years?
                     </ControlLabel>
                   }
                   field={
@@ -158,11 +141,6 @@ let Step2 = (props) => {
                       showClearButton={false}
                     />
                   }
-                  helpBlock={
-                    <HelpBlock>
-                      (Optional: this helps us detemine your loading...)
-                    </HelpBlock>
-                  }
                 />
               )}
 
@@ -170,7 +148,8 @@ let Step2 = (props) => {
                 controlId="rebateTier"
                 label={
                   <ControlLabel className="h3">
-                    What is your annual income?
+                    To determine your rebate level please select your combined
+                    household income tier.
                   </ControlLabel>
                 }
                 field={
@@ -182,11 +161,6 @@ let Step2 = (props) => {
                     <option value="4">Over $140,000+</option>
                   </Field>
                 }
-                helpBlock={
-                  <HelpBlock>
-                    (Optional: this helps us detemine your rebate...)
-                  </HelpBlock>
-                }
               />
             </Col>
             <Col sm={6} smOffset={1}>
@@ -194,7 +168,7 @@ let Step2 = (props) => {
                 {(policyType === 'HOSPITAL' || policyType === 'COMBINED') && (
                   <Col sm={policyType === 'HOSPITAL' ? 12 : 6}>
                     <InclusionSelectionGroup
-                      title="What hospital?"
+                      title="What hospital benefits are important to you?"
                       name="hospitalInclusions"
                       options={hospitalInclusionsOptions}
                       currentSelection={hospitalInclusions}
@@ -204,21 +178,13 @@ let Step2 = (props) => {
                 {(policyType === 'EXTRAS' || policyType === 'COMBINED') && (
                   <Col sm={policyType === 'EXTRAS' ? 12 : 6}>
                     <InclusionSelectionGroup
-                      title="What extras?"
+                      title="What extras benefits are important to you?"
                       name="extrasInclusions"
                       options={extrasInclusionsOptions}
                       currentSelection={extrasInclusions}
                     />
                   </Col>
                 )}
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <HelpBlock>
-                    (Optional: this helps us narrow down the policies that is
-                    best fit for you)
-                  </HelpBlock>
-                </Col>
               </Row>
             </Col>
           </Row>

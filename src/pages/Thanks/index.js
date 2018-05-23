@@ -89,7 +89,7 @@ class Thanks extends Component {
                           }}
                         >
                           <Button ghost size="medium" block>
-                            View Standard Information Statement
+                            Standard Information Statement
                           </Button>
                         </div>
                       </div>
@@ -122,6 +122,7 @@ class Thanks extends Component {
                   <a
                     href="https://strokefoundation.org.au/Media-Releases/2017/10/12/01/10/Stroke-survivor-challenges-Australians-to-Stride4stroke"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Paul's Story
                   </a>

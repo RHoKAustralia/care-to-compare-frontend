@@ -97,7 +97,7 @@ class PurchaseSummary extends Component {
                 }}
               >
                 <Button block ghost size="small" type="button">
-                  View SIS
+                  Standard Information Statement
                 </Button>
               </div>
               <div

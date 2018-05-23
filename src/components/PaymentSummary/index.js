@@ -24,7 +24,7 @@ const PaymentSummary = (props) => (
         </li>
       </ul>
       <Button primary>
-        <a href="./guide-to-sis-combined.pdf">View SIS</a>
+        <a href="./guide-to-sis-combined.pdf">Standard Information Statement</a>
       </Button>
     </Content>
   </Card>
