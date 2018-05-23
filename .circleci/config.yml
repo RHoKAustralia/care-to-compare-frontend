@@ -2,22 +2,10 @@ version: 2
 jobs:
   build:
     machine: true
-    # docker:
-    #   - image: debian:stretch
     steps:
       - checkout
-# install python and awscli
-      - run:
-          name: Install dependencies
-          working_directory: /
-          command: |
-            apt-get update && apt-get install -qq -y python-pip libpython-dev curl git
-            curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py
-            pip install -q awscli --upgrade
       - run:
           name: Deploy to Demo
           command: |-
             ./deploy.sh demo
-      - run:
-          name: Print the Current Time
-          command: date
+
