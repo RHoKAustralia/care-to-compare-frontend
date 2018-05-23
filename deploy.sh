@@ -12,6 +12,6 @@ fi
 
 docker run --rm \
     -v `pwd`:/cwd \
-    node:9.11-alpine ash -c "cd /cwd && npm install && yarn build"
+    node:9.11-alpine ash -c "cd /cwd && npm install && yarn build:prod"
 
 aws s3 sync --delete build/ s3://${ENVIRONMENT}.caretocompare.com.au/
