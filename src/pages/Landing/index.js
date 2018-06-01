@@ -13,18 +13,20 @@ import fundImages from 'assets/funds'
 import styles from './styles.css'
 
 const landingPageImages = [
-  { alt: '', src: require('../../assets/landing-images/strokesurvivor.jpeg') },
-  { alt: '', src: require('../../assets/landing-images/strokesurvivor1.jpeg') },
-  {
-    alt: '',
-    src: require('../../assets/landing-images/strokesurvivor3 594x395.jpeg'),
-  },
+  { alt: '', src: require('../../assets/landing-images/strokeRecovery.jpg') },
+  { alt: '', src: require('../../assets/landing-images/happyCoupleSmile.jpg') },
+  { alt: '', src: require('../../assets/landing-images/physio.jpg') },
+  { alt: '', src: require('../../assets/landing-images/redDustMole.jpg') },
+  { alt: '', src: require('../../assets/landing-images/takeCare.jpg') },
 ]
 
 const checkListItems = [
-  { checked: true, label: 'Exclusively deal in health insurance' },
-  { checked: true, label: 'Find a policy right for you' },
-  { checked: true, label: 'It costs no more no matter where you buy' },
+  { checked: true, label: 'We only compare health insurance.' },
+  { checked: true, label: 'Find a policy right for you.' },
+  {
+    checked: true,
+    label: "You won't pay more when you buy through CARE TO COMPARE.",
+  },
   { checked: true, label: 'Buy through C2C and support Stroke Foundation' },
 ]
 
