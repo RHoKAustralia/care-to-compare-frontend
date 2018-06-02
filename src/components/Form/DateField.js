@@ -1,8 +1,7 @@
 import React from 'react'
-import DatePicker from 'react-bootstrap-date-picker'
 
 const DateField = ({ input, meta, ...props }) => {
-  return <DatePicker {...props} {...input} />
+  return <input type="date" onChange={input.onChange} />
 }
 
 export default DateField
