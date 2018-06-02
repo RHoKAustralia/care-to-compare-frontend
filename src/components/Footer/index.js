@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 
 import Container from 'components/Container'
 import styles from './styles.css'
@@ -11,7 +12,9 @@ class Footer extends Component {
         <Container>
           <h2 className={styles.subheading}>Customer info</h2>
           <ul>
-            <li>How Care to Compare works</li>
+            <li>
+              <Link to="/about">How Care to Compare works</Link>
+            </li>
             <li>
               <a href="https://caretocompare.com.au/privacy-policy">
                 Privacy Policy
