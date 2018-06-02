@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 
 import logo from 'assets/C2Clogo.png'
 import Container from 'components/Container'
@@ -9,7 +10,9 @@ class Header extends Component {
     return (
       <header>
         <Container>
-          <img src={logo} alt="Care to Compare logo" />
+          <Link to="/">
+            <img src={logo} alt="Care to Compare logo" />
+          </Link>
         </Container>
       </header>
     )
