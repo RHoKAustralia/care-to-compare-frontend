@@ -5,9 +5,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy to Demo
+          name: Deploy to Demo2 (Demo Dev)
           command: |-
-            ./deploy.sh demo
+            ./deploy.sh demo2
           environment:
             REACT_APP_API_ENDPOINT: http://search-api.caretocompare.com.au:3000/graphql
 
