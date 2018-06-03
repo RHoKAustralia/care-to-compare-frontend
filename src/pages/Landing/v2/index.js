@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import Button from 'components/Button'
 import Container from 'components/Container'
 import Grid, { Col } from 'components/Grid'
-import CustomerTestimonials from './CustomerTestimonials'
+import ValuePropositions from './ValuePropositions'
 
 import fundImages from 'assets/funds'
 import foundationImages from 'assets/foundations'
@@ -66,7 +66,7 @@ class Landing extends Component {
           </Button>
           <Container>
             <div className={styles.content}>
-              <CustomerTestimonials />
+              <ValuePropositions />
             </div>
           </Container>
         </div>
