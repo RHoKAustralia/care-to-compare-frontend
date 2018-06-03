@@ -13,11 +13,17 @@ import fundImages from 'assets/funds'
 import styles from './styles.css'
 
 const landingPageImages = [
-  { alt: '', src: require('../../assets/landing-images/strokeRecovery.jpg') },
-  { alt: '', src: require('../../assets/landing-images/happyCoupleSmile.jpg') },
-  { alt: '', src: require('../../assets/landing-images/physio.jpg') },
-  { alt: '', src: require('../../assets/landing-images/redDustMole.jpg') },
-  { alt: '', src: require('../../assets/landing-images/takeCare.jpg') },
+  {
+    alt: '',
+    src: require('../../../assets/landing-images/strokeRecovery.jpg'),
+  },
+  {
+    alt: '',
+    src: require('../../../assets/landing-images/happyCoupleSmile.jpg'),
+  },
+  { alt: '', src: require('../../../assets/landing-images/physio.jpg') },
+  { alt: '', src: require('../../../assets/landing-images/redDustMole.jpg') },
+  { alt: '', src: require('../../../assets/landing-images/takeCare.jpg') },
 ]
 
 const checkListItems = [
