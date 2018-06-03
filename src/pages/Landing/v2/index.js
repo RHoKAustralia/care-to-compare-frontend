@@ -20,13 +20,11 @@ class Landing extends Component {
           <p className={classnames(styles.content, styles.tagline)}>
             You're on your way to getting the right health insurance for you and
             supporting great charities when you compare and buy health insurance
-            with <strong>Care to Compare</strong>.
+            with <strong>Care To Compare</strong>.
           </p>
           <div className={styles.showcase}>
             <div className={styles.content}>
-              <h2 className={styles.subheading}>
-                We partner with these providers
-              </h2>
+              <h2 className={styles.subheading}>We compare these providers</h2>
               <Grid>
                 {Object.values(fundImages).map((imageUrl, index) => (
                   <Col s={4} key={index}>

@@ -6,9 +6,7 @@ import styles from './styles.css'
 // TODO: Replace with real content
 const ValuePropositions = () => (
   <div>
-    <h2 className={styles.subheading}>
-      What people have to say about Care to Compare
-    </h2>
+    <h2 className={styles.subheading}>Why use Care To Compare?</h2>
     <Grid>
       {Array(3)
         .fill(null)
