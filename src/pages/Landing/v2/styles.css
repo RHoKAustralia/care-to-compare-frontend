@@ -1,8 +1,4 @@
 .root {
-  background-image: url('../../../assets/landing-images/takeCare.jpg');
-  background-repeat: no-repeat;
-  background-color: #777;
-  background-size: cover;
   padding: 2em 0;
   display: flex;
   flex-direction: column;
@@ -15,7 +11,6 @@
 .content {
   margin: 0.5em 1em;
   padding: 1em;
-  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .subheading {

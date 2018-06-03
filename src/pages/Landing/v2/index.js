@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import Button from 'components/Button'
 import Container from 'components/Container'
 import Grid, { Col } from 'components/Grid'
-import CustomerTestimonials from './CustomerTestimonials'
+import ValuePropositions from './ValuePropositions'
 
 import fundImages from 'assets/funds'
 import foundationImages from 'assets/foundations'
@@ -20,13 +20,11 @@ class Landing extends Component {
           <p className={classnames(styles.content, styles.tagline)}>
             You're on your way to getting the right health insurance for you and
             supporting great charities when you compare and buy health insurance
-            with <strong>Care to Compare</strong>.
+            with <strong>Care To Compare</strong>.
           </p>
           <div className={styles.showcase}>
             <div className={styles.content}>
-              <h2 className={styles.subheading}>
-                We partner with these providers
-              </h2>
+              <h2 className={styles.subheading}>We compare these providers</h2>
               <Grid>
                 {Object.values(fundImages).map((imageUrl, index) => (
                   <Col s={4} key={index}>
@@ -66,7 +64,7 @@ class Landing extends Component {
           </Button>
           <Container>
             <div className={styles.content}>
-              <CustomerTestimonials />
+              <ValuePropositions />
             </div>
           </Container>
         </div>

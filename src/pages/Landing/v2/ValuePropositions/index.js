@@ -4,17 +4,15 @@ import Grid, { Col } from 'components/Grid'
 import styles from './styles.css'
 
 // TODO: Replace with real content
-const CustomerTestimonials = () => (
+const ValuePropositions = () => (
   <div>
-    <h2 className={styles.subheading}>
-      What people have to say about Care to Compare
-    </h2>
+    <h2 className={styles.subheading}>Why use Care To Compare?</h2>
     <Grid>
       {Array(3)
         .fill(null)
         .map((_, index) => (
-          <Col s={4} key={`testimonial-${index}`}>
-            <div className={styles.testimonial}>
+          <Col s={4} key={`proposition-${index}`}>
+            <div className={styles.proposition}>
               <img
                 src={`https://source.unsplash.com/random/180x180?${index}`}
                 className={styles.photo}
@@ -31,4 +29,4 @@ const CustomerTestimonials = () => (
   </div>
 )
 
-export default CustomerTestimonials
+export default ValuePropositions
