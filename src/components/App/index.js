@@ -3,7 +3,6 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
-import About from 'pages/About'
 import Search from 'pages/Search'
 import SearchResults from 'pages/SearchResults'
 import Checkout from 'pages/Checkout'
@@ -20,7 +19,6 @@ class App extends Component {
             <Route path="/results" component={SearchResults} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/thanks" component={Thanks} />
-            <Route path="/about" component={About} />
             <Route component={Search} />
           </Switch>
           <Footer />
