@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
-import CharityBanner from 'components/CharityBanner'
 import Grid, { Col } from 'components/Grid'
 import Container from 'components/Container'
 import Card, { Header, Content } from 'components/Card'
+
+import ReviewAndJoin from './ReviewAndJoin'
+import PersonalDetails from './PersonalDetails'
+import MedicareDetails from './MedicareDetails'
+import LifetimeHealthcareLoading from './LifetimeHealthcareLoading'
+import Rebate from './Rebate'
+import ReviewRebate from './ReviewRebate'
+import ContactDetails from './ContactDetails'
+import PaymentDetails from './PaymentDetails'
+import ConfirmCheckout from './ConfirmCheckout'
 
 class Checkout extends Component {
   render() {
@@ -18,10 +28,30 @@ class Checkout extends Component {
               </Card>
             </Col>
             <Col s={6}>
-              <Card>
-                <Header>Content here</Header>
-                <Content>TODO</Content>
-              </Card>
+              <Route exact path="/checkout/" component={ReviewAndJoin} />
+              <Route
+                path="/checkout/about-you/personal-details"
+                component={PersonalDetails}
+              />
+              <Route
+                path="/checkout/about-you/medicare-details"
+                component={MedicareDetails}
+              />
+              <Route
+                path="/checkout/lifetime-healthcare-loading"
+                component={LifetimeHealthcareLoading}
+              />
+              <Route path="/checkout/rebate" component={Rebate} />
+              <Route path="/checkout/confirm-rebate" component={ReviewRebate} />
+              <Route
+                path="/checkout/contact-details"
+                component={ContactDetails}
+              />
+              <Route
+                path="/checkout/payment-details"
+                component={PaymentDetails}
+              />
+              <Route path="/checkout/confirm" component={ConfirmCheckout} />
             </Col>
             <Col s={3}>
               <Card>
