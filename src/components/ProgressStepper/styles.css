@@ -10,15 +10,15 @@
     line-height: 25px;
     display: inline-block;
     border-radius: 100px;
-    border: 3px solid;
-    border-color: black;
+    border: 1px solid;
+    border-color: #333333;
     z-index: 2;
     text-align: center;
     font-size: 14px;
 }
 
 .solid {
-    background: #57D09F;
+    background: #4DCCDE;
 }
 
 .hollow {
