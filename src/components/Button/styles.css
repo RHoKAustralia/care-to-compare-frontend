@@ -20,14 +20,15 @@
 
 /* TODO: Redo class names */
 .primary {
-  background-color: #57D09F;
-  color: #FFF;
+  background-color: white;
+  color: #333333;
+  border: 1px solid #4DCCDE;
 }
 
 .ghost {
   background-color: #FFF;
-  color: #57D09F;
-  border: 1px solid #57D09F;
+  color: #4DCCDE;
+  border: 1px solid #4DCCDE;
 }
 
 .secondary {
