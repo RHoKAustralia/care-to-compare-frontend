@@ -8,6 +8,7 @@ import Card, { Header, Content } from 'components/Card'
 import ReviewAndJoin from './ReviewAndJoin'
 import PersonalDetails from './PersonalDetails'
 import MedicareDetails from './MedicareDetails'
+import PreviousInsuranceDetails from './PreviousInsuranceDetails'
 import LifetimeHealthcareLoading from './LifetimeHealthcareLoading'
 import Rebate from './Rebate'
 import ReviewRebate from './ReviewRebate'
@@ -36,6 +37,10 @@ class Checkout extends Component {
               <Route
                 path="/checkout/about-you/medicare-details"
                 component={MedicareDetails}
+              />
+              <Route
+                path="/checkout/about-you/previous-insurance-details"
+                component={PreviousInsuranceDetails}
               />
               <Route
                 path="/checkout/lifetime-healthcare-loading"
