@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
-import CharityBanner from 'components/CharityBanner'
 import Grid, { Col } from 'components/Grid'
-import PaymentSummary from 'components/PaymentSummary'
-import PaymentOptionsForm from 'components/PaymentOptionsForm'
-import SelectedPolicyInformation from 'components/SelectedPolicyInformation'
-import UserDetailsForm from 'components/UserDetailsForm'
-import UserSummary from 'components/UserSummary'
 import Container from 'components/Container'
+import Card, { Header, Content } from 'components/Card'
+
+import ReviewAndJoin from './ReviewAndJoin'
+import PersonalDetails from './PersonalDetails'
+import MedicareDetails from './MedicareDetails'
+import PreviousInsuranceDetails from './PreviousInsuranceDetails'
+import LifetimeHealthcareLoading from './LifetimeHealthcareLoading'
+import Rebate from './Rebate'
+import ReviewRebate from './ReviewRebate'
+import ContactDetails from './ContactDetails'
+import PaymentDetails from './PaymentDetails'
+import ConfirmCheckout from './ConfirmCheckout'
 
 class Checkout extends Component {
   render() {
@@ -15,20 +22,50 @@ class Checkout extends Component {
       <div>
         <Container>
           <Grid>
-            <Col s={4}>
-              <UserSummary />
-              <PaymentSummary />
+            <Col s={3}>
+              <Card>
+                <Header>Your Summary</Header>
+                <Content>TODO</Content>
+              </Card>
             </Col>
-            <Col s={8}>
-              <UserDetailsForm />
-              <PaymentOptionsForm />
-              <SelectedPolicyInformation />
+            <Col s={6}>
+              <Route exact path="/checkout/" component={ReviewAndJoin} />
+              <Route
+                path="/checkout/about-you/personal-details"
+                component={PersonalDetails}
+              />
+              <Route
+                path="/checkout/about-you/medicare-details"
+                component={MedicareDetails}
+              />
+              <Route
+                path="/checkout/about-you/previous-insurance-details"
+                component={PreviousInsuranceDetails}
+              />
+              <Route
+                path="/checkout/lifetime-healthcare-loading"
+                component={LifetimeHealthcareLoading}
+              />
+              <Route path="/checkout/rebate" component={Rebate} />
+              <Route path="/checkout/confirm-rebate" component={ReviewRebate} />
+              <Route
+                path="/checkout/contact-details"
+                component={ContactDetails}
+              />
+              <Route
+                path="/checkout/payment-details"
+                component={PaymentDetails}
+              />
+              <Route path="/checkout/confirm" component={ConfirmCheckout} />
+            </Col>
+            <Col s={3}>
+              <Card>
+                <Header>Selected Policy</Header>
+                <Content>TODO</Content>
+              </Card>
             </Col>
           </Grid>
         </Container>
-        <div>
-          <CharityBanner />
-        </div>
       </div>
     )
   }
