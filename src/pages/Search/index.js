@@ -14,10 +14,11 @@ import { purchasedPolicy } from 'actions'
 import { searchFormName, signupFormName } from './constants'
 
 const allSteps = [
-  { step: 1, title: '1. Search' },
-  { step: 2, title: '2. Refine' },
-  { step: 3, title: '3. Compare' },
-  { step: 4, title: '4. Confirm' },
+  { step: 1, title: 'Start' },
+  { step: 2, title: 'Compare' },
+  { step: 3, title: 'Choose' },
+  { step: 4, title: 'Buy' },
+  { step: 5, title: 'Finish' },
 ]
 
 class Search extends Component {
