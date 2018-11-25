@@ -9,7 +9,6 @@ CareToCompare is a not-for-profit health insurance platform. Project started at 
 - React - bootstrapped using Create React App
 - Redux
 - Redux Saga
-- [Slick Carousel](https://github.com/kenwheeler/slick)
 - Webpack
 - CSS modules
 - Yarn
